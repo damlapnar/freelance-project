@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Simplicity in design, clarity in communication, and technical standard compliance are the fastest and most effective improvements. -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Custom Order | D'era House, Clifton, NJ</title>
@@ -203,26 +204,8 @@
               <input type="date" id="o-date" name="event_date" required>
             </div>
             <div class="form-group">
-              <label for="o-time">Preferred event time</label>
-              <input type="text" id="o-time" name="event_time" placeholder="e.g. 10:00 AM, 3:30 PM, evening">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="o-size">Size / Servings</label>
-              <select id="o-size" name="size">
-                <option value="">Select...</option>
-                <option>Small (6"/ up to 8 people)</option>
-                <option>Medium (8" / up to 16 people)</option>
-                <option>Large (10" / up to 24 people)</option>
-                <option>Extra Large (12" / 30+ people)</option>
-                <option>Tiered (multiple layers)</option>
-                <option>Not sure, please advise</option>
-              </select>
-            </div>
-            <div class="form-group">
               <label for="o-budget">Approximate Budget</label>
-              <select id="o-budget" name="budget">
+              <select id="o-budget" name="budget" required>
                 <option value="">Select...</option>
                 <option>Under $50</option>
                 <option>$50 – $100</option>
@@ -234,43 +217,19 @@
             </div>
           </div>
 
-          <p class="form-section-title">Flavors &amp; Preferences</p>
-          <div class="form-group">
-            <label>Cake Flavor (choose all that apply)</label>
-            <div class="option-chips">
-              <label class="chip-label"><input type="checkbox" name="flavor[]" value="Classic Vanilla"><span>Classic Vanilla</span></label>
-              <label class="chip-label"><input type="checkbox" name="flavor[]" value="Chocolate"><span>Chocolate</span></label>
-              <label class="chip-label"><input type="checkbox" name="flavor[]" value="Red Velvet"><span>Red Velvet</span></label>
-              <label class="chip-label"><input type="checkbox" name="flavor[]" value="Lemon"><span>Lemon</span></label>
-              <label class="chip-label"><input type="checkbox" name="flavor[]" value="Strawberry"><span>Strawberry</span></label>
-              <label class="chip-label"><input type="checkbox" name="flavor[]" value="Carrot"><span>Carrot</span></label>
-              <label class="chip-label"><input type="checkbox" name="flavor[]" value="Not sure"><span>Not sure</span></label>
-            </div>
-          </div>
-          <div class="form-group" style="margin-top:1rem;">
-            <label>Dietary Needs</label>
-            <div class="option-chips">
-              <label class="chip-label"><input type="checkbox" name="dietary[]" value="Gluten-Free"><span>Gluten-Free</span></label>
-              <label class="chip-label"><input type="checkbox" name="dietary[]" value="Nut-Free"><span>Nut-Free</span></label>
-              <label class="chip-label"><input type="checkbox" name="dietary[]" value="Dairy-Free"><span>Dairy-Free</span></label>
-              <label class="chip-label"><input type="checkbox" name="dietary[]" value="Vegan"><span>Vegan</span></label>
-              <label class="chip-label"><input type="checkbox" name="dietary[]" value="Halal"><span>Halal</span></label>
-              <label class="chip-label"><input type="checkbox" name="dietary[]" value="None"><span>None</span></label>
-            </div>
+          <div class="info-note">
+            <strong>Deposit required.</strong> Your order will be confirmed after we review your request and send payment details.
           </div>
 
-          <p class="form-section-title">Design &amp; Special Requests</p>
+          <p style="margin: 1.5rem 0 0.5rem; color: #555; font-size:0.96rem; line-height:1.5;">Recommended: add your preferred flavors, estimated servings, dietary needs, and any inspiration details so we can offer the best guidance.</p>
+
           <div class="form-group">
             <label for="o-design">Design Description</label>
-            <textarea id="o-design" name="design_description" placeholder="Describe your vision, colors, theme, decorations, text on the cake, etc. The more detail the better!"></textarea>
+            <textarea id="o-design" name="design_description" placeholder="Describe your vision, colors, theme, decorations, text on the cake, and any flavor or dietary preferences."></textarea>
           </div>
           <div class="form-group">
             <label for="o-notes">Additional Notes</label>
             <textarea id="o-notes" name="notes" placeholder="Anything else we should know? Allergies, pickup preferences, etc." style="min-height:70px;"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="o-card-note">Gift card message</label>
-            <textarea id="o-card-note" name="card_note" placeholder="Write the card message here" style="min-height:70px;"></textarea>
           </div>
           <div class="form-group">
             <label class="chip-label"><input type="checkbox" name="whatsapp_opt_in" value="Yes"><span>Yes, contact me on WhatsApp for urgent order questions.</span></label>
