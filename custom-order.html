@@ -149,7 +149,7 @@
       <p class="order-subtitle">Tell us about your dream dessert, we'll make it happen 🎂</p>
 
       <div class="info-note">
-        <strong>📅 Please order at least 72 hours in advance.</strong> We'll confirm your order and provide a quote within 24 hours. For questions, call us at <a href="tel:+12019239776" style="color:#fff;">(201) 923-9776</a> or message on <a href="https://wa.me/12019239776" style="color:#fff;">WhatsApp</a>.
+        <strong>📅 Please order at least 72 hours in advance.</strong> We'll confirm your order and provide a quote within 24 hours. For questions, call us at <a href="tel:+12019239776" style="color:#fff;">(201) 923-9776</a> or message on <a href="https://wa.me/12019239776" style="color:#fff;">WhatsApp</a>. If you have a specific design in mind, you can also send the photo via WhatsApp or Messenger.
       </div>
 
       <div class="order-form-box">
@@ -192,6 +192,10 @@
               <label for="o-date">Event Date *</label>
               <input type="date" id="o-date" name="event_date" required>
             </div>
+            <div class="form-group">
+              <label for="o-time">Preferred event time</label>
+              <input type="text" id="o-time" name="event_time" placeholder="e.g. 10:00 AM, 3:30 PM, evening">
+            </div>
           </div>
           <div class="form-row">
             <div class="form-group">
@@ -224,24 +228,24 @@
           <div class="form-group">
             <label>Cake Flavor (choose all that apply)</label>
             <div class="option-chips">
-              <label class="chip-label"><input type="checkbox" name="flavor" value="Classic Vanilla"><span>Classic Vanilla</span></label>
-              <label class="chip-label"><input type="checkbox" name="flavor" value="Chocolate"><span>Chocolate</span></label>
-              <label class="chip-label"><input type="checkbox" name="flavor" value="Red Velvet"><span>Red Velvet</span></label>
-              <label class="chip-label"><input type="checkbox" name="flavor" value="Lemon"><span>Lemon</span></label>
-              <label class="chip-label"><input type="checkbox" name="flavor" value="Strawberry"><span>Strawberry</span></label>
-              <label class="chip-label"><input type="checkbox" name="flavor" value="Carrot"><span>Carrot</span></label>
-              <label class="chip-label"><input type="checkbox" name="flavor" value="Not sure"><span>Not sure</span></label>
+              <label class="chip-label"><input type="checkbox" name="flavor[]" value="Classic Vanilla"><span>Classic Vanilla</span></label>
+              <label class="chip-label"><input type="checkbox" name="flavor[]" value="Chocolate"><span>Chocolate</span></label>
+              <label class="chip-label"><input type="checkbox" name="flavor[]" value="Red Velvet"><span>Red Velvet</span></label>
+              <label class="chip-label"><input type="checkbox" name="flavor[]" value="Lemon"><span>Lemon</span></label>
+              <label class="chip-label"><input type="checkbox" name="flavor[]" value="Strawberry"><span>Strawberry</span></label>
+              <label class="chip-label"><input type="checkbox" name="flavor[]" value="Carrot"><span>Carrot</span></label>
+              <label class="chip-label"><input type="checkbox" name="flavor[]" value="Not sure"><span>Not sure</span></label>
             </div>
           </div>
           <div class="form-group" style="margin-top:1rem;">
             <label>Dietary Needs</label>
             <div class="option-chips">
-              <label class="chip-label"><input type="checkbox" name="dietary" value="Gluten-Free"><span>Gluten-Free</span></label>
-              <label class="chip-label"><input type="checkbox" name="dietary" value="Nut-Free"><span>Nut-Free</span></label>
-              <label class="chip-label"><input type="checkbox" name="dietary" value="Dairy-Free"><span>Dairy-Free</span></label>
-              <label class="chip-label"><input type="checkbox" name="dietary" value="Vegan"><span>Vegan</span></label>
-              <label class="chip-label"><input type="checkbox" name="dietary" value="Halal"><span>Halal</span></label>
-              <label class="chip-label"><input type="checkbox" name="dietary" value="None"><span>None</span></label>
+              <label class="chip-label"><input type="checkbox" name="dietary[]" value="Gluten-Free"><span>Gluten-Free</span></label>
+              <label class="chip-label"><input type="checkbox" name="dietary[]" value="Nut-Free"><span>Nut-Free</span></label>
+              <label class="chip-label"><input type="checkbox" name="dietary[]" value="Dairy-Free"><span>Dairy-Free</span></label>
+              <label class="chip-label"><input type="checkbox" name="dietary[]" value="Vegan"><span>Vegan</span></label>
+              <label class="chip-label"><input type="checkbox" name="dietary[]" value="Halal"><span>Halal</span></label>
+              <label class="chip-label"><input type="checkbox" name="dietary[]" value="None"><span>None</span></label>
             </div>
           </div>
 
@@ -253,6 +257,16 @@
           <div class="form-group">
             <label for="o-notes">Additional Notes</label>
             <textarea id="o-notes" name="notes" placeholder="Anything else we should know? Allergies, pickup preferences, etc." style="min-height:70px;"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="o-card-note">Card note</label>
+            <textarea id="o-card-note" name="card_note" placeholder="If you want a message on a card, yazınız..." style="min-height:70px;"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="chip-label"><input type="checkbox" name="whatsapp_opt_in" value="Yes"><span>WhatsApp üzerinden acil sorular için benimle iletişime geçilebilir.</span></label>
+          </div>
+          <div class="form-group">
+            <label class="chip-label"><input type="checkbox" id="deposit_policy" name="deposit_policy_accepted" value="Yes" required><span>Depozito ödemesi yapmadan siparişin kesinleşmeyeceğini anladım.</span></label>
           </div>
 
           <input type="hidden" name="_subject" value="New Custom Order Request, D'era House">
