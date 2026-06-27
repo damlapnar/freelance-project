@@ -151,11 +151,12 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
+      
+      <a href="https://www.grubhub.com/restaurant/dera-pastry-house-1076-main-ave-clifton/12091408" class="cta" target="_blank" rel="noopener noreferrer">Order Now</a>
       <button class="cart-nav-btn" onclick="openSidebar()" aria-label="View cart">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
         <span class="cart-count" style="display:none">0</span>
       </button>
-      <a href="https://www.grubhub.com/restaurant/dera-pastry-house-1076-main-ave-clifton/12091408" class="cta" target="_blank" rel="noopener noreferrer">Order Now</a>
     </div>
   </header>
 
@@ -208,16 +209,16 @@
               <label for="o-date">Event Date *</label>
               <input type="date" id="o-date" name="event_date" required>
             </div>
-            <div class="form-group" style="grid-column:1 / -1;">
-              <label for="o-budget">Approximate Budget</label>
-              <select id="o-budget" name="budget" required>
+            <div class="form-group">
+              <label for="o-serves">How Many People? *</label>
+              <select id="o-serves" name="serves" required>
                 <option value="">Select...</option>
-                <option>Under $50</option>
-                <option>$50 – $100</option>
-                <option>$100 – $200</option>
-                <option>$200 – $400</option>
-                <option>$400+</option>
-                <option>Flexible</option>
+                <option>1 – 5 people</option>
+                <option>6 – 10 people</option>
+                <option>11 – 20 people</option>
+                <option>21 – 40 people</option>
+                <option>41 – 80 people</option>
+                <option>80+ people</option>
               </select>
             </div>
           </div>

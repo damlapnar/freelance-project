@@ -12,6 +12,61 @@
     localStorage.setItem('dera-cart', JSON.stringify(cart));
   }
 
+  /* ── CARD UI SYNC ── */
+  function updateCardUI() {
+    loadCart();
+    document.querySelectorAll('.card-action').forEach(function (area) {
+      var item = cart.find(function (i) { return i.id === area.dataset.id; });
+      var qty = item ? item.qty : 0;
+      var addBtn = area.querySelector('.add-btn');
+      var stepper = area.querySelector('.card-stepper');
+      var qtyEl = area.querySelector('.card-qty');
+      if (!addBtn || !stepper) return;
+      if (qty > 0) {
+        addBtn.style.display = 'none';
+        stepper.classList.remove('hidden');
+        if (qtyEl) qtyEl.textContent = qty;
+      } else {
+        addBtn.style.display = '';
+        stepper.classList.add('hidden');
+      }
+    });
+  }
+
+  /* ── CARD BUTTON HANDLERS ── */
+  window.cardAdd = function (btn) {
+    var area = btn.closest('.card-action');
+    if (!area) return;
+    var id = area.dataset.id, name = area.dataset.name, price = area.dataset.price, img = area.dataset.img || '';
+    loadCart();
+    var ex = cart.find(function (i) { return i.id === id; });
+    if (ex) ex.qty += 1;
+    else cart.push({ id: id, name: name, price: parseFloat(price), img: img, qty: 1 });
+    saveCart();
+    updateCardUI();
+    renderSidebar();
+    updateBadge();
+  };
+
+  window.cardStep = function (btn, delta) {
+    var area = btn.closest('.card-action');
+    if (!area) return;
+    var id = area.dataset.id;
+    loadCart();
+    var item = cart.find(function (i) { return i.id === id; });
+    var newQty = (item ? item.qty : 0) + delta;
+    if (newQty <= 0) {
+      cart = cart.filter(function (i) { return i.id !== id; });
+    } else {
+      if (item) item.qty = newQty;
+      else cart.push({ id: id, name: area.dataset.name, price: parseFloat(area.dataset.price), img: area.dataset.img || '', qty: newQty });
+    }
+    saveCart();
+    updateCardUI();
+    renderSidebar();
+    updateBadge();
+  };
+
   /* ── PUBLIC API ── */
   window.deraCart = {
     add: function (id, name, price, img) {
@@ -20,6 +75,7 @@
       if (ex) ex.qty += 1;
       else cart.push({ id, name, price: parseFloat(price), img: img || '', qty: 1 });
       saveCart();
+      updateCardUI();
       renderSidebar();
       updateBadge();
       openSidebar();
@@ -28,6 +84,7 @@
       loadCart();
       cart = cart.filter(i => i.id !== id);
       saveCart();
+      updateCardUI();
       renderSidebar();
       updateBadge();
     },
@@ -38,6 +95,7 @@
       const item = cart.find(i => i.id === id);
       if (item) item.qty = qty;
       saveCart();
+      updateCardUI();
       renderSidebar();
       updateBadge();
     }
@@ -222,11 +280,29 @@
   window.openCheckout = openCheckout;
   window.closeCheckout = closeCheckout;
 
+  /* ── READ MORE ── */
+  function initReadMore() {
+    document.querySelectorAll('.menu-card-body p').forEach(function (p) {
+      if (p.scrollHeight <= p.clientHeight + 2) return;
+      p.style.cursor = 'pointer';
+      p.title = 'Click to read more';
+      p.addEventListener('click', function () {
+        if (p.classList.contains('expanded')) {
+          p.classList.remove('expanded');
+        } else {
+          p.classList.add('expanded');
+        }
+      });
+    });
+  }
+
   /* ── INIT ── */
   document.addEventListener('DOMContentLoaded', function () {
     injectCartHTML();
     loadCart();
     renderSidebar();
     updateBadge();
+    updateCardUI();
+    setTimeout(initReadMore, 100);
   });
 })();

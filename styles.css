@@ -710,9 +710,19 @@ body.menu-open {
     text-align: center !important;
   }
 
-  /* Drawer açıkken alttaki Order Now bar gizlensin */
-  body.menu-open .cta {
+  /* Order Now header'dan gizle (drawer'da zaten var) */
+  .nav-container .cta {
     display: none !important;
+  }
+
+  /* Cart butonu kompakt - sadece ikon */
+  .cart-nav-btn {
+    padding: 8px !important;
+    border-radius: 50% !important;
+  }
+  .cart-nav-btn svg {
+    width: 22px !important;
+    height: 22px !important;
   }
 }
 

@@ -40,10 +40,10 @@
     .menu-card:hover { transform:translateY(-5px); box-shadow:0 14px 32px rgba(0,0,0,0.18); }
     .menu-card img { width:100%; height:200px; object-fit:cover; display:block; transition:transform 0.4s; flex-shrink:0; }
     .menu-card:hover img { transform:scale(1.05); }
-    .menu-card-body { padding:1rem 1.2rem 1.3rem; flex:1; display:flex; flex-direction:column; }
-    .menu-card-body .add-to-cart-btn { margin-top:auto; }
+
+    
     .menu-card-body h3 { font-family:'Playfair Display',serif; color:#1c1c1c; font-size:1.08rem; margin-bottom:0.3rem; }
-    .menu-card-body p { color:#555; font-size:0.9rem; line-height:1.55; margin:0 0 0.6rem; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+
     .menu-card-body .tag { display:inline-block; background:#f0f7f1; color:#355E3B; font-size:0.78rem; font-weight:700; padding:3px 10px; border-radius:999px; font-family:'Open Sans',sans-serif; }
     .menu-card-price { display:inline-block; background:#355E3B; color:#fff; font-size:0.88rem; font-weight:700; padding:4px 12px; border-radius:999px; font-family:'Open Sans',sans-serif; margin-top:0.4rem; }
     .menu-card-no-img { height:200px; display:flex; align-items:center; justify-content:center; font-size:3rem; background:#f9f5f0; }
@@ -63,6 +63,26 @@
     [data-theme="dark"] .menu-card-body h3 { color:#e8f5e9; }
     [data-theme="dark"] .menu-card-body p { color:#a8d5b5; }
     [data-theme="dark"] .menu-card-body .tag { background:#1a2e1d; color:#a8d5b5; }
+
+    .card-bottom-row { display:flex; align-items:center; justify-content:space-between; gap:0.5rem; margin-top:auto; padding-top:0.7rem; }
+    .add-btn { background:#355E3B; color:#fff; border:none; border-radius:999px; padding:0.45rem 1rem; font-family:'Open Sans',sans-serif; font-size:0.85rem; font-weight:700; cursor:pointer; white-space:nowrap; transition:background .2s,transform .15s; flex-shrink:0; }
+    .add-btn:hover { background:#2a4b2e; transform:translateY(-1px); }
+    .card-stepper { display:flex; align-items:center; gap:6px; }
+    .card-stepper.hidden { display:none !important; }
+    .stepper-btn { width:28px; height:28px; border-radius:50%; border:2px solid #355E3B; background:#fff; color:#355E3B; cursor:pointer; font-size:1rem; font-weight:700; display:flex; align-items:center; justify-content:center; transition:background .2s,color .2s; flex-shrink:0; padding:0; }
+    .stepper-btn:hover { background:#355E3B; color:#fff; }
+    .card-qty { font-size:0.95rem; font-weight:700; color:#1c1c1c; min-width:18px; text-align:center; }
+    .menu-card-body { padding:1rem 1.2rem 1.3rem; flex:1; display:flex; flex-direction:column; }
+    .card-bottom-row { display:flex; align-items:center; justify-content:space-between; gap:0.5rem; margin-top:auto; padding-top:0.7rem; }
+    .add-btn { background:#355E3B; color:#fff; border:none; border-radius:999px; padding:0.45rem 1rem; font-family:'Open Sans',sans-serif; font-size:0.85rem; font-weight:700; cursor:pointer; white-space:nowrap; transition:background .2s,transform .15s; flex-shrink:0; }
+    .add-btn:hover { background:#2a4b2e; transform:translateY(-1px); }
+    .card-stepper { display:flex; align-items:center; gap:6px; }
+    .card-stepper.hidden { display:none !important; }
+    .stepper-btn { width:28px; height:28px; border-radius:50%; border:2px solid #355E3B; background:#fff; color:#355E3B; cursor:pointer; font-size:1.1rem; font-weight:700; display:flex; align-items:center; justify-content:center; transition:background .2s,color .2s; flex-shrink:0; padding:0; line-height:1; }
+    .stepper-btn:hover { background:#355E3B; color:#fff; }
+    .card-qty { font-size:0.95rem; font-weight:700; color:#1c1c1c; min-width:18px; text-align:center; font-family:'Open Sans',sans-serif; }
+    .menu-card-body p { color:#555; font-size:0.9rem; line-height:1.55; margin:0 0 0.6rem; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; cursor:pointer; }
+    .menu-card-body p.expanded { display:block; -webkit-line-clamp:unset; }
   </style>
 </head>
 <body>
@@ -80,11 +100,12 @@
         <li><a href="locations.html">Locations</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul></nav>
+      
+      <a href="https://www.grubhub.com/restaurant/dera-pastry-house-1076-main-ave-clifton/12091408" class="cta" target="_blank" rel="noopener noreferrer">Order Now</a>
       <button class="cart-nav-btn" onclick="openSidebar()" aria-label="View cart">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
         <span class="cart-count" style="display:none">0</span>
       </button>
-      <a href="https://www.grubhub.com/restaurant/dera-pastry-house-1076-main-ave-clifton/12091408" class="cta" target="_blank" rel="noopener noreferrer">Order Now</a>
     </div>
   </header>
 
@@ -104,260 +125,442 @@
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/vmgmw62btqtliq9u0iex" alt="Chocolate Fudge Cake – Slice" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Chocolate Fudge Cake – Slice</h3>
-            <span class="menu-card-price">$11.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('chocolate-fudge-cake-slice','Chocolate Fudge Cake – Slice',11,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/vmgmw62btqtliq9u0iex')">
-              + Add to Order
-            </button>
+            <div class="card-bottom-row">
+              <span class="menu-card-price">$11.00</span>
+              <div class="card-action" data-id="chocolate-fudge-cake-slice" data-name="Chocolate Fudge Cake – Slice" data-price="11" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/vmgmw62btqtliq9u0iex">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/sx8rvolme7pg5zvhsy9r" alt="Biscoff Lotus Cake – Slice" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Biscoff Lotus Cake – Slice</h3>
-            <span class="menu-card-price">$11.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('biscoff-lotus-cake-slice','Biscoff Lotus Cake – Slice',11,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/sx8rvolme7pg5zvhsy9r')">
-              + Add to Order
-            </button>
+            <div class="card-bottom-row">
+              <span class="menu-card-price">$11.00</span>
+              <div class="card-action" data-id="biscoff-lotus-cake-slice" data-name="Biscoff Lotus Cake – Slice" data-price="11" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/sx8rvolme7pg5zvhsy9r">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zoz5tfzyoz0eiksavx02" alt="Brownie" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Brownie</h3>
-            <span class="menu-card-price">$8.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('brownie','Brownie',8,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zoz5tfzyoz0eiksavx02')">
-              + Add to Order
-            </button>
+            <div class="card-bottom-row">
+              <span class="menu-card-price">$8.00</span>
+              <div class="card-action" data-id="brownie" data-name="Brownie" data-price="8" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zoz5tfzyoz0eiksavx02">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/aqwwa0xlbk07jlqlo9wk" alt="Classic Vanilla Cake– Slice" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Classic Vanilla Cake– Slice</h3>
-            <span class="menu-card-price">$11.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('classic-vanilla-cake-slice','Classic Vanilla Cake– Slice',11,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/aqwwa0xlbk07jlqlo9wk')">
-              + Add to Order
-            </button>
+            <div class="card-bottom-row">
+              <span class="menu-card-price">$11.00</span>
+              <div class="card-action" data-id="classic-vanilla-cake-slice" data-name="Classic Vanilla Cake– Slice" data-price="11" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/aqwwa0xlbk07jlqlo9wk">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/cqkq4rln9z82mvtngzbu" alt="Carrot Cake – Slice" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Carrot Cake – Slice</h3>
-            <p>Moist, warmly spiced carrot sponge (cinnamon + nutmeg) layered with our cream-cheese European-style pastry cream, creating a velvety, lighter twist on traditional carrot cake frosting. Balanced sweetness, rich flavor, and baked fresh daily.</p><span class="menu-card-price">$11.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('carrot-cake-slice','Carrot Cake – Slice',11,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/cqkq4rln9z82mvtngzbu')">
-              + Add to Order
-            </button>
+            <p>Moist, warmly spiced carrot sponge (cinnamon + nutmeg) layered with our cream-cheese European-style pastry cream, creating a velvety, lighter twist on traditional carrot cake frosting. Balanced sweetness, rich flavor, and baked fresh daily.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$11.00</span>
+              <div class="card-action" data-id="carrot-cake-slice" data-name="Carrot Cake – Slice" data-price="11" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/cqkq4rln9z82mvtngzbu">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/e8e5kxwmq7jyjwcghz9k" alt="Red Velvet Cake – Slice" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Red Velvet Cake – Slice</h3>
-            <p>Classic red velvet cake layered with our cream-cheese–infused European-style pastry cream, which creates a lighter, silkier, and more luxurious version of traditional cream cheese frosting. Soft cocoa notes and velvety texture make this a customer favorite.</p><span class="menu-card-price">$11.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('red-velvet-cake-slice','Red Velvet Cake – Slice',11,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/e8e5kxwmq7jyjwcghz9k')">
-              + Add to Order
-            </button>
+            <p>Classic red velvet cake layered with our cream-cheese–infused European-style pastry cream, which creates a lighter, silkier, and more luxurious version of traditional cream cheese frosting. Soft cocoa notes and velvety texture make this a customer favorite.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$11.00</span>
+              <div class="card-action" data-id="red-velvet-cake-slice" data-name="Red Velvet Cake – Slice" data-price="11" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/e8e5kxwmq7jyjwcghz9k">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/vtmaa9ghnrex4b5cwhsi" alt="Mozaik Cake – Slice" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Mozaik Cake – Slice</h3>
-            <p>Traditional Turkish-style chocolate mosaic cake made with buttery biscuit pieces, rich cocoa, and a smooth chocolate base. Finished with a touch of our signature European-style chocolate pastry cream for a velvety, premium texture. Served chilled</p><span class="menu-card-price">$11.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('mozaik-cake-slice','Mozaik Cake – Slice',11,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/vtmaa9ghnrex4b5cwhsi')">
-              + Add to Order
-            </button>
+            <p>Traditional Turkish-style chocolate mosaic cake made with buttery biscuit pieces, rich cocoa, and a smooth chocolate base. Finished with a touch of our signature European-style chocolate pastry cream for a velvety, premium texture. Served chilled</p><div class="card-bottom-row">
+              <span class="menu-card-price">$11.00</span>
+              <div class="card-action" data-id="mozaik-cake-slice" data-name="Mozaik Cake – Slice" data-price="11" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/vtmaa9ghnrex4b5cwhsi">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/rwk2fevwiks9jkxy80oj" alt="Trilece – Slice" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Trilece – Slice</h3>
-            <p>Ultra-soft airy sponge soaked in a three-milk blend and topped with our signature European-style whipped pastry cream, then finished with a silky caramel glaze. Moist, light, creamy, and one of our bestselling traditional European desserts — made fresh in-house.</p><span class="menu-card-price">$11.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('trilece-slice','Trilece – Slice',11,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/rwk2fevwiks9jkxy80oj')">
-              + Add to Order
-            </button>
+            <p>Ultra-soft airy sponge soaked in a three-milk blend and topped with our signature European-style whipped pastry cream, then finished with a silky caramel glaze. Moist, light, creamy, and one of our bestselling traditional European desserts — made fresh in-house.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$11.00</span>
+              <div class="card-action" data-id="trilece-slice" data-name="Trilece – Slice" data-price="11" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/rwk2fevwiks9jkxy80oj">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/eq3swdttr3ctbkp6ikc4" alt="Biscoff Lotus Cake – Whole (8&quot;)" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Biscoff Lotus Cake – Whole (8&quot;)</h3>
-            <p>Vanilla sponge layered with European-style Biscoff pastry cream, topped with Lotus crumble and drizzle. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.</p><span class="menu-card-price">$65.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('biscoff-lotus-cake-whole-8-quot','Biscoff Lotus Cake – Whole (8&quot;)',65,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/eq3swdttr3ctbkp6ikc4')">
-              + Add to Order
-            </button>
+            <p>Vanilla sponge layered with European-style Biscoff pastry cream, topped with Lotus crumble and drizzle. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$65.00</span>
+              <div class="card-action" data-id="biscoff-lotus-cake-whole-8-quot" data-name="Biscoff Lotus Cake – Whole (8&quot;)" data-price="65" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/eq3swdttr3ctbkp6ikc4">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/nx3y2pnti47y9wryaacg" alt="Carrot Cake – Whole (8&quot;)" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Carrot Cake – Whole (8&quot;)</h3>
-            <p>Warmly spiced carrot sponge layered with European-style cream-cheese pastry cream, smooth and balanced. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.</p><span class="menu-card-price">$65.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('carrot-cake-whole-8-quot','Carrot Cake – Whole (8&quot;)',65,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/nx3y2pnti47y9wryaacg')">
-              + Add to Order
-            </button>
+            <p>Warmly spiced carrot sponge layered with European-style cream-cheese pastry cream, smooth and balanced. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$65.00</span>
+              <div class="card-action" data-id="carrot-cake-whole-8-quot" data-name="Carrot Cake – Whole (8&quot;)" data-price="65" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/nx3y2pnti47y9wryaacg">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/ou2brlfzuixmijlfsroo" alt="Classic Vanilla Cake – Whole (8&quot;)" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Classic Vanilla Cake – Whole (8&quot;)</h3>
-            <p>Soft vanilla sponge layered with our signature European-style vanilla pastry cream, finished with a silky smooth frosting. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.</p><span class="menu-card-price">$65.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('classic-vanilla-cake-whole-8-quot','Classic Vanilla Cake – Whole (8&quot;)',65,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/ou2brlfzuixmijlfsroo')">
-              + Add to Order
-            </button>
+            <p>Soft vanilla sponge layered with our signature European-style vanilla pastry cream, finished with a silky smooth frosting. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$65.00</span>
+              <div class="card-action" data-id="classic-vanilla-cake-whole-8-quot" data-name="Classic Vanilla Cake – Whole (8&quot;)" data-price="65" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/ou2brlfzuixmijlfsroo">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/hkgmt2rghmmgcbgs9wsf" alt="Chocolate Fudge Cake – Whole (8&quot;)" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Chocolate Fudge Cake – Whole (8&quot;)</h3>
-            <p>Moist chocolate sponge filled with European-style chocolate pastry cream, giving it a velvety, mousse-like texture. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.</p><span class="menu-card-price">$65.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('chocolate-fudge-cake-whole-8-quot','Chocolate Fudge Cake – Whole (8&quot;)',65,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/hkgmt2rghmmgcbgs9wsf')">
-              + Add to Order
-            </button>
+            <p>Moist chocolate sponge filled with European-style chocolate pastry cream, giving it a velvety, mousse-like texture. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$65.00</span>
+              <div class="card-action" data-id="chocolate-fudge-cake-whole-8-quot" data-name="Chocolate Fudge Cake – Whole (8&quot;)" data-price="65" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/hkgmt2rghmmgcbgs9wsf">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/voytego6vqifmomkuo2e" alt="Mozaik Cake – Whole" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Mozaik Cake – Whole</h3>
-            <p>Traditional Turkish-style chocolate mosaic cake made with buttery biscuit pieces and rich cocoa, blended with our signature European-style chocolate pastry cream for an ultra-smooth, premium finish. Shaped into a whole loaf and served chilled. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary</p><span class="menu-card-price">$65.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('mozaik-cake-whole','Mozaik Cake – Whole',65,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/voytego6vqifmomkuo2e')">
-              + Add to Order
-            </button>
+            <p>Traditional Turkish-style chocolate mosaic cake made with buttery biscuit pieces and rich cocoa, blended with our signature European-style chocolate pastry cream for an ultra-smooth, premium finish. Shaped into a whole loaf and served chilled. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary</p><div class="card-bottom-row">
+              <span class="menu-card-price">$65.00</span>
+              <div class="card-action" data-id="mozaik-cake-whole" data-name="Mozaik Cake – Whole" data-price="65" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/voytego6vqifmomkuo2e">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/euv1ucjqsnbbjxz8d60k" alt="Red Velvet Cake – Whole (8&quot;)" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Red Velvet Cake – Whole (8&quot;)</h3>
-            <p>Classic red velvet sponge layered with cream-cheese–infused European-style pastry cream, lighter and smoother than traditional frosting. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.</p><span class="menu-card-price">$65.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('red-velvet-cake-whole-8-quot','Red Velvet Cake – Whole (8&quot;)',65,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/euv1ucjqsnbbjxz8d60k')">
-              + Add to Order
-            </button>
+            <p>Classic red velvet sponge layered with cream-cheese–infused European-style pastry cream, lighter and smoother than traditional frosting. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$65.00</span>
+              <div class="card-action" data-id="red-velvet-cake-whole-8-quot" data-name="Red Velvet Cake – Whole (8&quot;)" data-price="65" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/euv1ucjqsnbbjxz8d60k">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/wz1jzbp6keyq2oj4hyul" alt="Trilece – Whole" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Trilece – Whole</h3>
-            <p>Soft milk-soaked sponge topped with caramel glaze and European-style whipped pastry cream. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.</p><span class="menu-card-price">$65.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('trilece-whole','Trilece – Whole',65,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/wz1jzbp6keyq2oj4hyul')">
-              + Add to Order
-            </button>
+            <p>Soft milk-soaked sponge topped with caramel glaze and European-style whipped pastry cream. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$65.00</span>
+              <div class="card-action" data-id="trilece-whole" data-name="Trilece – Whole" data-price="65" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/wz1jzbp6keyq2oj4hyul">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <div class="menu-card-no-img">&#127856;</div>
           <div class="menu-card-body">
             <h3>Fraise Noire</h3>
-            <p>Inspired by the elegance of Parisian patisseries, Fraise Noire is a delicate cocoa velvet cake topped with hand-whipped white chocolate cream and glazed fresh strawberries. Crafted in small batches, this dessert captures the charm of a quiet morning in Montmartre — where every bite feels like a soft-spoken secret. Refined, romantic, and unapologetically French La douceur parisienne, chez D’ERA.</p><span class="menu-card-price">$11.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('fraise-noire','Fraise Noire',11,'')">
-              + Add to Order
-            </button>
+            <p>Inspired by the elegance of Parisian patisseries, Fraise Noire is a delicate cocoa velvet cake topped with hand-whipped white chocolate cream and glazed fresh strawberries. Crafted in small batches, this dessert captures the charm of a quiet morning in Montmartre — where every bite feels like a soft-spoken secret. Refined, romantic, and unapologetically French La douceur parisienne, chez D’ERA.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$11.00</span>
+              <div class="card-action" data-id="fraise-noire" data-name="Fraise Noire" data-price="11" data-img="">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/vnvk01kbpyjo0moc14u4" alt="Office Celebration Cake – Corporate Friendly" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Office Celebration Cake – Corporate Friendly</h3>
-            <p>Starting at $55. Pricing varies based on design, size, and theme. Office celebration cakes are available for in-store or phone ordering only. A clean, elegant cake ideal for office events, retirements, promotions, team celebrations, or corporate gatherings. Designs can be kept simple and classic or customized to match company colors.</p><span class="menu-card-price">$55.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('office-celebration-cake-corporate-friendly','Office Celebration Cake – Corporate Friendly',55,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/vnvk01kbpyjo0moc14u4')">
-              + Add to Order
-            </button>
+            <p>Starting at $55. Pricing varies based on design, size, and theme. Office celebration cakes are available for in-store or phone ordering only. A clean, elegant cake ideal for office events, retirements, promotions, team celebrations, or corporate gatherings. Designs can be kept simple and classic or customized to match company colors.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$55.00</span>
+              <div class="card-action" data-id="office-celebration-cake-corporate-friendly" data-name="Office Celebration Cake – Corporate Friendly" data-price="55" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/vnvk01kbpyjo0moc14u4">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zrdxlpxniaxsz6edplnw" alt="Anniversary Cake – Classic Elegance" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Anniversary Cake – Classic Elegance</h3>
-            <p>A smooth, elegant cake perfect for celebrating love and special milestones. Available in any of our flavors and customizable with soft floral details, gold/silver accents (optional), or a minimalist modern finish. Custom designs and color themes available upon request. In-store or phone ordering only. Starting at $55. Price varies based on size, flavor, and design.</p><span class="menu-card-price">$55.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('anniversary-cake-classic-elegance','Anniversary Cake – Classic Elegance',55,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zrdxlpxniaxsz6edplnw')">
-              + Add to Order
-            </button>
+            <p>A smooth, elegant cake perfect for celebrating love and special milestones. Available in any of our flavors and customizable with soft floral details, gold/silver accents (optional), or a minimalist modern finish. Custom designs and color themes available upon request. In-store or phone ordering only. Starting at $55. Price varies based on size, flavor, and design.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$55.00</span>
+              <div class="card-action" data-id="anniversary-cake-classic-elegance" data-name="Anniversary Cake – Classic Elegance" data-price="55" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zrdxlpxniaxsz6edplnw">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/nbptxkapijqbx4ks22kd" alt="Engagement Cake – Floral or Minimalist" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Engagement Cake – Floral or Minimalist</h3>
-            <p>Starting at $55. Pricing varies based on size, flavor, and design. All custom engagement cakes are available for in-store or phone ordering only. A romantic engagement cake designed with soft florals, pastel tones, or a minimalist smooth finish. Available in any of our signature flavors and customizable with initials, color themes, light piping, or classic white elegance. Perfect for intimate celebrations or upscale engagement dinners.</p><span class="menu-card-price">$55.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('engagement-cake-floral-or-minimalist','Engagement Cake – Floral or Minimalist',55,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/nbptxkapijqbx4ks22kd')">
-              + Add to Order
-            </button>
+            <p>Starting at $55. Pricing varies based on size, flavor, and design. All custom engagement cakes are available for in-store or phone ordering only. A romantic engagement cake designed with soft florals, pastel tones, or a minimalist smooth finish. Available in any of our signature flavors and customizable with initials, color themes, light piping, or classic white elegance. Perfect for intimate celebrations or upscale engagement dinners.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$55.00</span>
+              <div class="card-action" data-id="engagement-cake-floral-or-minimalist" data-name="Engagement Cake – Floral or Minimalist" data-price="55" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/nbptxkapijqbx4ks22kd">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <div class="menu-card-no-img">&#127856;</div>
           <div class="menu-card-body">
             <h3>Baby Shower Cake – Boy / Girl Theme</h3>
-            <p>Starting at $55. Pricing varies based on size, flavor, and decoration. Custom baby shower cakes are available for in-store or phone ordering only. A sweet and elegant baby shower cake available in pink, blue, beige, cream, or any neutral color palette. Choose from soft cloud-style piping, simple fondant accents, or modern minimalist designs. Perfect for celebrating the arrival of your little one.</p><span class="menu-card-price">$55.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('baby-shower-cake-boy-girl-theme','Baby Shower Cake – Boy / Girl Theme',55,'')">
-              + Add to Order
-            </button>
+            <p>Starting at $55. Pricing varies based on size, flavor, and decoration. Custom baby shower cakes are available for in-store or phone ordering only. A sweet and elegant baby shower cake available in pink, blue, beige, cream, or any neutral color palette. Choose from soft cloud-style piping, simple fondant accents, or modern minimalist designs. Perfect for celebrating the arrival of your little one.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$55.00</span>
+              <div class="card-action" data-id="baby-shower-cake-boy-girl-theme" data-name="Baby Shower Cake – Boy / Girl Theme" data-price="55" data-img="">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/kijszqvxllygpmlgk7oq" alt="Gender Reveal Cake – Surprise Center" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Gender Reveal Cake – Surprise Center</h3>
-            <p>Starting at $55. Pricing varies based on theme and filling design. Gender reveal cakes are available for in-store or phone ordering only. A classic gender reveal cake with a simple, neutral outer design and optional pink or blue surprise center. Flavors, colors, and decorative accents can be fully customized. Ideal for family gatherings or gender reveal parties.</p><span class="menu-card-price">$55.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('gender-reveal-cake-surprise-center','Gender Reveal Cake – Surprise Center',55,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/kijszqvxllygpmlgk7oq')">
-              + Add to Order
-            </button>
+            <p>Starting at $55. Pricing varies based on theme and filling design. Gender reveal cakes are available for in-store or phone ordering only. A classic gender reveal cake with a simple, neutral outer design and optional pink or blue surprise center. Flavors, colors, and decorative accents can be fully customized. Ideal for family gatherings or gender reveal parties.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$55.00</span>
+              <div class="card-action" data-id="gender-reveal-cake-surprise-center" data-name="Gender Reveal Cake – Surprise Center" data-price="55" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/kijszqvxllygpmlgk7oq">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/akdcvdfppuy4nwfaznpu" alt="Graduation Cake – School Colors Available" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Graduation Cake – School Colors Available</h3>
-            <p>Starting at $55. Pricing varies based on size, color theme, and decoration. Graduation cakes are available for in-store or phone ordering only. A celebratory graduation cake customizable with school colors, graduation year, and simple toppers. Available in any flavor. Perfect for class parties, ceremonies, and family celebrations.</p><span class="menu-card-price">$55.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('graduation-cake-school-colors-available','Graduation Cake – School Colors Available',55,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/akdcvdfppuy4nwfaznpu')">
-              + Add to Order
-            </button>
+            <p>Starting at $55. Pricing varies based on size, color theme, and decoration. Graduation cakes are available for in-store or phone ordering only. A celebratory graduation cake customizable with school colors, graduation year, and simple toppers. Available in any flavor. Perfect for class parties, ceremonies, and family celebrations.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$55.00</span>
+              <div class="card-action" data-id="graduation-cake-school-colors-available" data-name="Graduation Cake – School Colors Available" data-price="55" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/akdcvdfppuy4nwfaznpu">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/ickwlevoisparievygz8" alt="Wedding Cake – Two Tier" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Wedding Cake – Two Tier</h3>
-            <p>Starting at $160. Price varies based on tier size, flavor selection, and design. Two-tier wedding cakes are available for in-store or phone consultation only. An elegant two-tier cake crafted with premium layers and our signature pastry cream. Customize with soft florals, pearls, smooth edges, or modern pastel tones.</p><span class="menu-card-price">$160.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('wedding-cake-two-tier','Wedding Cake – Two Tier',160,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/ickwlevoisparievygz8')">
-              + Add to Order
-            </button>
+            <p>Starting at $160. Price varies based on tier size, flavor selection, and design. Two-tier wedding cakes are available for in-store or phone consultation only. An elegant two-tier cake crafted with premium layers and our signature pastry cream. Customize with soft florals, pearls, smooth edges, or modern pastel tones.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$160.00</span>
+              <div class="card-action" data-id="wedding-cake-two-tier" data-name="Wedding Cake – Two Tier" data-price="160" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/ickwlevoisparievygz8">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/fi2kvczlx0lxqkxuqdhn" alt="Wedding Cake – Three Tier" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Wedding Cake – Three Tier</h3>
-            <p>Starting at $250. Price varies based on size, theme, and decoration complexity. Three-tier wedding cakes require in-store or phone consultation only. A luxurious three-tier centerpiece cake designed for weddings and large celebrations. Smooth finish, floral accents, or modern clean-layer design available upon request.</p><span class="menu-card-price">$250.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('wedding-cake-three-tier','Wedding Cake – Three Tier',250,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/fi2kvczlx0lxqkxuqdhn')">
-              + Add to Order
-            </button>
+            <p>Starting at $250. Price varies based on size, theme, and decoration complexity. Three-tier wedding cakes require in-store or phone consultation only. A luxurious three-tier centerpiece cake designed for weddings and large celebrations. Smooth finish, floral accents, or modern clean-layer design available upon request.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$250.00</span>
+              <div class="card-action" data-id="wedding-cake-three-tier" data-name="Wedding Cake – Three Tier" data-price="250" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/fi2kvczlx0lxqkxuqdhn">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/bwyimscsjjcs6wxtkq5t" alt="Wedding Cake – Single Tier (6″ / 8″)" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Wedding Cake – Single Tier (6″ / 8″)</h3>
-            <p>Starting at $85. Price varies based on size, flavor, and decoration. Wedding cake orders are available for in-store or phone consultation only. A beautifully smooth single-tier wedding cake perfect for intimate ceremonies, elopements, and small celebrations. Customizable with florals, piping, minimalist white finish, or pastel themes.</p><span class="menu-card-price">$85.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('wedding-cake-single-tier-6-8','Wedding Cake – Single Tier (6″ / 8″)',85,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/bwyimscsjjcs6wxtkq5t')">
-              + Add to Order
-            </button>
+            <p>Starting at $85. Price varies based on size, flavor, and decoration. Wedding cake orders are available for in-store or phone consultation only. A beautifully smooth single-tier wedding cake perfect for intimate ceremonies, elopements, and small celebrations. Customizable with florals, piping, minimalist white finish, or pastel themes.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$85.00</span>
+              <div class="card-action" data-id="wedding-cake-single-tier-6-8" data-name="Wedding Cake – Single Tier (6″ / 8″)" data-price="85" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/bwyimscsjjcs6wxtkq5t">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/p2tmifkmrwthzixpe2ec" alt="Red Velvet Mini Bundt Cake (6)" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Red Velvet Mini Bundt Cake (6)</h3>
-            <p>Individually crafted, ultra-soft red velvet cakes with a delicate powdered sugar finish. Light, rich, and addictive — perfect with coffee or as a shareable dessert.</p><span class="menu-card-price">$27.45</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('red-velvet-mini-bundt-cake-6','Red Velvet Mini Bundt Cake (6)',27.45,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/p2tmifkmrwthzixpe2ec')">
-              + Add to Order
-            </button>
+            <p>Individually crafted, ultra-soft red velvet cakes with a delicate powdered sugar finish. Light, rich, and addictive — perfect with coffee or as a shareable dessert.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$27.45</span>
+              <div class="card-action" data-id="red-velvet-mini-bundt-cake-6" data-name="Red Velvet Mini Bundt Cake (6)" data-price="27.45" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/p2tmifkmrwthzixpe2ec">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -370,100 +573,170 @@
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/nkw2qayykqeagz2z5dq1" alt="Cinnamon Roll (Cream Cheese Frosting)" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Cinnamon Roll (Cream Cheese Frosting)</h3>
-            <p>Fluffy cinnamon roll baked with brown sugar cinnamon filling and finished with house-made cream cheese frosting.</p><span class="menu-card-price">$5.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('cinnamon-roll-cream-cheese-frosting','Cinnamon Roll (Cream Cheese Frosting)',5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/nkw2qayykqeagz2z5dq1')">
-              + Add to Order
-            </button>
+            <p>Fluffy cinnamon roll baked with brown sugar cinnamon filling and finished with house-made cream cheese frosting.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$5.00</span>
+              <div class="card-action" data-id="cinnamon-roll-cream-cheese-frosting" data-name="Cinnamon Roll (Cream Cheese Frosting)" data-price="5" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/nkw2qayykqeagz2z5dq1">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/tqg5lgjipgck0g0avgnv" alt="Ham &amp; Swiss Croissant" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Ham &amp; Swiss Croissant</h3>
-            <p>Premium sliced ham and melted Swiss cheese tucked into a buttery croissant. Warm, filling, and perfect for breakfast.</p><span class="menu-card-price">$5.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('ham-swiss-croissant','Ham & Swiss Croissant',5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/tqg5lgjipgck0g0avgnv')">
-              + Add to Order
-            </button>
+            <p>Premium sliced ham and melted Swiss cheese tucked into a buttery croissant. Warm, filling, and perfect for breakfast.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$5.00</span>
+              <div class="card-action" data-id="ham-swiss-croissant" data-name="Ham & Swiss Croissant" data-price="5" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/tqg5lgjipgck0g0avgnv">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/oakvbv7hiuittmyiaegy" alt="Spinach &amp; Feta Puff" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Spinach &amp; Feta Puff</h3>
-            <p>Crispy golden puff pastry filled with spinach, feta, herbs, and seasoning. Savory, filling, and vegetarian-friendly.</p><span class="menu-card-price">$5.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('spinach-feta-puff','Spinach & Feta Puff',5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/oakvbv7hiuittmyiaegy')">
-              + Add to Order
-            </button>
+            <p>Crispy golden puff pastry filled with spinach, feta, herbs, and seasoning. Savory, filling, and vegetarian-friendly.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$5.00</span>
+              <div class="card-action" data-id="spinach-feta-puff" data-name="Spinach & Feta Puff" data-price="5" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/oakvbv7hiuittmyiaegy">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/lhehll5jiw4zfdhqrdko" alt="Bagel" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Bagel</h3>
-            <span class="menu-card-price">$3.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('bagel','Bagel',3,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/lhehll5jiw4zfdhqrdko')">
-              + Add to Order
-            </button>
+            <div class="card-bottom-row">
+              <span class="menu-card-price">$3.00</span>
+              <div class="card-action" data-id="bagel" data-name="Bagel" data-price="3" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/lhehll5jiw4zfdhqrdko">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/fdtgbz7f4divdumwilvs" alt="Chocolate Croissant (Pain Au Chocolat)" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Chocolate Croissant (Pain Au Chocolat)</h3>
-            <p>Classic French pain au chocolat baked golden, wrapped around premium dark chocolate batons that melt into soft layers.</p><span class="menu-card-price">$5.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('chocolate-croissant-pain-au-chocolat','Chocolate Croissant (Pain Au Chocolat)',5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/fdtgbz7f4divdumwilvs')">
-              + Add to Order
-            </button>
+            <p>Classic French pain au chocolat baked golden, wrapped around premium dark chocolate batons that melt into soft layers.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$5.00</span>
+              <div class="card-action" data-id="chocolate-croissant-pain-au-chocolat" data-name="Chocolate Croissant (Pain Au Chocolat)" data-price="5" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/fdtgbz7f4divdumwilvs">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/wocfxzd7ftwnx5i7u3rc" alt="Cheese Danish" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Cheese Danish</h3>
-            <p>Golden Danish pastry filled with smooth, lightly sweetened cream cheese. Buttery, creamy, and perfectly balanced</p><span class="menu-card-price">$5.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('cheese-danish','Cheese Danish',5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/wocfxzd7ftwnx5i7u3rc')">
-              + Add to Order
-            </button>
+            <p>Golden Danish pastry filled with smooth, lightly sweetened cream cheese. Buttery, creamy, and perfectly balanced</p><div class="card-bottom-row">
+              <span class="menu-card-price">$5.00</span>
+              <div class="card-action" data-id="cheese-danish" data-name="Cheese Danish" data-price="5" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/wocfxzd7ftwnx5i7u3rc">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/xpcvqafx0wrkbipknbys" alt="Banana Bread" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Banana Bread</h3>
-            <p>Banana bread with moist banana slices and subtle hints of vanilla, topped with crushed walnuts.</p><span class="menu-card-price">$7.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('banana-bread','Banana Bread',7,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/xpcvqafx0wrkbipknbys')">
-              + Add to Order
-            </button>
+            <p>Banana bread with moist banana slices and subtle hints of vanilla, topped with crushed walnuts.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$7.00</span>
+              <div class="card-action" data-id="banana-bread" data-name="Banana Bread" data-price="7" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/xpcvqafx0wrkbipknbys">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zi6uodo16gmkn9yyd8qs" alt="Butter Croissant" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Butter Croissant</h3>
-            <p>Flaky, buttery French croissant baked fresh daily.</p><span class="menu-card-price">$5.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('butter-croissant','Butter Croissant',5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zi6uodo16gmkn9yyd8qs')">
-              + Add to Order
-            </button>
+            <p>Flaky, buttery French croissant baked fresh daily.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$5.00</span>
+              <div class="card-action" data-id="butter-croissant" data-name="Butter Croissant" data-price="5" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zi6uodo16gmkn9yyd8qs">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/bqxu8cljcvuzmmuaftrj" alt="Almond Croissant" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Almond Croissant</h3>
-            <p>Buttery laminated croissant filled with rich house-made almond frangipane and finished with golden toasted almonds. Slightly sweet and aromatic.</p><span class="menu-card-price">$5.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('almond-croissant','Almond Croissant',5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/bqxu8cljcvuzmmuaftrj')">
-              + Add to Order
-            </button>
+            <p>Buttery laminated croissant filled with rich house-made almond frangipane and finished with golden toasted almonds. Slightly sweet and aromatic.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$5.00</span>
+              <div class="card-action" data-id="almond-croissant" data-name="Almond Croissant" data-price="5" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/bqxu8cljcvuzmmuaftrj">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/pgsug31hj4mxrvftwsyn" alt="Bagel w Cream Cheese + Large Coffee" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Bagel w Cream Cheese + Large Coffee</h3>
-            <span class="menu-card-price">$9.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('bagel-w-cream-cheese-large-coffee','Bagel w Cream Cheese + Large Coffee',9,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/pgsug31hj4mxrvftwsyn')">
-              + Add to Order
-            </button>
+            <div class="card-bottom-row">
+              <span class="menu-card-price">$9.00</span>
+              <div class="card-action" data-id="bagel-w-cream-cheese-large-coffee" data-name="Bagel w Cream Cheese + Large Coffee" data-price="9" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/pgsug31hj4mxrvftwsyn">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -476,60 +749,102 @@
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/inae3ifjh8pzqg9pdu32" alt="Profiteroles" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Profiteroles</h3>
-            <p>Cream puff decorated with rich chocolate sauce</p><span class="menu-card-price">$9.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('profiteroles','Profiteroles',9,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/inae3ifjh8pzqg9pdu32')">
-              + Add to Order
-            </button>
+            <p>Cream puff decorated with rich chocolate sauce</p><div class="card-bottom-row">
+              <span class="menu-card-price">$9.00</span>
+              <div class="card-action" data-id="profiteroles" data-name="Profiteroles" data-price="9" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/inae3ifjh8pzqg9pdu32">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/qand0edqubp6etbzoreu" alt="Fruit Tart (5)" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Fruit Tart (5)</h3>
-            <p>Five fresh fruit tarts topped with a colorful mix of kiwi, strawberry, raspberry, blackberry, and banana. A perfect sweet treat to share or enjoy all to yourself.</p><span class="menu-card-price">$15.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('fruit-tart-5','Fruit Tart (5)',15,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/qand0edqubp6etbzoreu')">
-              + Add to Order
-            </button>
+            <p>Five fresh fruit tarts topped with a colorful mix of kiwi, strawberry, raspberry, blackberry, and banana. A perfect sweet treat to share or enjoy all to yourself.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$15.00</span>
+              <div class="card-action" data-id="fruit-tart-5" data-name="Fruit Tart (5)" data-price="15" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/qand0edqubp6etbzoreu">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/qnmdk5dpammtz7ejgbhh" alt="Chocolate Covered Strawberries (5)" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Chocolate Covered Strawberries (5)</h3>
-            <p>Fresh strawberries dipped in rich chocolate, offering a delightful balance of sweetness and indulgence. (5 pieces)</p><span class="menu-card-price">$15.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('chocolate-covered-strawberries-5','Chocolate Covered Strawberries (5)',15,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/qnmdk5dpammtz7ejgbhh')">
-              + Add to Order
-            </button>
+            <p>Fresh strawberries dipped in rich chocolate, offering a delightful balance of sweetness and indulgence. (5 pieces)</p><div class="card-bottom-row">
+              <span class="menu-card-price">$15.00</span>
+              <div class="card-action" data-id="chocolate-covered-strawberries-5" data-name="Chocolate Covered Strawberries (5)" data-price="15" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/qnmdk5dpammtz7ejgbhh">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/jvddovatnnkghlcpoqqe" alt="Dubai Chocolate" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Dubai Chocolate</h3>
-            <p>Rich, creamy chocolate bars crafted with premium ingredients, offering a smooth and decadent treat.</p><span class="menu-card-price">$17.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('dubai-chocolate','Dubai Chocolate',17,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/jvddovatnnkghlcpoqqe')">
-              + Add to Order
-            </button>
+            <p>Rich, creamy chocolate bars crafted with premium ingredients, offering a smooth and decadent treat.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$17.00</span>
+              <div class="card-action" data-id="dubai-chocolate" data-name="Dubai Chocolate" data-price="17" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/jvddovatnnkghlcpoqqe">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/odtgylqvknbladgxsf3p" alt="Macarons (4)" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Macarons (4)</h3>
-            <span class="menu-card-price">$11.99</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('macarons-4','Macarons (4)',11.99,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/odtgylqvknbladgxsf3p')">
-              + Add to Order
-            </button>
+            <div class="card-bottom-row">
+              <span class="menu-card-price">$11.99</span>
+              <div class="card-action" data-id="macarons-4" data-name="Macarons (4)" data-price="11.99" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/odtgylqvknbladgxsf3p">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zfn7bom8lfh1bklk9rxg" alt="Banana Pudding" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Banana Pudding</h3>
-            <p>A rich, dreamy banana pudding made the NYC way – layered with fresh banana slices, fluffy vanilla pudding, and crispy vanilla wafers. Handcrafted in small batches. Served chilled. Limited daily quantity – always fresh!</p><span class="menu-card-price">$11.95</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('banana-pudding','Banana Pudding',11.95,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zfn7bom8lfh1bklk9rxg')">
-              + Add to Order
-            </button>
+            <p>A rich, dreamy banana pudding made the NYC way – layered with fresh banana slices, fluffy vanilla pudding, and crispy vanilla wafers. Handcrafted in small batches. Served chilled. Limited daily quantity – always fresh!</p><div class="card-bottom-row">
+              <span class="menu-card-price">$11.95</span>
+              <div class="card-action" data-id="banana-pudding" data-name="Banana Pudding" data-price="11.95" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zfn7bom8lfh1bklk9rxg">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -542,80 +857,136 @@
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/juul8bvqmz9t3nbn3xvw" alt="Oreo Cheesecake – Slice" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Oreo Cheesecake – Slice</h3>
-            <span class="menu-card-price">$11.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('oreo-cheesecake-slice','Oreo Cheesecake – Slice',11,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/juul8bvqmz9t3nbn3xvw')">
-              + Add to Order
-            </button>
+            <div class="card-bottom-row">
+              <span class="menu-card-price">$11.00</span>
+              <div class="card-action" data-id="oreo-cheesecake-slice" data-name="Oreo Cheesecake – Slice" data-price="11" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/juul8bvqmz9t3nbn3xvw">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zmflgpqcuid4jg6ajrgs" alt="New York Cheesecake – Whole (8″)" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>New York Cheesecake – Whole (8″)</h3>
-            <p>Creamy whole cheesecake blended with our signature European-style whipped pastry cream for a silky, luxurious texture. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary</p><span class="menu-card-price">$90.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('new-york-cheesecake-whole-8','New York Cheesecake – Whole (8″)',90,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zmflgpqcuid4jg6ajrgs')">
-              + Add to Order
-            </button>
+            <p>Creamy whole cheesecake blended with our signature European-style whipped pastry cream for a silky, luxurious texture. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary</p><div class="card-bottom-row">
+              <span class="menu-card-price">$90.00</span>
+              <div class="card-action" data-id="new-york-cheesecake-whole-8" data-name="New York Cheesecake – Whole (8″)" data-price="90" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zmflgpqcuid4jg6ajrgs">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/qhwx2aqywj3zl3mbgitz" alt="Strawberry Cheesecake – Whole (8″)" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Strawberry Cheesecake – Whole (8″)</h3>
-            <p>Creamy cheesecake topped with house-made strawberry sauce and blended with European-style whipped pastry cream. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.</p><span class="menu-card-price">$90.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('strawberry-cheesecake-whole-8','Strawberry Cheesecake – Whole (8″)',90,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/qhwx2aqywj3zl3mbgitz')">
-              + Add to Order
-            </button>
+            <p>Creamy cheesecake topped with house-made strawberry sauce and blended with European-style whipped pastry cream. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$90.00</span>
+              <div class="card-action" data-id="strawberry-cheesecake-whole-8" data-name="Strawberry Cheesecake – Whole (8″)" data-price="90" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/qhwx2aqywj3zl3mbgitz">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/mwjc3sucywtq4bwo2oxj" alt="Oreo Cheesecake – Whole (8″)" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Oreo Cheesecake – Whole (8″)</h3>
-            <p>Silky Oreo cheesecake blended with our European-style whipped Oreo pastry cream and topped with crushed Oreos. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.</p><span class="menu-card-price">$90.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('oreo-cheesecake-whole-8','Oreo Cheesecake – Whole (8″)',90,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/mwjc3sucywtq4bwo2oxj')">
-              + Add to Order
-            </button>
+            <p>Silky Oreo cheesecake blended with our European-style whipped Oreo pastry cream and topped with crushed Oreos. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$90.00</span>
+              <div class="card-action" data-id="oreo-cheesecake-whole-8" data-name="Oreo Cheesecake – Whole (8″)" data-price="90" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/mwjc3sucywtq4bwo2oxj">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/igcgmv7qobv3jucburrm" alt="New York Cheesecake-Slice" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>New York Cheesecake-Slice</h3>
-            <p>Creamy New York–style cheesecake blended with our signature European-style whipped pastry cream for a silky, smooth finish. Light vanilla aroma, rich texture, baked fresh in-house.</p><span class="menu-card-price">$11.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('new-york-cheesecake-slice','New York Cheesecake-Slice',11,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/igcgmv7qobv3jucburrm')">
-              + Add to Order
-            </button>
+            <p>Creamy New York–style cheesecake blended with our signature European-style whipped pastry cream for a silky, smooth finish. Light vanilla aroma, rich texture, baked fresh in-house.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$11.00</span>
+              <div class="card-action" data-id="new-york-cheesecake-slice" data-name="New York Cheesecake-Slice" data-price="11" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/igcgmv7qobv3jucburrm">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/jljbfkm5nvagot0gflmi" alt="Strawberry Cheesecake – Slice" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Strawberry Cheesecake – Slice</h3>
-            <p>Silky cheesecake topped with house-made strawberry sauce and finished with a touch of European-style whipped pastry cream. Creamy, fruity, and perfectly balanced.</p><span class="menu-card-price">$11.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('strawberry-cheesecake-slice','Strawberry Cheesecake – Slice',11,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/jljbfkm5nvagot0gflmi')">
-              + Add to Order
-            </button>
+            <p>Silky cheesecake topped with house-made strawberry sauce and finished with a touch of European-style whipped pastry cream. Creamy, fruity, and perfectly balanced.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$11.00</span>
+              <div class="card-action" data-id="strawberry-cheesecake-slice" data-name="Strawberry Cheesecake – Slice" data-price="11" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/jljbfkm5nvagot0gflmi">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <div class="menu-card-no-img">&#127856;</div>
           <div class="menu-card-body">
             <h3>M&amp;M Cheesecake – Whole ( 8″)</h3>
-            <p>Creamy vanilla cheesecake mixed with crunchy chocolate M&amp;Ms and topped with European-style whipped vanilla pastry cream. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.</p><span class="menu-card-price">$90.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('m-m-cheesecake-whole-8','M&M Cheesecake – Whole ( 8″)',90,'')">
-              + Add to Order
-            </button>
+            <p>Creamy vanilla cheesecake mixed with crunchy chocolate M&amp;Ms and topped with European-style whipped vanilla pastry cream. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$90.00</span>
+              <div class="card-action" data-id="m-m-cheesecake-whole-8" data-name="M&M Cheesecake – Whole ( 8″)" data-price="90" data-img="">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zxgknbrhng9jhny2txfx" alt="M&amp;M Cheesecake – Slice" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>M&amp;M Cheesecake – Slice</h3>
-            <p>Creamy vanilla cheesecake swirled with chocolate M&amp;Ms and topped with our signature European-style vanilla pastry cream, adding a smooth finish to the crunchy-chocolate texture. Fun, colorful, and kid-friendly.</p><span class="menu-card-price">$11.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('m-m-cheesecake-slice','M&M Cheesecake – Slice',11,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zxgknbrhng9jhny2txfx')">
-              + Add to Order
-            </button>
+            <p>Creamy vanilla cheesecake swirled with chocolate M&amp;Ms and topped with our signature European-style vanilla pastry cream, adding a smooth finish to the crunchy-chocolate texture. Fun, colorful, and kid-friendly.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$11.00</span>
+              <div class="card-action" data-id="m-m-cheesecake-slice" data-name="M&M Cheesecake – Slice" data-price="11" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zxgknbrhng9jhny2txfx">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -628,130 +999,221 @@
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/z1vvuomu9hty8bosqctl" alt="Diet Coke (Can)" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Diet Coke (Can)</h3>
-            <span class="menu-card-price">$4.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('diet-coke-can','Diet Coke (Can)',4,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/z1vvuomu9hty8bosqctl')">
-              + Add to Order
-            </button>
+            <div class="card-bottom-row">
+              <span class="menu-card-price">$4.00</span>
+              <div class="card-action" data-id="diet-coke-can" data-name="Diet Coke (Can)" data-price="4" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/z1vvuomu9hty8bosqctl">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/to6wvjnndecpdeo7quoc" alt="Coke (Can)" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Coke (Can)</h3>
-            <span class="menu-card-price">$2.50</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('coke-can','Coke (Can)',2.5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/to6wvjnndecpdeo7quoc')">
-              + Add to Order
-            </button>
+            <div class="card-bottom-row">
+              <span class="menu-card-price">$2.50</span>
+              <div class="card-action" data-id="coke-can" data-name="Coke (Can)" data-price="2.5" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/to6wvjnndecpdeo7quoc">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/xwirjlylmqn1x1hokke7" alt="Sprite (Can)" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Sprite (Can)</h3>
-            <span class="menu-card-price">$2.50</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('sprite-can','Sprite (Can)',2.5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/xwirjlylmqn1x1hokke7')">
-              + Add to Order
-            </button>
+            <div class="card-bottom-row">
+              <span class="menu-card-price">$2.50</span>
+              <div class="card-action" data-id="sprite-can" data-name="Sprite (Can)" data-price="2.5" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/xwirjlylmqn1x1hokke7">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/yekmqv2lslc6k4taev0i" alt="Water" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Water</h3>
-            <span class="menu-card-price">$1.50</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('water','Water',1.5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/yekmqv2lslc6k4taev0i')">
-              + Add to Order
-            </button>
+            <div class="card-bottom-row">
+              <span class="menu-card-price">$1.50</span>
+              <div class="card-action" data-id="water" data-name="Water" data-price="1.5" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/yekmqv2lslc6k4taev0i">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/te8hjxxjqkwt8jsctth3" alt="Turkish Tea" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Turkish Tea</h3>
-            <p>Freshly brewed Turkish black tea</p><span class="menu-card-price">$5.50</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('turkish-tea','Turkish Tea',5.5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/te8hjxxjqkwt8jsctth3')">
-              + Add to Order
-            </button>
+            <p>Freshly brewed Turkish black tea</p><div class="card-bottom-row">
+              <span class="menu-card-price">$5.50</span>
+              <div class="card-action" data-id="turkish-tea" data-name="Turkish Tea" data-price="5.5" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/te8hjxxjqkwt8jsctth3">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zhenxcmqiacdzc1ylizo" alt="Hot Chocolate" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Hot Chocolate</h3>
-            <p>Rich chocolate drink with steamed milk, topped with whipped cream and a sprinkle of cocoa powder.</p><span class="menu-card-price">$6.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('hot-chocolate','Hot Chocolate',6,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zhenxcmqiacdzc1ylizo')">
-              + Add to Order
-            </button>
+            <p>Rich chocolate drink with steamed milk, topped with whipped cream and a sprinkle of cocoa powder.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$6.00</span>
+              <div class="card-action" data-id="hot-chocolate" data-name="Hot Chocolate" data-price="6" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zhenxcmqiacdzc1ylizo">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/m8ecv4huezhrmonsukeq" alt="Dr Pepper (Can)" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Dr Pepper (Can)</h3>
-            <span class="menu-card-price">$4.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('dr-pepper-can','Dr Pepper (Can)',4,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/m8ecv4huezhrmonsukeq')">
-              + Add to Order
-            </button>
+            <div class="card-bottom-row">
+              <span class="menu-card-price">$4.00</span>
+              <div class="card-action" data-id="dr-pepper-can" data-name="Dr Pepper (Can)" data-price="4" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/m8ecv4huezhrmonsukeq">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/gpreebx9oxolqbpz9tae" alt="Canary Dry (Can)" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Canary Dry (Can)</h3>
-            <span class="menu-card-price">$4.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('canary-dry-can','Canary Dry (Can)',4,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/gpreebx9oxolqbpz9tae')">
-              + Add to Order
-            </button>
+            <div class="card-bottom-row">
+              <span class="menu-card-price">$4.00</span>
+              <div class="card-action" data-id="canary-dry-can" data-name="Canary Dry (Can)" data-price="4" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/gpreebx9oxolqbpz9tae">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/rvpejbzraredx0oosn7g" alt="Iced Latte" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Iced Latte</h3>
-            <span class="menu-card-price">$6.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('iced-latte','Iced Latte',6,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/rvpejbzraredx0oosn7g')">
-              + Add to Order
-            </button>
+            <div class="card-bottom-row">
+              <span class="menu-card-price">$6.00</span>
+              <div class="card-action" data-id="iced-latte" data-name="Iced Latte" data-price="6" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/rvpejbzraredx0oosn7g">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <div class="menu-card-no-img">&#127856;</div>
           <div class="menu-card-body">
             <h3>Cafe Latte</h3>
-            <p>Rich espresso blended with steamed milk, topped with a layer of frothy foam.</p><span class="menu-card-price">$6.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('cafe-latte','Cafe Latte',6,'')">
-              + Add to Order
-            </button>
+            <p>Rich espresso blended with steamed milk, topped with a layer of frothy foam.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$6.00</span>
+              <div class="card-action" data-id="cafe-latte" data-name="Cafe Latte" data-price="6" data-img="">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <div class="menu-card-no-img">&#127856;</div>
           <div class="menu-card-body">
             <h3>Americano</h3>
-            <p>Bold espresso blended with hot water for a smooth, balanced coffee experience.</p><span class="menu-card-price">$5.50</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('americano','Americano',5.5,'')">
-              + Add to Order
-            </button>
+            <p>Bold espresso blended with hot water for a smooth, balanced coffee experience.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$5.50</span>
+              <div class="card-action" data-id="americano" data-name="Americano" data-price="5.5" data-img="">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <div class="menu-card-no-img">&#127856;</div>
           <div class="menu-card-body">
             <h3>Mountain Dew (Can)</h3>
-            <span class="menu-card-price">$4.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('mountain-dew-can','Mountain Dew (Can)',4,'')">
-              + Add to Order
-            </button>
+            <div class="card-bottom-row">
+              <span class="menu-card-price">$4.00</span>
+              <div class="card-action" data-id="mountain-dew-can" data-name="Mountain Dew (Can)" data-price="4" data-img="">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <div class="menu-card-no-img">&#127856;</div>
           <div class="menu-card-body">
             <h3>Cappucino</h3>
-            <span class="menu-card-price">$6.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('cappucino','Cappucino',6,'')">
-              + Add to Order
-            </button>
+            <div class="card-bottom-row">
+              <span class="menu-card-price">$6.00</span>
+              <div class="card-action" data-id="cappucino" data-name="Cappucino" data-price="6" data-img="">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
@@ -772,40 +1234,68 @@
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/n1cm0ccrqj8pjeym3gzy" alt="Nutella Swirl Cupcake" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Nutella Swirl Cupcake</h3>
-            <p>Chocolate-hazelnut cupcake swirled with Nutella and topped with our Nutella-infused European-style pastry cream, creating the smoothest, richest Nutella frosting possible. A bestseller.</p><span class="menu-card-price">$4.50</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('nutella-swirl-cupcake','Nutella Swirl Cupcake',4.5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/n1cm0ccrqj8pjeym3gzy')">
-              + Add to Order
-            </button>
+            <p>Chocolate-hazelnut cupcake swirled with Nutella and topped with our Nutella-infused European-style pastry cream, creating the smoothest, richest Nutella frosting possible. A bestseller.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$4.50</span>
+              <div class="card-action" data-id="nutella-swirl-cupcake" data-name="Nutella Swirl Cupcake" data-price="4.5" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/n1cm0ccrqj8pjeym3gzy">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/rdo8mwjyds4zcyzfuiaw" alt="Vanilla Bean Cupcake" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Vanilla Bean Cupcake</h3>
-            <p>Soft vanilla sponge topped with our signature European-style vanilla pastry cream, whipped into a silky buttercream-like texture. Light, elegant, and aromatic, a classic elevated to a luxury level.</p><span class="menu-card-price">$4.50</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('vanilla-bean-cupcake','Vanilla Bean Cupcake',4.5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/rdo8mwjyds4zcyzfuiaw')">
-              + Add to Order
-            </button>
+            <p>Soft vanilla sponge topped with our signature European-style vanilla pastry cream, whipped into a silky buttercream-like texture. Light, elegant, and aromatic, a classic elevated to a luxury level.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$4.50</span>
+              <div class="card-action" data-id="vanilla-bean-cupcake" data-name="Vanilla Bean Cupcake" data-price="4.5" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/rdo8mwjyds4zcyzfuiaw">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/u1luogwiguso5idbvqef" alt="Red Velvet Cupcake" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Red Velvet Cupcake</h3>
-            <p>Moist red velvet cake topped with a cream-cheese–infused European-style pastry cream, creating a lighter, silkier version of classic cream cheese frosting. Smooth, elegant, and perfectly balanced.</p><span class="menu-card-price">$4.50</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('red-velvet-cupcake','Red Velvet Cupcake',4.5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/u1luogwiguso5idbvqef')">
-              + Add to Order
-            </button>
+            <p>Moist red velvet cake topped with a cream-cheese–infused European-style pastry cream, creating a lighter, silkier version of classic cream cheese frosting. Smooth, elegant, and perfectly balanced.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$4.50</span>
+              <div class="card-action" data-id="red-velvet-cupcake" data-name="Red Velvet Cupcake" data-price="4.5" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/u1luogwiguso5idbvqef">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/tk4v9bydihebdcxtro5g" alt="Carrot Cake Cupcake" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Carrot Cake Cupcake</h3>
-            <p>Spiced carrot sponge topped with our cream-cheese European-style pastry cream, giving a velvety, lighter twist to traditional carrot cake frosting. Warm spices and creamy finish</p><span class="menu-card-price">$4.50</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('carrot-cake-cupcake','Carrot Cake Cupcake',4.5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/tk4v9bydihebdcxtro5g')">
-              + Add to Order
-            </button>
+            <p>Spiced carrot sponge topped with our cream-cheese European-style pastry cream, giving a velvety, lighter twist to traditional carrot cake frosting. Warm spices and creamy finish</p><div class="card-bottom-row">
+              <span class="menu-card-price">$4.50</span>
+              <div class="card-action" data-id="carrot-cake-cupcake" data-name="Carrot Cake Cupcake" data-price="4.5" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/tk4v9bydihebdcxtro5g">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -818,30 +1308,51 @@
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/sdk1eoclrzht7vji8yqt" alt="Cookie Box (8-pack)" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Cookie Box (8-pack)</h3>
-            <p>An assortment of eight cookies featuring chocolate chip</p><span class="menu-card-price">$30.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('cookie-box-8-pack','Cookie Box (8-pack)',30,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/sdk1eoclrzht7vji8yqt')">
-              + Add to Order
-            </button>
+            <p>An assortment of eight cookies featuring chocolate chip</p><div class="card-bottom-row">
+              <span class="menu-card-price">$30.00</span>
+              <div class="card-action" data-id="cookie-box-8-pack" data-name="Cookie Box (8-pack)" data-price="30" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/sdk1eoclrzht7vji8yqt">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/cylajmd3nabbnnnfhidi" alt="Chocolate Chip Cookie" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Chocolate Chip Cookie</h3>
-            <p>Rich chocolate chunks in a classic, chewy cookie.</p><span class="menu-card-price">$4.50</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('chocolate-chip-cookie','Chocolate Chip Cookie',4.5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/cylajmd3nabbnnnfhidi')">
-              + Add to Order
-            </button>
+            <p>Rich chocolate chunks in a classic, chewy cookie.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$4.50</span>
+              <div class="card-action" data-id="chocolate-chip-cookie" data-name="Chocolate Chip Cookie" data-price="4.5" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/cylajmd3nabbnnnfhidi">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/uojcui9bykdyhbzcy64r" alt="White Chocolate Cookie" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>White Chocolate Cookie</h3>
-            <p>Soft cookie with chunks of sweet white chocolate.</p><span class="menu-card-price">$4.50</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('white-chocolate-cookie','White Chocolate Cookie',4.5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/uojcui9bykdyhbzcy64r')">
-              + Add to Order
-            </button>
+            <p>Soft cookie with chunks of sweet white chocolate.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$4.50</span>
+              <div class="card-action" data-id="white-chocolate-cookie" data-name="White Chocolate Cookie" data-price="4.5" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/uojcui9bykdyhbzcy64r">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -854,40 +1365,68 @@
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/z1w9avapv1kcmuv2qkt3" alt="Pistachio Baklava (4 pcs)" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Pistachio Baklava (4 pcs)</h3>
-            <p>Layered pastry with finely chopped pistachios and sweet syrup, served as four pieces</p><span class="menu-card-price">$9.50</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('pistachio-baklava-4-pcs','Pistachio Baklava (4 pcs)',9.5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/z1w9avapv1kcmuv2qkt3')">
-              + Add to Order
-            </button>
+            <p>Layered pastry with finely chopped pistachios and sweet syrup, served as four pieces</p><div class="card-bottom-row">
+              <span class="menu-card-price">$9.50</span>
+              <div class="card-action" data-id="pistachio-baklava-4-pcs" data-name="Pistachio Baklava (4 pcs)" data-price="9.5" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/z1w9avapv1kcmuv2qkt3">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/pxofrtrpj3jz7vtwlan1" alt="Walnut Baklava (4 pcs)" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Walnut Baklava (4 pcs)</h3>
-            <p>Layers of phyllo dough, honey, and walnuts. Four pieces per serving.</p><span class="menu-card-price">$9.50</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('walnut-baklava-4-pcs','Walnut Baklava (4 pcs)',9.5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/pxofrtrpj3jz7vtwlan1')">
-              + Add to Order
-            </button>
+            <p>Layers of phyllo dough, honey, and walnuts. Four pieces per serving.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$9.50</span>
+              <div class="card-action" data-id="walnut-baklava-4-pcs" data-name="Walnut Baklava (4 pcs)" data-price="9.5" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/pxofrtrpj3jz7vtwlan1">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/pu8epirxl02tavrqvqzz" alt="Cold Pistachio Baklava (Soğuk Baklava) (4pcs)" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Cold Pistachio Baklava (Soğuk Baklava) (4pcs)</h3>
-            <p>Chilled pistachio baklava topped with light chocolate dusting and cold milk syrup.</p><span class="menu-card-price">$9.50</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('cold-pistachio-baklava-so-uk-baklava-4pcs','Cold Pistachio Baklava (Soğuk Baklava) (4pcs)',9.5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/pu8epirxl02tavrqvqzz')">
-              + Add to Order
-            </button>
+            <p>Chilled pistachio baklava topped with light chocolate dusting and cold milk syrup.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$9.50</span>
+              <div class="card-action" data-id="cold-pistachio-baklava-so-uk-baklava-4pcs" data-name="Cold Pistachio Baklava (Soğuk Baklava) (4pcs)" data-price="9.5" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/pu8epirxl02tavrqvqzz">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zf64kdvdy0f50q7ebapo" alt="Carrot Slice Baklava (Havuç Dilim)" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Carrot Slice Baklava (Havuç Dilim)</h3>
-            <p>Premium pistachio-filled baklava prepared in the traditional “carrot slice” style. Ultra-thin phyllo layers, clarified butter, and a rich pistachio center create a crisp, delicate, and elegant dessert. A classic specialty for baklava lovers.</p><span class="menu-card-price">$7.95</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('carrot-slice-baklava-havu-dilim','Carrot Slice Baklava (Havuç Dilim)',7.95,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zf64kdvdy0f50q7ebapo')">
-              + Add to Order
-            </button>
+            <p>Premium pistachio-filled baklava prepared in the traditional “carrot slice” style. Ultra-thin phyllo layers, clarified butter, and a rich pistachio center create a crisp, delicate, and elegant dessert. A classic specialty for baklava lovers.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$7.95</span>
+              <div class="card-action" data-id="carrot-slice-baklava-havu-dilim" data-name="Carrot Slice Baklava (Havuç Dilim)" data-price="7.95" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zf64kdvdy0f50q7ebapo">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -922,20 +1461,34 @@
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/mmml8vfwfvuqadatyooi" alt="Pumpkin Pie – Whole (9&quot;)" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Pumpkin Pie – Whole (9&quot;)</h3>
-            <p>A smooth and creamy pumpkin pie baked with warm fall spices and a silky custard filling. Available in 9-inch (serves 6–8) and 12-inch (serves 10–14) sizes. Perfect for Thanksgiving tables, holiday dinners, or family gatherings. Seasonal item – limited availability. Pre-order recommended.</p><span class="menu-card-price">$35.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('pumpkin-pie-whole-9-quot','Pumpkin Pie – Whole (9&quot;)',35,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/mmml8vfwfvuqadatyooi')">
-              + Add to Order
-            </button>
+            <p>A smooth and creamy pumpkin pie baked with warm fall spices and a silky custard filling. Available in 9-inch (serves 6–8) and 12-inch (serves 10–14) sizes. Perfect for Thanksgiving tables, holiday dinners, or family gatherings. Seasonal item – limited availability. Pre-order recommended.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$35.00</span>
+              <div class="card-action" data-id="pumpkin-pie-whole-9-quot" data-name="Pumpkin Pie – Whole (9&quot;)" data-price="35" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/mmml8vfwfvuqadatyooi">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="menu-card">
           <img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/mmml8vfwfvuqadatyooi" alt="Pumpkin Pie – Whole ( 12″)" loading="lazy" onerror="this.style.display='none'">
           <div class="menu-card-body">
             <h3>Pumpkin Pie – Whole ( 12″)</h3>
-            <p>A smooth and creamy pumpkin pie baked with warm fall spices and a silky custard filling. Available in 9-inch (serves 6–8) and 12-inch (serves 10–14) sizes. Perfect for Thanksgiving tables, holiday dinners, or family gatherings. Seasonal item – limited availability. Pre-order recommended for the 12″ size.</p><span class="menu-card-price">$45.00</span>
-            <button class="add-to-cart-btn" onclick="deraCart.add('pumpkin-pie-whole-12','Pumpkin Pie – Whole ( 12″)',45,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/mmml8vfwfvuqadatyooi')">
-              + Add to Order
-            </button>
+            <p>A smooth and creamy pumpkin pie baked with warm fall spices and a silky custard filling. Available in 9-inch (serves 6–8) and 12-inch (serves 10–14) sizes. Perfect for Thanksgiving tables, holiday dinners, or family gatherings. Seasonal item – limited availability. Pre-order recommended for the 12″ size.</p><div class="card-bottom-row">
+              <span class="menu-card-price">$45.00</span>
+              <div class="card-action" data-id="pumpkin-pie-whole-12" data-name="Pumpkin Pie – Whole ( 12″)" data-price="45" data-img="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/mmml8vfwfvuqadatyooi">
+                <button class="add-btn" onclick="cardAdd(this)">Add</button>
+                <div class="card-stepper hidden">
+                  <button class="stepper-btn" onclick="cardStep(this,-1)">&#x2212;</button>
+                  <span class="card-qty">0</span>
+                  <button class="stepper-btn" onclick="cardStep(this,1)">&#x2B;</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

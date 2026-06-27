@@ -59,3 +59,10 @@ body.cart-open{overflow:hidden}
 .co-submit-btn:disabled{opacity:.6;cursor:default}
 .checkout-success-msg{background:#e7fbe7;border:1px solid #88cc88;color:#2a6e2a;padding:1.2rem;border-radius:10px;font-weight:700;text-align:center;font-family:'Open Sans',sans-serif;font-size:.95rem}
 @media(max-width:480px){#dera-cart-sidebar{width:100vw}.checkout-box{padding:1.4rem;border-radius:16px 16px 0 0;position:fixed;bottom:0;left:0;right:0;max-height:92vh}}
+
+/* ── MOBILE NAV FIX ── */
+@media(max-width:768px){
+  .nav-container .cta{display:none !important;}
+  .cart-nav-btn{margin-left:auto;padding:8px !important;border-radius:50% !important;}
+  .cart-nav-btn svg{width:22px !important;height:22px !important;}
+}
