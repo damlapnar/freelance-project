@@ -186,8 +186,8 @@
         <input type="text" name="name" required placeholder="Jane Smith">
       </div>
       <div class="co-field">
-        <label>Email *</label>
-        <input type="email" name="email" required placeholder="jane@email.com">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="jane@email.com">
       </div>
       <div class="co-field">
         <label>Phone</label>
@@ -204,7 +204,7 @@
       <button type="submit" class="co-submit-btn">Place Order &mdash; Pay at Pickup</button>
     </form>
     <div id="checkout-success" style="display:none" class="checkout-success-msg">
-      &#x2705; Order received! We'll email you a confirmation. See you at pickup!
+      &#x2705; Order received! We'll see you at pickup — 1076 Main Ave, Clifton NJ.
     </div>
   </div>
 </div>`;
