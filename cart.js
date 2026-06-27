@@ -46,6 +46,7 @@
     updateCardUI();
     renderSidebar();
     updateBadge();
+    openSidebar();
   };
 
   window.cardStep = function (btn, delta) {

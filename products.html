@@ -64,15 +64,9 @@
     [data-theme="dark"] .menu-card-body p { color:#a8d5b5; }
     [data-theme="dark"] .menu-card-body .tag { background:#1a2e1d; color:#a8d5b5; }
 
-    .card-bottom-row { display:flex; align-items:center; justify-content:space-between; gap:0.5rem; margin-top:auto; padding-top:0.7rem; }
-    .add-btn { background:#355E3B; color:#fff; border:none; border-radius:999px; padding:0.45rem 1rem; font-family:'Open Sans',sans-serif; font-size:0.85rem; font-weight:700; cursor:pointer; white-space:nowrap; transition:background .2s,transform .15s; flex-shrink:0; }
-    .add-btn:hover { background:#2a4b2e; transform:translateY(-1px); }
-    .card-stepper { display:flex; align-items:center; gap:6px; }
-    .card-stepper.hidden { display:none !important; }
-    .stepper-btn { width:28px; height:28px; border-radius:50%; border:2px solid #355E3B; background:#fff; color:#355E3B; cursor:pointer; font-size:1rem; font-weight:700; display:flex; align-items:center; justify-content:center; transition:background .2s,color .2s; flex-shrink:0; padding:0; }
-    .stepper-btn:hover { background:#355E3B; color:#fff; }
-    .card-qty { font-size:0.95rem; font-weight:700; color:#1c1c1c; min-width:18px; text-align:center; }
     .menu-card-body { padding:1rem 1.2rem 1.3rem; flex:1; display:flex; flex-direction:column; }
+    .menu-card-body p { color:#555; font-size:0.9rem; line-height:1.55; margin:0 0 0.6rem; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; cursor:pointer; }
+    .menu-card-body p.expanded { display:block; }
     .card-bottom-row { display:flex; align-items:center; justify-content:space-between; gap:0.5rem; margin-top:auto; padding-top:0.7rem; }
     .add-btn { background:#355E3B; color:#fff; border:none; border-radius:999px; padding:0.45rem 1rem; font-family:'Open Sans',sans-serif; font-size:0.85rem; font-weight:700; cursor:pointer; white-space:nowrap; transition:background .2s,transform .15s; flex-shrink:0; }
     .add-btn:hover { background:#2a4b2e; transform:translateY(-1px); }
@@ -81,8 +75,6 @@
     .stepper-btn { width:28px; height:28px; border-radius:50%; border:2px solid #355E3B; background:#fff; color:#355E3B; cursor:pointer; font-size:1.1rem; font-weight:700; display:flex; align-items:center; justify-content:center; transition:background .2s,color .2s; flex-shrink:0; padding:0; line-height:1; }
     .stepper-btn:hover { background:#355E3B; color:#fff; }
     .card-qty { font-size:0.95rem; font-weight:700; color:#1c1c1c; min-width:18px; text-align:center; font-family:'Open Sans',sans-serif; }
-    .menu-card-body p { color:#555; font-size:0.9rem; line-height:1.55; margin:0 0 0.6rem; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; cursor:pointer; }
-    .menu-card-body p.expanded { display:block; -webkit-line-clamp:unset; }
   </style>
 </head>
 <body>
