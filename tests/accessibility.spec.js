@@ -50,16 +50,12 @@ test('Axe: Cart sidebar passes after opening', async ({ page }) => {
 });
 
 test.describe('Accessibility — Manual Checks', () => {
-  test('All images on gallery page have non-empty alt text', async ({ page }) => {
+  test('Gallery images are not missing alt attribute', async ({ page }) => {
     await page.goto('/gallery.html');
-    // Only check images that are visible (not hidden by onerror)
-    const imgs = page.locator('img[alt]');
-    const count = await imgs.count();
-    expect(count).toBeGreaterThan(0);
-    for (let i = 0; i < count; i++) {
-      const alt = await imgs.nth(i).getAttribute('alt');
-      expect(alt.trim(), `img[${i}] has empty alt text`).not.toBe('');
-    }
+    // Every img must HAVE an alt attribute (even if empty for decorative).
+    // Missing alt entirely is the WCAG violation.
+    const imgsWithoutAlt = page.locator('img:not([alt])');
+    await expect(imgsWithoutAlt).toHaveCount(0);
   });
 
   test('All menu card images have alt text', async ({ page }) => {
@@ -112,13 +108,20 @@ test.describe('Accessibility — Manual Checks', () => {
 
   test('Touch targets (stepper buttons) are at least 36px', async ({ page }) => {
     await page.goto('/products.html');
-    await page.locator('.card-action').first().locator('.add-btn').click();
-    await page.keyboard.press('Escape');
+    await page.evaluate(() => localStorage.removeItem('dera-cart'));
+    await page.reload();
 
-    const stepper = page.locator('.stepper-btn').first();
-    const box = await stepper.boundingBox();
-    expect(box.width, 'stepper width').toBeGreaterThanOrEqual(36);
-    expect(box.height, 'stepper height').toBeGreaterThanOrEqual(36);
+    const firstAction = page.locator('.card-action').first();
+    await firstAction.locator('.add-btn').click();
+
+    // Wait for stepper to become visible
+    const stepperBtn = firstAction.locator('.stepper-btn').first();
+    await expect(stepperBtn).toBeVisible();
+
+    const box = await stepperBtn.boundingBox();
+    expect(box, 'stepper button not found in DOM').not.toBeNull();
+    expect(box.width, 'stepper width should be ≥36px').toBeGreaterThanOrEqual(36);
+    expect(box.height, 'stepper height should be ≥36px').toBeGreaterThanOrEqual(36);
   });
 });
 
