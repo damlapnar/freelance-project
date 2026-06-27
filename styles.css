@@ -123,7 +123,7 @@ p {
 ========================= */
 .hero {
   position: relative;
-  background: url('https://images.unsplash.com/photo-1612196524186-6512ce1511cf?q=80&w=1470&auto=format&fit=crop') center/cover no-repeat;
+  background: url('https://images.unsplash.com/photo-1486427944299-d1955d23e34d?q=80&w=1470&auto=format&fit=crop') center/cover no-repeat;
   height: 400px;
   display: flex;
   align-items: center;
