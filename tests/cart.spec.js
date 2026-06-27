@@ -61,6 +61,8 @@ test.describe('Cart — Happy Path', () => {
   test('Stepper + increases quantity', async ({ page }) => {
     const firstAction = page.locator('.card-action').first();
     await firstAction.locator('.add-btn').click();
+    // Close sidebar so overlay doesn't block card stepper
+    await page.keyboard.press('Escape');
 
     const plusBtn = firstAction.locator('.stepper-btn').nth(1);
     await plusBtn.click();
@@ -72,8 +74,9 @@ test.describe('Cart — Happy Path', () => {
   test('Stepper − decreases quantity', async ({ page }) => {
     const firstAction = page.locator('.card-action').first();
     await firstAction.locator('.add-btn').click();
+    await page.keyboard.press('Escape'); // close sidebar overlay
 
-    // Add one more
+    // Add one more via stepper
     await firstAction.locator('.stepper-btn').nth(1).click();
     await expect(firstAction.locator('.card-qty')).toHaveText('2');
 
@@ -108,7 +111,7 @@ test.describe('Cart — Happy Path', () => {
     const modal = page.locator('#dera-checkout-modal');
     await expect(modal.locator('input[name="name"]')).toBeVisible();
     await expect(modal.locator('input[name="email"]')).toBeVisible();
-    await expect(modal.locator('select[name="Pickup"]')).toBeVisible();
+    await expect(modal.locator('input[name="Pickup"]')).toBeVisible();
   });
 });
 
@@ -136,7 +139,7 @@ test.describe('Cart — Negative Cases', () => {
     const modal = page.locator('#dera-checkout-modal');
     // Fill email but not name
     await modal.locator('input[name="email"]').fill('test@example.com');
-    await modal.locator('select[name="Pickup"]').selectOption({ index: 1 });
+    await modal.locator('input[name="Pickup"]').fill('Tomorrow at 3pm');
 
     // Submit form - browser validation should block it
     const nameInput = modal.locator('input[name="name"]');
@@ -157,8 +160,8 @@ test.describe('Cart — Negative Cases', () => {
     await page.locator('#cart-checkout-btn').click();
 
     const modal = page.locator('#dera-checkout-modal');
-    const pickupSelect = modal.locator('select[name="Pickup"]');
-    await expect(pickupSelect).toHaveAttribute('required', '');
+    const pickupInput = modal.locator('input[name="Pickup"]');
+    await expect(pickupInput).toHaveAttribute('required', '');
   });
 });
 
@@ -235,7 +238,7 @@ test.describe('Cart — Edge Cases', () => {
   });
 
   test('Cart icon in nav is immediately right of Order Now link', async ({ page }) => {
-    const nav = page.locator('.nav-links');
+    const nav = page.locator('.nav-container');
     const orderNow = nav.locator('a.cta');
     const cartBtn = nav.locator('.cart-nav-btn');
 
