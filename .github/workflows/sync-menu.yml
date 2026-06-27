@@ -1,0 +1,53 @@
+name: GrubHub Menü Sync
+
+on:
+  schedule:
+    - cron: '0 8 * * 1'  # Her Pazartesi 08:00 UTC (04:00 ET)
+  workflow_dispatch:       # Manuel tetikleme butonu
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Repo'yu indir
+        uses: actions/checkout@v4
+
+      - name: Node.js kur
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: scripts/package.json
+
+      - name: Bagımlılıkları yükle
+        working-directory: scripts
+        run: npm install
+
+      - name: Playwright sistem bagımlılıkları
+        working-directory: scripts
+        run: npx playwright install-deps chromium
+
+      - name: GrubHub menüsünü çek
+        working-directory: scripts
+        run: node scrape-grubhub.js
+        env:
+          CI: 'true'
+
+      - name: products.html'i güncelle
+        working-directory: scripts
+        run: node inject-menu.js
+
+      - name: Değişiklik varsa commit et ve push yap
+        run: |
+          git config user.name "Menu Bot"
+          git config user.email "noreply@derapastryhouse.com"
+          git add products.html scripts/menu.json
+          if git diff --staged --quiet; then
+            echo "Değişiklik yok, skip."
+          else
+            git commit -m "Auto: GrubHub menüsü güncellendi ($(date -u '+%Y-%m-%d'))"
+            git push
+          fi

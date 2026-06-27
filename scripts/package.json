@@ -1,0 +1,8 @@
+{
+  "name": "dera-menu-sync",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "playwright-chromium": "^1.52.0"
+  }
+}
