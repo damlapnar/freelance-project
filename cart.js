@@ -126,11 +126,7 @@
     btn.textContent = 'Sending...';
 
     const data = new FormData(form);
-    data.append('_replyto', data.get('Email') || '');
-    data.append('_autoresponse', "Thank you for your order at D’era Pastry House! 🍰\n\nWe've received your order and will have it ready for pickup.\n\nPickup location: 1076 Main Ave, Clifton, NJ\n\nIf you have any questions, call us at (201) 923-9776.\n\nSee you soon!");
-    data.append('_template', 'table');
-    data.append('_captcha', 'false');
-    fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+    fetch(form.action, { method: ‘POST’, body: data, headers: { ‘Accept’: ‘application/json’ } })
       .then(r => {
         if (r.ok) {
           document.getElementById('checkout-success').style.display = 'block';
@@ -179,17 +175,19 @@
       <p class="checkout-total-line">Total: <strong id="checkout-total">$0.00</strong></p>
       <p class="checkout-pay-note">&#x1F4B5; You'll pay at pickup. No charge now.</p>
     </div>
-    <form id="pickup-order-form" action="https://formsubmit.co/damlapnar1@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="New Pickup Order — D'era House">
+    <form id="pickup-order-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="a10ef4ae-2861-41cb-9942-55013c6c3079">
+      <input type="hidden" name="subject" value="New Pickup Order — D'era Pastry House">
+      <input type="hidden" name="from_name" value="D'era Pastry House">
       <input type="hidden" id="checkout-hidden-order" name="Order">
       <input type="hidden" id="checkout-hidden-total" name="Total">
       <div class="co-field">
         <label>Your Name *</label>
-        <input type="text" name="Name" required placeholder="Jane Smith">
+        <input type="text" name="name" required placeholder="Jane Smith">
       </div>
       <div class="co-field">
         <label>Email *</label>
-        <input type="email" name="Email" required placeholder="jane@email.com">
+        <input type="email" name="email" required placeholder="jane@email.com">
       </div>
       <div class="co-field">
         <label>Phone</label>
