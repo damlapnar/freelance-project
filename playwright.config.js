@@ -8,10 +8,10 @@ module.exports = defineConfig({
   retries: 1,
   reporter: [['list'], ['html', { outputFolder: 'tests/report', open: 'never' }]],
   webServer: {
-    command: 'node node_modules/serve/build/main.js . -l 3737 --no-clipboard',
+    command: 'node tests/server.js',
     url: 'http://localhost:3737',
     reuseExistingServer: !process.env.CI,
-    timeout: 15000,
+    timeout: 10000,
   },
   use: {
     baseURL: 'http://localhost:3737',

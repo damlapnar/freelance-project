@@ -190,7 +190,7 @@
     btn.textContent = 'Sending...';
 
     const data = new FormData(form);
-    fetch(form.action, { method: ‘POST’, body: data, headers: { ‘Accept’: ‘application/json’ } })
+    fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
       .then(r => {
         if (r.ok) {
           document.getElementById('checkout-success').style.display = 'block';
