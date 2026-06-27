@@ -187,7 +187,7 @@
       </div>
       <div class="co-field">
         <label>Email</label>
-        <input type="email" name="email" placeholder="jane@email.com">
+        <input type="email" name="email" required placeholder="jane@email.com">
       </div>
       <div class="co-field">
         <label>Phone</label>
