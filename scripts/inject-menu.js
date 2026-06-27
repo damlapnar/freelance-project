@@ -86,11 +86,18 @@ function itemHtml(item) {
     : `<div class="menu-card-no-img">&#127856;</div>`;
   const desc = item.desc ? `<p>${escapeHtml(item.desc)}</p>` : '';
   const price = item.price ? `<span class="menu-card-price">${escapeHtml(item.price)}</span>` : '';
+  const priceNum = item.price ? parseFloat(item.price.replace(/[^0-9.]/g, '')) : 0;
+  const id = item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '').substring(0, 60);
+  const safeImg = (item.img || '').replace(/'/g, "\\'");
+  const safeName = item.name.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+  const cartBtn = priceNum > 0
+    ? `\n            <button class="add-to-cart-btn" onclick="deraCart.add('${id}','${safeName}',${priceNum},'${safeImg}')">+ Add to Order</button>`
+    : '';
   return `        <div class="menu-card">
           ${img}
           <div class="menu-card-body">
             <h3>${escapeHtml(item.name)}</h3>
-            ${desc}${price}
+            ${desc}${price}${cartBtn}
           </div>
         </div>`;
 }

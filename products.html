@@ -20,8 +20,6 @@
   <meta name="theme-color" content="#355E3B">
   <link rel="stylesheet" href="styles.min.css">
   <link rel="stylesheet" href="animations.min.css">
-  <!-- Snipcart -->
-  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&amp;family=Open+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
   <style>
     .menu-hero {
@@ -81,11 +79,10 @@
         <li><a href="locations.html">Locations</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul></nav>
-      <button class="snipcart-checkout cart-nav-btn" aria-label="View cart">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-        <span class="snipcart-items-count"></span>
+      <button class="cart-nav-btn" onclick="openSidebar()" aria-label="View cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cart-count" style="display:none">0</span>
       </button>
-      
       <a href="https://www.grubhub.com/restaurant/dera-pastry-house-1076-main-ave-clifton/12091408" class="cta" target="_blank" rel="noopener noreferrer">Order Now</a>
     </div>
   </header>
@@ -107,15 +104,8 @@
           <div class="menu-card-body">
             <h3>Chocolate Fudge Cake – Slice</h3>
             <span class="menu-card-price">$11.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="chocolate-fudge-cake-slice"
-              data-item-price="11.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Chocolate Fudge Cake – Slice"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('chocolate-fudge-cake-slice','Chocolate Fudge Cake – Slice',11,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/vmgmw62btqtliq9u0iex')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -124,15 +114,8 @@
           <div class="menu-card-body">
             <h3>Biscoff Lotus Cake – Slice</h3>
             <span class="menu-card-price">$11.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="biscoff-lotus-cake-slice"
-              data-item-price="11.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Biscoff Lotus Cake – Slice"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('biscoff-lotus-cake-slice','Biscoff Lotus Cake – Slice',11,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/sx8rvolme7pg5zvhsy9r')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -141,15 +124,8 @@
           <div class="menu-card-body">
             <h3>Brownie</h3>
             <span class="menu-card-price">$8.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="brownie"
-              data-item-price="8.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Brownie"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('brownie','Brownie',8,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zoz5tfzyoz0eiksavx02')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -158,15 +134,8 @@
           <div class="menu-card-body">
             <h3>Classic Vanilla Cake– Slice</h3>
             <span class="menu-card-price">$11.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="classic-vanilla-cake-slice"
-              data-item-price="11.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Classic Vanilla Cake– Slice"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('classic-vanilla-cake-slice','Classic Vanilla Cake– Slice',11,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/aqwwa0xlbk07jlqlo9wk')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -175,15 +144,8 @@
           <div class="menu-card-body">
             <h3>Carrot Cake – Slice</h3>
             <p>Moist, warmly spiced carrot sponge (cinnamon + nutmeg) layered with our cream-cheese European-style pastry cream, creating a velvety, lighter twist on traditional carrot cake frosting. Balanced sweetness, rich flavor, and baked fresh daily.</p><span class="menu-card-price">$11.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="carrot-cake-slice"
-              data-item-price="11.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Carrot Cake – Slice"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('carrot-cake-slice','Carrot Cake – Slice',11,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/cqkq4rln9z82mvtngzbu')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -192,15 +154,8 @@
           <div class="menu-card-body">
             <h3>Red Velvet Cake – Slice</h3>
             <p>Classic red velvet cake layered with our cream-cheese–infused European-style pastry cream, which creates a lighter, silkier, and more luxurious version of traditional cream cheese frosting. Soft cocoa notes and velvety texture make this a customer favorite.</p><span class="menu-card-price">$11.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="red-velvet-cake-slice"
-              data-item-price="11.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Red Velvet Cake – Slice"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('red-velvet-cake-slice','Red Velvet Cake – Slice',11,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/e8e5kxwmq7jyjwcghz9k')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -209,15 +164,8 @@
           <div class="menu-card-body">
             <h3>Mozaik Cake – Slice</h3>
             <p>Traditional Turkish-style chocolate mosaic cake made with buttery biscuit pieces, rich cocoa, and a smooth chocolate base. Finished with a touch of our signature European-style chocolate pastry cream for a velvety, premium texture. Served chilled</p><span class="menu-card-price">$11.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="mozaik-cake-slice"
-              data-item-price="11.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Mozaik Cake – Slice"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('mozaik-cake-slice','Mozaik Cake – Slice',11,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/vtmaa9ghnrex4b5cwhsi')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -226,15 +174,8 @@
           <div class="menu-card-body">
             <h3>Trilece – Slice</h3>
             <p>Ultra-soft airy sponge soaked in a three-milk blend and topped with our signature European-style whipped pastry cream, then finished with a silky caramel glaze. Moist, light, creamy, and one of our bestselling traditional European desserts — made fresh in-house.</p><span class="menu-card-price">$11.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="trilece-slice"
-              data-item-price="11.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Trilece – Slice"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('trilece-slice','Trilece – Slice',11,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/rwk2fevwiks9jkxy80oj')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -243,15 +184,8 @@
           <div class="menu-card-body">
             <h3>Biscoff Lotus Cake – Whole (8&quot;)</h3>
             <p>Vanilla sponge layered with European-style Biscoff pastry cream, topped with Lotus crumble and drizzle. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.</p><span class="menu-card-price">$65.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="biscoff-lotus-cake-whole-8"
-              data-item-price="65.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Biscoff Lotus Cake – Whole (8&quot;)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('biscoff-lotus-cake-whole-8-quot','Biscoff Lotus Cake – Whole (8&quot;)',65,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/eq3swdttr3ctbkp6ikc4')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -260,15 +194,8 @@
           <div class="menu-card-body">
             <h3>Carrot Cake – Whole (8&quot;)</h3>
             <p>Warmly spiced carrot sponge layered with European-style cream-cheese pastry cream, smooth and balanced. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.</p><span class="menu-card-price">$65.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="carrot-cake-whole-8"
-              data-item-price="65.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Carrot Cake – Whole (8&quot;)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('carrot-cake-whole-8-quot','Carrot Cake – Whole (8&quot;)',65,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/nx3y2pnti47y9wryaacg')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -277,15 +204,8 @@
           <div class="menu-card-body">
             <h3>Classic Vanilla Cake – Whole (8&quot;)</h3>
             <p>Soft vanilla sponge layered with our signature European-style vanilla pastry cream, finished with a silky smooth frosting. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.</p><span class="menu-card-price">$65.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="classic-vanilla-cake-whole-8"
-              data-item-price="65.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Classic Vanilla Cake – Whole (8&quot;)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('classic-vanilla-cake-whole-8-quot','Classic Vanilla Cake – Whole (8&quot;)',65,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/ou2brlfzuixmijlfsroo')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -294,15 +214,8 @@
           <div class="menu-card-body">
             <h3>Chocolate Fudge Cake – Whole (8&quot;)</h3>
             <p>Moist chocolate sponge filled with European-style chocolate pastry cream, giving it a velvety, mousse-like texture. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.</p><span class="menu-card-price">$65.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="chocolate-fudge-cake-whole-8"
-              data-item-price="65.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Chocolate Fudge Cake – Whole (8&quot;)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('chocolate-fudge-cake-whole-8-quot','Chocolate Fudge Cake – Whole (8&quot;)',65,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/hkgmt2rghmmgcbgs9wsf')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -311,15 +224,8 @@
           <div class="menu-card-body">
             <h3>Mozaik Cake – Whole</h3>
             <p>Traditional Turkish-style chocolate mosaic cake made with buttery biscuit pieces and rich cocoa, blended with our signature European-style chocolate pastry cream for an ultra-smooth, premium finish. Shaped into a whole loaf and served chilled. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary</p><span class="menu-card-price">$65.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="mozaik-cake-whole"
-              data-item-price="65.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Mozaik Cake – Whole"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('mozaik-cake-whole','Mozaik Cake – Whole',65,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/voytego6vqifmomkuo2e')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -328,15 +234,8 @@
           <div class="menu-card-body">
             <h3>Red Velvet Cake – Whole (8&quot;)</h3>
             <p>Classic red velvet sponge layered with cream-cheese–infused European-style pastry cream, lighter and smoother than traditional frosting. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.</p><span class="menu-card-price">$65.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="red-velvet-cake-whole-8"
-              data-item-price="65.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Red Velvet Cake – Whole (8&quot;)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('red-velvet-cake-whole-8-quot','Red Velvet Cake – Whole (8&quot;)',65,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/euv1ucjqsnbbjxz8d60k')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -345,15 +244,8 @@
           <div class="menu-card-body">
             <h3>Trilece – Whole</h3>
             <p>Soft milk-soaked sponge topped with caramel glaze and European-style whipped pastry cream. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.</p><span class="menu-card-price">$65.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="trilece-whole"
-              data-item-price="65.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Trilece – Whole"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('trilece-whole','Trilece – Whole',65,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/wz1jzbp6keyq2oj4hyul')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -362,15 +254,8 @@
           <div class="menu-card-body">
             <h3>Fraise Noire</h3>
             <p>Inspired by the elegance of Parisian patisseries, Fraise Noire is a delicate cocoa velvet cake topped with hand-whipped white chocolate cream and glazed fresh strawberries. Crafted in small batches, this dessert captures the charm of a quiet morning in Montmartre — where every bite feels like a soft-spoken secret. Refined, romantic, and unapologetically French La douceur parisienne, chez D’ERA.</p><span class="menu-card-price">$11.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="fraise-noire"
-              data-item-price="11.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Fraise Noire"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('fraise-noire','Fraise Noire',11,'')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -379,15 +264,8 @@
           <div class="menu-card-body">
             <h3>Office Celebration Cake – Corporate Friendly</h3>
             <p>Starting at $55. Pricing varies based on design, size, and theme. Office celebration cakes are available for in-store or phone ordering only. A clean, elegant cake ideal for office events, retirements, promotions, team celebrations, or corporate gatherings. Designs can be kept simple and classic or customized to match company colors.</p><span class="menu-card-price">$55.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="office-celebration-cake-corporate-friendly"
-              data-item-price="55.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Office Celebration Cake – Corporate Friendly"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('office-celebration-cake-corporate-friendly','Office Celebration Cake – Corporate Friendly',55,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/vnvk01kbpyjo0moc14u4')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -396,15 +274,8 @@
           <div class="menu-card-body">
             <h3>Anniversary Cake – Classic Elegance</h3>
             <p>A smooth, elegant cake perfect for celebrating love and special milestones. Available in any of our flavors and customizable with soft floral details, gold/silver accents (optional), or a minimalist modern finish. Custom designs and color themes available upon request. In-store or phone ordering only. Starting at $55. Price varies based on size, flavor, and design.</p><span class="menu-card-price">$55.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="anniversary-cake-classic-elegance"
-              data-item-price="55.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Anniversary Cake – Classic Elegance"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('anniversary-cake-classic-elegance','Anniversary Cake – Classic Elegance',55,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zrdxlpxniaxsz6edplnw')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -413,15 +284,8 @@
           <div class="menu-card-body">
             <h3>Engagement Cake – Floral or Minimalist</h3>
             <p>Starting at $55. Pricing varies based on size, flavor, and design. All custom engagement cakes are available for in-store or phone ordering only. A romantic engagement cake designed with soft florals, pastel tones, or a minimalist smooth finish. Available in any of our signature flavors and customizable with initials, color themes, light piping, or classic white elegance. Perfect for intimate celebrations or upscale engagement dinners.</p><span class="menu-card-price">$55.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="engagement-cake-floral-or-minimalist"
-              data-item-price="55.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Engagement Cake – Floral or Minimalist"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('engagement-cake-floral-or-minimalist','Engagement Cake – Floral or Minimalist',55,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/nbptxkapijqbx4ks22kd')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -430,15 +294,8 @@
           <div class="menu-card-body">
             <h3>Baby Shower Cake – Boy / Girl Theme</h3>
             <p>Starting at $55. Pricing varies based on size, flavor, and decoration. Custom baby shower cakes are available for in-store or phone ordering only. A sweet and elegant baby shower cake available in pink, blue, beige, cream, or any neutral color palette. Choose from soft cloud-style piping, simple fondant accents, or modern minimalist designs. Perfect for celebrating the arrival of your little one.</p><span class="menu-card-price">$55.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="baby-shower-cake-boy-girl-theme"
-              data-item-price="55.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Baby Shower Cake – Boy / Girl Theme"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('baby-shower-cake-boy-girl-theme','Baby Shower Cake – Boy / Girl Theme',55,'')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -447,15 +304,8 @@
           <div class="menu-card-body">
             <h3>Gender Reveal Cake – Surprise Center</h3>
             <p>Starting at $55. Pricing varies based on theme and filling design. Gender reveal cakes are available for in-store or phone ordering only. A classic gender reveal cake with a simple, neutral outer design and optional pink or blue surprise center. Flavors, colors, and decorative accents can be fully customized. Ideal for family gatherings or gender reveal parties.</p><span class="menu-card-price">$55.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="gender-reveal-cake-surprise-center"
-              data-item-price="55.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Gender Reveal Cake – Surprise Center"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('gender-reveal-cake-surprise-center','Gender Reveal Cake – Surprise Center',55,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/kijszqvxllygpmlgk7oq')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -464,15 +314,8 @@
           <div class="menu-card-body">
             <h3>Graduation Cake – School Colors Available</h3>
             <p>Starting at $55. Pricing varies based on size, color theme, and decoration. Graduation cakes are available for in-store or phone ordering only. A celebratory graduation cake customizable with school colors, graduation year, and simple toppers. Available in any flavor. Perfect for class parties, ceremonies, and family celebrations.</p><span class="menu-card-price">$55.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="graduation-cake-school-colors-available"
-              data-item-price="55.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Graduation Cake – School Colors Available"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('graduation-cake-school-colors-available','Graduation Cake – School Colors Available',55,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/akdcvdfppuy4nwfaznpu')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -481,15 +324,8 @@
           <div class="menu-card-body">
             <h3>Wedding Cake – Two Tier</h3>
             <p>Starting at $160. Price varies based on tier size, flavor selection, and design. Two-tier wedding cakes are available for in-store or phone consultation only. An elegant two-tier cake crafted with premium layers and our signature pastry cream. Customize with soft florals, pearls, smooth edges, or modern pastel tones.</p><span class="menu-card-price">$160.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="wedding-cake-two-tier"
-              data-item-price="160.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Wedding Cake – Two Tier"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('wedding-cake-two-tier','Wedding Cake – Two Tier',160,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/ickwlevoisparievygz8')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -498,15 +334,8 @@
           <div class="menu-card-body">
             <h3>Wedding Cake – Three Tier</h3>
             <p>Starting at $250. Price varies based on size, theme, and decoration complexity. Three-tier wedding cakes require in-store or phone consultation only. A luxurious three-tier centerpiece cake designed for weddings and large celebrations. Smooth finish, floral accents, or modern clean-layer design available upon request.</p><span class="menu-card-price">$250.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="wedding-cake-three-tier"
-              data-item-price="250.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Wedding Cake – Three Tier"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('wedding-cake-three-tier','Wedding Cake – Three Tier',250,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/fi2kvczlx0lxqkxuqdhn')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -515,15 +344,8 @@
           <div class="menu-card-body">
             <h3>Wedding Cake – Single Tier (6″ / 8″)</h3>
             <p>Starting at $85. Price varies based on size, flavor, and decoration. Wedding cake orders are available for in-store or phone consultation only. A beautifully smooth single-tier wedding cake perfect for intimate ceremonies, elopements, and small celebrations. Customizable with florals, piping, minimalist white finish, or pastel themes.</p><span class="menu-card-price">$85.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="wedding-cake-single-tier-6-8"
-              data-item-price="85.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Wedding Cake – Single Tier (6″ / 8″)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('wedding-cake-single-tier-6-8','Wedding Cake – Single Tier (6″ / 8″)',85,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/bwyimscsjjcs6wxtkq5t')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -532,15 +354,8 @@
           <div class="menu-card-body">
             <h3>Red Velvet Mini Bundt Cake (6)</h3>
             <p>Individually crafted, ultra-soft red velvet cakes with a delicate powdered sugar finish. Light, rich, and addictive — perfect with coffee or as a shareable dessert.</p><span class="menu-card-price">$27.45</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="red-velvet-mini-bundt-cake-6"
-              data-item-price="27.45"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Red Velvet Mini Bundt Cake (6)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('red-velvet-mini-bundt-cake-6','Red Velvet Mini Bundt Cake (6)',27.45,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/p2tmifkmrwthzixpe2ec')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -555,15 +370,8 @@
           <div class="menu-card-body">
             <h3>Cinnamon Roll (Cream Cheese Frosting)</h3>
             <p>Fluffy cinnamon roll baked with brown sugar cinnamon filling and finished with house-made cream cheese frosting.</p><span class="menu-card-price">$5.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="cinnamon-roll-cream-cheese-frosting"
-              data-item-price="5.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Cinnamon Roll (Cream Cheese Frosting)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('cinnamon-roll-cream-cheese-frosting','Cinnamon Roll (Cream Cheese Frosting)',5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/nkw2qayykqeagz2z5dq1')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -572,15 +380,8 @@
           <div class="menu-card-body">
             <h3>Ham &amp; Swiss Croissant</h3>
             <p>Premium sliced ham and melted Swiss cheese tucked into a buttery croissant. Warm, filling, and perfect for breakfast.</p><span class="menu-card-price">$5.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="ham-swiss-croissant"
-              data-item-price="5.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Ham & Swiss Croissant"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('ham-swiss-croissant','Ham & Swiss Croissant',5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/tqg5lgjipgck0g0avgnv')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -589,15 +390,8 @@
           <div class="menu-card-body">
             <h3>Spinach &amp; Feta Puff</h3>
             <p>Crispy golden puff pastry filled with spinach, feta, herbs, and seasoning. Savory, filling, and vegetarian-friendly.</p><span class="menu-card-price">$5.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="spinach-feta-puff"
-              data-item-price="5.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Spinach & Feta Puff"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('spinach-feta-puff','Spinach & Feta Puff',5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/oakvbv7hiuittmyiaegy')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -606,15 +400,8 @@
           <div class="menu-card-body">
             <h3>Bagel</h3>
             <span class="menu-card-price">$3.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="bagel"
-              data-item-price="3.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Bagel"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('bagel','Bagel',3,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/lhehll5jiw4zfdhqrdko')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -623,15 +410,8 @@
           <div class="menu-card-body">
             <h3>Chocolate Croissant (Pain Au Chocolat)</h3>
             <p>Classic French pain au chocolat baked golden, wrapped around premium dark chocolate batons that melt into soft layers.</p><span class="menu-card-price">$5.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="chocolate-croissant-pain-au-chocolat"
-              data-item-price="5.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Chocolate Croissant (Pain Au Chocolat)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('chocolate-croissant-pain-au-chocolat','Chocolate Croissant (Pain Au Chocolat)',5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/fdtgbz7f4divdumwilvs')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -640,15 +420,8 @@
           <div class="menu-card-body">
             <h3>Cheese Danish</h3>
             <p>Golden Danish pastry filled with smooth, lightly sweetened cream cheese. Buttery, creamy, and perfectly balanced</p><span class="menu-card-price">$5.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="cheese-danish"
-              data-item-price="5.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Cheese Danish"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('cheese-danish','Cheese Danish',5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/wocfxzd7ftwnx5i7u3rc')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -657,15 +430,8 @@
           <div class="menu-card-body">
             <h3>Banana Bread</h3>
             <p>Banana bread with moist banana slices and subtle hints of vanilla, topped with crushed walnuts.</p><span class="menu-card-price">$7.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="banana-bread"
-              data-item-price="7.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Banana Bread"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('banana-bread','Banana Bread',7,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/xpcvqafx0wrkbipknbys')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -674,15 +440,8 @@
           <div class="menu-card-body">
             <h3>Butter Croissant</h3>
             <p>Flaky, buttery French croissant baked fresh daily.</p><span class="menu-card-price">$5.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="butter-croissant"
-              data-item-price="5.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Butter Croissant"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('butter-croissant','Butter Croissant',5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zi6uodo16gmkn9yyd8qs')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -691,15 +450,8 @@
           <div class="menu-card-body">
             <h3>Almond Croissant</h3>
             <p>Buttery laminated croissant filled with rich house-made almond frangipane and finished with golden toasted almonds. Slightly sweet and aromatic.</p><span class="menu-card-price">$5.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="almond-croissant"
-              data-item-price="5.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Almond Croissant"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('almond-croissant','Almond Croissant',5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/bqxu8cljcvuzmmuaftrj')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -708,15 +460,8 @@
           <div class="menu-card-body">
             <h3>Bagel w Cream Cheese + Large Coffee</h3>
             <span class="menu-card-price">$9.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="bagel-w-cream-cheese-large-coffee"
-              data-item-price="9.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Bagel w Cream Cheese + Large Coffee"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('bagel-w-cream-cheese-large-coffee','Bagel w Cream Cheese + Large Coffee',9,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/pgsug31hj4mxrvftwsyn')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -731,15 +476,8 @@
           <div class="menu-card-body">
             <h3>Profiteroles</h3>
             <p>Cream puff decorated with rich chocolate sauce</p><span class="menu-card-price">$9.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="profiteroles"
-              data-item-price="9.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Profiteroles"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('profiteroles','Profiteroles',9,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/inae3ifjh8pzqg9pdu32')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -748,15 +486,8 @@
           <div class="menu-card-body">
             <h3>Fruit Tart (5)</h3>
             <p>Five fresh fruit tarts topped with a colorful mix of kiwi, strawberry, raspberry, blackberry, and banana. A perfect sweet treat to share or enjoy all to yourself.</p><span class="menu-card-price">$15.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="fruit-tart-5"
-              data-item-price="15.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Fruit Tart (5)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('fruit-tart-5','Fruit Tart (5)',15,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/qand0edqubp6etbzoreu')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -765,15 +496,8 @@
           <div class="menu-card-body">
             <h3>Chocolate Covered Strawberries (5)</h3>
             <p>Fresh strawberries dipped in rich chocolate, offering a delightful balance of sweetness and indulgence. (5 pieces)</p><span class="menu-card-price">$15.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="chocolate-covered-strawberries-5"
-              data-item-price="15.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Chocolate Covered Strawberries (5)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('chocolate-covered-strawberries-5','Chocolate Covered Strawberries (5)',15,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/qnmdk5dpammtz7ejgbhh')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -782,15 +506,8 @@
           <div class="menu-card-body">
             <h3>Dubai Chocolate</h3>
             <p>Rich, creamy chocolate bars crafted with premium ingredients, offering a smooth and decadent treat.</p><span class="menu-card-price">$17.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="dubai-chocolate"
-              data-item-price="17.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Dubai Chocolate"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('dubai-chocolate','Dubai Chocolate',17,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/jvddovatnnkghlcpoqqe')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -799,15 +516,8 @@
           <div class="menu-card-body">
             <h3>Macarons (4)</h3>
             <span class="menu-card-price">$11.99</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="macarons-4"
-              data-item-price="11.99"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Macarons (4)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('macarons-4','Macarons (4)',11.99,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/odtgylqvknbladgxsf3p')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -816,15 +526,8 @@
           <div class="menu-card-body">
             <h3>Banana Pudding</h3>
             <p>A rich, dreamy banana pudding made the NYC way – layered with fresh banana slices, fluffy vanilla pudding, and crispy vanilla wafers. Handcrafted in small batches. Served chilled. Limited daily quantity – always fresh!</p><span class="menu-card-price">$11.95</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="banana-pudding"
-              data-item-price="11.95"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Banana Pudding"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('banana-pudding','Banana Pudding',11.95,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zfn7bom8lfh1bklk9rxg')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -839,15 +542,8 @@
           <div class="menu-card-body">
             <h3>Oreo Cheesecake – Slice</h3>
             <span class="menu-card-price">$11.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="oreo-cheesecake-slice"
-              data-item-price="11.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Oreo Cheesecake – Slice"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('oreo-cheesecake-slice','Oreo Cheesecake – Slice',11,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/juul8bvqmz9t3nbn3xvw')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -856,15 +552,8 @@
           <div class="menu-card-body">
             <h3>New York Cheesecake – Whole (8″)</h3>
             <p>Creamy whole cheesecake blended with our signature European-style whipped pastry cream for a silky, luxurious texture. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary</p><span class="menu-card-price">$90.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="new-york-cheesecake-whole-8"
-              data-item-price="90.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="New York Cheesecake – Whole (8″)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('new-york-cheesecake-whole-8','New York Cheesecake – Whole (8″)',90,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zmflgpqcuid4jg6ajrgs')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -873,15 +562,8 @@
           <div class="menu-card-body">
             <h3>Strawberry Cheesecake – Whole (8″)</h3>
             <p>Creamy cheesecake topped with house-made strawberry sauce and blended with European-style whipped pastry cream. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.</p><span class="menu-card-price">$90.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="strawberry-cheesecake-whole-8"
-              data-item-price="90.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Strawberry Cheesecake – Whole (8″)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('strawberry-cheesecake-whole-8','Strawberry Cheesecake – Whole (8″)',90,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/qhwx2aqywj3zl3mbgitz')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -890,15 +572,8 @@
           <div class="menu-card-body">
             <h3>Oreo Cheesecake – Whole (8″)</h3>
             <p>Silky Oreo cheesecake blended with our European-style whipped Oreo pastry cream and topped with crushed Oreos. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.</p><span class="menu-card-price">$90.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="oreo-cheesecake-whole-8"
-              data-item-price="90.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Oreo Cheesecake – Whole (8″)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('oreo-cheesecake-whole-8','Oreo Cheesecake – Whole (8″)',90,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/mwjc3sucywtq4bwo2oxj')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -907,15 +582,8 @@
           <div class="menu-card-body">
             <h3>New York Cheesecake-Slice</h3>
             <p>Creamy New York–style cheesecake blended with our signature European-style whipped pastry cream for a silky, smooth finish. Light vanilla aroma, rich texture, baked fresh in-house.</p><span class="menu-card-price">$11.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="new-york-cheesecake-slice"
-              data-item-price="11.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="New York Cheesecake-Slice"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('new-york-cheesecake-slice','New York Cheesecake-Slice',11,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/igcgmv7qobv3jucburrm')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -924,15 +592,8 @@
           <div class="menu-card-body">
             <h3>Strawberry Cheesecake – Slice</h3>
             <p>Silky cheesecake topped with house-made strawberry sauce and finished with a touch of European-style whipped pastry cream. Creamy, fruity, and perfectly balanced.</p><span class="menu-card-price">$11.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="strawberry-cheesecake-slice"
-              data-item-price="11.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Strawberry Cheesecake – Slice"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('strawberry-cheesecake-slice','Strawberry Cheesecake – Slice',11,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/jljbfkm5nvagot0gflmi')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -941,15 +602,8 @@
           <div class="menu-card-body">
             <h3>M&amp;M Cheesecake – Whole ( 8″)</h3>
             <p>Creamy vanilla cheesecake mixed with crunchy chocolate M&amp;Ms and topped with European-style whipped vanilla pastry cream. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.</p><span class="menu-card-price">$90.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="mm-cheesecake-whole-8"
-              data-item-price="90.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="M&M Cheesecake – Whole ( 8″)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('m-m-cheesecake-whole-8','M&M Cheesecake – Whole ( 8″)',90,'')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -958,15 +612,8 @@
           <div class="menu-card-body">
             <h3>M&amp;M Cheesecake – Slice</h3>
             <p>Creamy vanilla cheesecake swirled with chocolate M&amp;Ms and topped with our signature European-style vanilla pastry cream, adding a smooth finish to the crunchy-chocolate texture. Fun, colorful, and kid-friendly.</p><span class="menu-card-price">$11.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="mm-cheesecake-slice"
-              data-item-price="11.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="M&M Cheesecake – Slice"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('m-m-cheesecake-slice','M&M Cheesecake – Slice',11,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zxgknbrhng9jhny2txfx')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -981,15 +628,8 @@
           <div class="menu-card-body">
             <h3>Diet Coke (Can)</h3>
             <span class="menu-card-price">$4.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="diet-coke-can"
-              data-item-price="4.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Diet Coke (Can)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('diet-coke-can','Diet Coke (Can)',4,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/z1vvuomu9hty8bosqctl')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -998,15 +638,8 @@
           <div class="menu-card-body">
             <h3>Coke (Can)</h3>
             <span class="menu-card-price">$2.50</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="coke-can"
-              data-item-price="2.50"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Coke (Can)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('coke-can','Coke (Can)',2.5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/to6wvjnndecpdeo7quoc')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -1015,15 +648,8 @@
           <div class="menu-card-body">
             <h3>Sprite (Can)</h3>
             <span class="menu-card-price">$2.50</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="sprite-can"
-              data-item-price="2.50"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Sprite (Can)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('sprite-can','Sprite (Can)',2.5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/xwirjlylmqn1x1hokke7')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -1032,15 +658,8 @@
           <div class="menu-card-body">
             <h3>Water</h3>
             <span class="menu-card-price">$1.50</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="water"
-              data-item-price="1.50"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Water"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('water','Water',1.5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/yekmqv2lslc6k4taev0i')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -1049,15 +668,8 @@
           <div class="menu-card-body">
             <h3>Turkish Tea</h3>
             <p>Freshly brewed Turkish black tea</p><span class="menu-card-price">$5.50</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="turkish-tea"
-              data-item-price="5.50"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Turkish Tea"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('turkish-tea','Turkish Tea',5.5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/te8hjxxjqkwt8jsctth3')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -1066,15 +678,8 @@
           <div class="menu-card-body">
             <h3>Hot Chocolate</h3>
             <p>Rich chocolate drink with steamed milk, topped with whipped cream and a sprinkle of cocoa powder.</p><span class="menu-card-price">$6.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="hot-chocolate"
-              data-item-price="6.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Hot Chocolate"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('hot-chocolate','Hot Chocolate',6,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zhenxcmqiacdzc1ylizo')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -1083,15 +688,8 @@
           <div class="menu-card-body">
             <h3>Dr Pepper (Can)</h3>
             <span class="menu-card-price">$4.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="dr-pepper-can"
-              data-item-price="4.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Dr Pepper (Can)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('dr-pepper-can','Dr Pepper (Can)',4,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/m8ecv4huezhrmonsukeq')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -1100,15 +698,8 @@
           <div class="menu-card-body">
             <h3>Canary Dry (Can)</h3>
             <span class="menu-card-price">$4.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="canary-dry-can"
-              data-item-price="4.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Canary Dry (Can)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('canary-dry-can','Canary Dry (Can)',4,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/gpreebx9oxolqbpz9tae')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -1117,15 +708,8 @@
           <div class="menu-card-body">
             <h3>Iced Latte</h3>
             <span class="menu-card-price">$6.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="iced-latte"
-              data-item-price="6.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Iced Latte"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('iced-latte','Iced Latte',6,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/rvpejbzraredx0oosn7g')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -1134,15 +718,8 @@
           <div class="menu-card-body">
             <h3>Cafe Latte</h3>
             <p>Rich espresso blended with steamed milk, topped with a layer of frothy foam.</p><span class="menu-card-price">$6.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="cafe-latte"
-              data-item-price="6.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Cafe Latte"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('cafe-latte','Cafe Latte',6,'')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -1151,15 +728,8 @@
           <div class="menu-card-body">
             <h3>Americano</h3>
             <p>Bold espresso blended with hot water for a smooth, balanced coffee experience.</p><span class="menu-card-price">$5.50</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="americano"
-              data-item-price="5.50"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Americano"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('americano','Americano',5.5,'')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -1168,15 +738,8 @@
           <div class="menu-card-body">
             <h3>Mountain Dew (Can)</h3>
             <span class="menu-card-price">$4.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="mountain-dew-can"
-              data-item-price="4.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Mountain Dew (Can)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('mountain-dew-can','Mountain Dew (Can)',4,'')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -1185,15 +748,8 @@
           <div class="menu-card-body">
             <h3>Cappucino</h3>
             <span class="menu-card-price">$6.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="cappucino"
-              data-item-price="6.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Cappucino"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('cappucino','Cappucino',6,'')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -1202,16 +758,7 @@
           <div class="menu-card-body">
             <h3>Fresh Fruit Basket / Fruit Platter</h3>
             <p>Beautifully arranged seasonal fruits. Perfect for birthdays, anniversaries, parties, and corporate events. Designs vary by season. Customization available in-store or by phone.</p><span class="menu-card-price">$0.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="fresh-fruit-basket-fruit-platter"
-              data-item-price="0.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Fresh Fruit Basket / Fruit Platter"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
-            </button>
+            
           </div>
         </div>
       </div>
@@ -1225,15 +772,8 @@
           <div class="menu-card-body">
             <h3>Nutella Swirl Cupcake</h3>
             <p>Chocolate-hazelnut cupcake swirled with Nutella and topped with our Nutella-infused European-style pastry cream, creating the smoothest, richest Nutella frosting possible. A bestseller.</p><span class="menu-card-price">$4.50</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="nutella-swirl-cupcake"
-              data-item-price="4.50"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Nutella Swirl Cupcake"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('nutella-swirl-cupcake','Nutella Swirl Cupcake',4.5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/n1cm0ccrqj8pjeym3gzy')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -1242,15 +782,8 @@
           <div class="menu-card-body">
             <h3>Vanilla Bean Cupcake</h3>
             <p>Soft vanilla sponge topped with our signature European-style vanilla pastry cream, whipped into a silky buttercream-like texture. Light, elegant, and aromatic, a classic elevated to a luxury level.</p><span class="menu-card-price">$4.50</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="vanilla-bean-cupcake"
-              data-item-price="4.50"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Vanilla Bean Cupcake"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('vanilla-bean-cupcake','Vanilla Bean Cupcake',4.5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/rdo8mwjyds4zcyzfuiaw')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -1259,15 +792,8 @@
           <div class="menu-card-body">
             <h3>Red Velvet Cupcake</h3>
             <p>Moist red velvet cake topped with a cream-cheese–infused European-style pastry cream, creating a lighter, silkier version of classic cream cheese frosting. Smooth, elegant, and perfectly balanced.</p><span class="menu-card-price">$4.50</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="red-velvet-cupcake"
-              data-item-price="4.50"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Red Velvet Cupcake"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('red-velvet-cupcake','Red Velvet Cupcake',4.5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/u1luogwiguso5idbvqef')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -1276,15 +802,8 @@
           <div class="menu-card-body">
             <h3>Carrot Cake Cupcake</h3>
             <p>Spiced carrot sponge topped with our cream-cheese European-style pastry cream, giving a velvety, lighter twist to traditional carrot cake frosting. Warm spices and creamy finish</p><span class="menu-card-price">$4.50</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="carrot-cake-cupcake"
-              data-item-price="4.50"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Carrot Cake Cupcake"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('carrot-cake-cupcake','Carrot Cake Cupcake',4.5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/tk4v9bydihebdcxtro5g')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -1299,15 +818,8 @@
           <div class="menu-card-body">
             <h3>Cookie Box (8-pack)</h3>
             <p>An assortment of eight cookies featuring chocolate chip</p><span class="menu-card-price">$30.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="cookie-box-8-pack"
-              data-item-price="30.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Cookie Box (8-pack)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('cookie-box-8-pack','Cookie Box (8-pack)',30,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/sdk1eoclrzht7vji8yqt')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -1316,15 +828,8 @@
           <div class="menu-card-body">
             <h3>Chocolate Chip Cookie</h3>
             <p>Rich chocolate chunks in a classic, chewy cookie.</p><span class="menu-card-price">$4.50</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="chocolate-chip-cookie"
-              data-item-price="4.50"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Chocolate Chip Cookie"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('chocolate-chip-cookie','Chocolate Chip Cookie',4.5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/cylajmd3nabbnnnfhidi')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -1333,15 +838,8 @@
           <div class="menu-card-body">
             <h3>White Chocolate Cookie</h3>
             <p>Soft cookie with chunks of sweet white chocolate.</p><span class="menu-card-price">$4.50</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="white-chocolate-cookie"
-              data-item-price="4.50"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="White Chocolate Cookie"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('white-chocolate-cookie','White Chocolate Cookie',4.5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/uojcui9bykdyhbzcy64r')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -1356,15 +854,8 @@
           <div class="menu-card-body">
             <h3>Pistachio Baklava (4 pcs)</h3>
             <p>Layered pastry with finely chopped pistachios and sweet syrup, served as four pieces</p><span class="menu-card-price">$9.50</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="pistachio-baklava-4-pcs"
-              data-item-price="9.50"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Pistachio Baklava (4 pcs)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('pistachio-baklava-4-pcs','Pistachio Baklava (4 pcs)',9.5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/z1w9avapv1kcmuv2qkt3')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -1373,15 +864,8 @@
           <div class="menu-card-body">
             <h3>Walnut Baklava (4 pcs)</h3>
             <p>Layers of phyllo dough, honey, and walnuts. Four pieces per serving.</p><span class="menu-card-price">$9.50</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="walnut-baklava-4-pcs"
-              data-item-price="9.50"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Walnut Baklava (4 pcs)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('walnut-baklava-4-pcs','Walnut Baklava (4 pcs)',9.5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/pxofrtrpj3jz7vtwlan1')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -1390,15 +874,8 @@
           <div class="menu-card-body">
             <h3>Cold Pistachio Baklava (Soğuk Baklava) (4pcs)</h3>
             <p>Chilled pistachio baklava topped with light chocolate dusting and cold milk syrup.</p><span class="menu-card-price">$9.50</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="cold-pistachio-baklava-souk-baklava-4pcs"
-              data-item-price="9.50"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Cold Pistachio Baklava (Soğuk Baklava) (4pcs)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('cold-pistachio-baklava-so-uk-baklava-4pcs','Cold Pistachio Baklava (Soğuk Baklava) (4pcs)',9.5,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/pu8epirxl02tavrqvqzz')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -1407,15 +884,8 @@
           <div class="menu-card-body">
             <h3>Carrot Slice Baklava (Havuç Dilim)</h3>
             <p>Premium pistachio-filled baklava prepared in the traditional “carrot slice” style. Ultra-thin phyllo layers, clarified butter, and a rich pistachio center create a crisp, delicate, and elegant dessert. A classic specialty for baklava lovers.</p><span class="menu-card-price">$7.95</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="carrot-slice-baklava-havu-dilim"
-              data-item-price="7.95"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Carrot Slice Baklava (Havuç Dilim)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('carrot-slice-baklava-havu-dilim','Carrot Slice Baklava (Havuç Dilim)',7.95,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zf64kdvdy0f50q7ebapo')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -1430,16 +900,7 @@
           <div class="menu-card-body">
             <h3>Custom Gift Sets</h3>
             <p>Beautifully curated gift sets customized for any occasion birthdays, anniversaries, baby showers, graduations, thank-you gifts, holidays, corporate events, and more. Each box is fully adjustable: choose your preferred treats, colors, themes, and size. Perfect for last-minute gifting. Customization and pricing vary by selection.</p><span class="menu-card-price">$0.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="custom-gift-sets"
-              data-item-price="0.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Custom Gift Sets"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
-            </button>
+            
           </div>
         </div>
         <div class="menu-card">
@@ -1447,16 +908,7 @@
           <div class="menu-card-body">
             <h3>Stuffed Dates/ Filled Dates</h3>
             <p>Fresh premium dates filled to your choice. Fully customizable flavors, fillings, toppings and quantities can be adjusted. If you have any special requests or large orders, please call the store or visit the store.</p><span class="menu-card-price">$0.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="stuffed-dates-filled-dates"
-              data-item-price="0.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Stuffed Dates/ Filled Dates"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
-            </button>
+            
           </div>
         </div>
       </div>
@@ -1470,15 +922,8 @@
           <div class="menu-card-body">
             <h3>Pumpkin Pie – Whole (9&quot;)</h3>
             <p>A smooth and creamy pumpkin pie baked with warm fall spices and a silky custard filling. Available in 9-inch (serves 6–8) and 12-inch (serves 10–14) sizes. Perfect for Thanksgiving tables, holiday dinners, or family gatherings. Seasonal item – limited availability. Pre-order recommended.</p><span class="menu-card-price">$35.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="pumpkin-pie-whole-9"
-              data-item-price="35.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Pumpkin Pie – Whole (9&quot;)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('pumpkin-pie-whole-9-quot','Pumpkin Pie – Whole (9&quot;)',35,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/mmml8vfwfvuqadatyooi')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -1487,15 +932,8 @@
           <div class="menu-card-body">
             <h3>Pumpkin Pie – Whole ( 12″)</h3>
             <p>A smooth and creamy pumpkin pie baked with warm fall spices and a silky custard filling. Available in 9-inch (serves 6–8) and 12-inch (serves 10–14) sizes. Perfect for Thanksgiving tables, holiday dinners, or family gatherings. Seasonal item – limited availability. Pre-order recommended for the 12″ size.</p><span class="menu-card-price">$45.00</span>
-            <button
-              class="snipcart-add-item snipcart-add-item-btn"
-              data-item-id="pumpkin-pie-whole-12"
-              data-item-price="45.00"
-              data-item-url="https://derapastryhouse.com/products.html"
-              data-item-name="Pumpkin Pie – Whole ( 12″)"
-              data-item-custom1-name="Pickup Note"
-              data-item-custom1-placeholder="When will you pick up? (e.g. Today 3pm)">
-              + Add to Cart
+            <button class="add-to-cart-btn" onclick="deraCart.add('pumpkin-pie-whole-12','Pumpkin Pie – Whole ( 12″)',45,'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/mmml8vfwfvuqadatyooi')">
+              + Add to Order
             </button>
           </div>
         </div>
@@ -1558,13 +996,6 @@
   <script>(function(){const t=document.querySelector('.menu-toggle'),c=document.querySelectorAll('[data-drawer-close]');if(!t)return;function o(){document.body.classList.add('menu-open');t.setAttribute('aria-expanded','true');}function cl(){document.body.classList.remove('menu-open');t.setAttribute('aria-expanded','false');}t.addEventListener('click',()=>document.body.classList.contains('menu-open')?cl():o());c.forEach(el=>el.addEventListener('click',cl));document.addEventListener('keydown',(e)=>{if(e.key==='Escape')cl();});})();</script>
   <a href="https://wa.me/12019239776" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" loading="lazy"></a>
   <script src="animations.min.js"></script>
-
-  <!-- Snipcart -->
-  <div hidden id="snipcart"
-    data-api-key="YOUR_SNIPCART_PUBLIC_API_KEY"
-    data-config-modal-style="side"
-    data-currency="usd">
-  </div>
-  <script async src="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.js"></script>
+  <script src="cart.js"></script>
 </body>
 </html>
