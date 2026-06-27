@@ -36,11 +36,12 @@
     .menu-category { max-width:1100px; margin:0 auto 3.5rem; }
     .menu-category h2 { font-family:'Playfair Display',serif; color:#fff; font-size:clamp(1.3rem,3vw,1.7rem); margin-bottom:1.5rem; padding-bottom:0.5rem; border-bottom:2px solid rgba(255,255,255,0.2); display:flex; align-items:center; gap:0.6rem; }
     .menu-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1.4rem; }
-    .menu-card { background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.12); transition:transform 0.3s,box-shadow 0.3s; }
+    .menu-card { background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.12); transition:transform 0.3s,box-shadow 0.3s; display:flex; flex-direction:column; }
     .menu-card:hover { transform:translateY(-5px); box-shadow:0 14px 32px rgba(0,0,0,0.18); }
     .menu-card img { width:100%; height:200px; object-fit:cover; display:block; transition:transform 0.4s; }
     .menu-card:hover img { transform:scale(1.05); }
-    .menu-card-body { padding:1rem 1.2rem 1.3rem; }
+    .menu-card-body { padding:1rem 1.2rem 1.3rem; flex:1; display:flex; flex-direction:column; }
+    .menu-card-body .add-to-cart-btn { margin-top:auto; }
     .menu-card-body h3 { font-family:'Playfair Display',serif; color:#1c1c1c; font-size:1.08rem; margin-bottom:0.3rem; }
     .menu-card-body p { color:#555; font-size:0.9rem; line-height:1.55; margin:0 0 0.6rem; }
     .menu-card-body .tag { display:inline-block; background:#f0f7f1; color:#355E3B; font-size:0.78rem; font-weight:700; padding:3px 10px; border-radius:999px; font-family:'Open Sans',sans-serif; }
