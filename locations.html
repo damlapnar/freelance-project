@@ -20,6 +20,8 @@
   <meta name="theme-color" content="#355E3B">
   <link rel="stylesheet" href="styles.min.css">
   <link rel="stylesheet" href="animations.min.css">
+  <!-- Snipcart -->
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&amp;family=Open+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
   <style>
     .locations-page { background:#355E3B; padding:3rem 1.5rem 4rem; }
@@ -52,6 +54,11 @@
       <nav><ul>
         <li><a href="index.html">Home</a></li><li><a href="products.html">Menu</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="about.html">About</a></li><li><a href="locations.html" class="nav-active">Locations</a></li><li><a href="contact.html">Contact</a></li>
       </ul></nav>
+      <button class="snipcart-checkout cart-nav-btn" aria-label="View cart">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="snipcart-items-count"></span>
+      </button>
+      
       <a href="https://www.grubhub.com/restaurant/dera-pastry-house-1076-main-ave-clifton/12091408" class="cta" target="_blank" rel="noopener noreferrer">Order Now</a>
     </div>
   </header>
@@ -92,5 +99,13 @@
   <script>(function(){const t=document.querySelector('.menu-toggle'),c=document.querySelectorAll('[data-drawer-close]');if(!t)return;function o(){document.body.classList.add('menu-open');t.setAttribute('aria-expanded','true');}function cl(){document.body.classList.remove('menu-open');t.setAttribute('aria-expanded','false');}t.addEventListener('click',()=>document.body.classList.contains('menu-open')?cl():o());c.forEach(el=>el.addEventListener('click',cl));document.addEventListener('keydown',(e)=>{if(e.key==='Escape')cl();});})();</script>
   <a href="https://wa.me/12019239776" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" loading="lazy"></a>
   <script src="animations.min.js"></script>
+
+  <!-- Snipcart -->
+  <div hidden id="snipcart"
+    data-api-key="YOUR_SNIPCART_PUBLIC_API_KEY"
+    data-config-modal-style="side"
+    data-currency="usd">
+  </div>
+  <script async src="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.js"></script>
 </body>
 </html>
