@@ -169,7 +169,12 @@
     document.getElementById('checkout-hidden-order').value = summary;
     document.getElementById('checkout-hidden-total').value = '$' + total.toFixed(2);
 
-    document.getElementById('dera-checkout-modal').classList.add('open');
+    const modal = document.getElementById('dera-checkout-modal');
+    modal.classList.add('open');
+    setTimeout(function () {
+      const first = modal.querySelector('input:not([type="hidden"]), select, textarea');
+      if (first) first.focus();
+    }, 50);
   }
   function closeCheckout() {
     const m = document.getElementById('dera-checkout-modal');
@@ -241,24 +246,24 @@
       <input type="hidden" id="checkout-hidden-order" name="Order">
       <input type="hidden" id="checkout-hidden-total" name="Total">
       <div class="co-field">
-        <label>Your Name *</label>
-        <input type="text" name="name" required placeholder="Jane Smith">
+        <label for="co-name">Your Name *</label>
+        <input id="co-name" type="text" name="name" required placeholder="Jane Smith">
       </div>
       <div class="co-field">
-        <label>Email</label>
-        <input type="email" name="email" required placeholder="jane@email.com">
+        <label for="co-email">Email *</label>
+        <input id="co-email" type="email" name="email" required placeholder="jane@email.com">
       </div>
       <div class="co-field">
-        <label>Phone</label>
-        <input type="tel" name="Phone" placeholder="(201) 555-0000">
+        <label for="co-phone">Phone</label>
+        <input id="co-phone" type="tel" name="Phone" placeholder="(201) 555-0000">
       </div>
       <div class="co-field">
-        <label>Pickup Date &amp; Time *</label>
-        <input type="text" name="Pickup" required placeholder="e.g. Tomorrow at 3pm">
+        <label for="co-pickup">Pickup Date &amp; Time *</label>
+        <input id="co-pickup" type="text" name="Pickup" required placeholder="e.g. Tomorrow at 3pm">
       </div>
       <div class="co-field">
-        <label>Special Instructions</label>
-        <textarea name="Notes" rows="2" placeholder="Allergies, decorations, etc."></textarea>
+        <label for="co-notes">Special Instructions</label>
+        <textarea id="co-notes" name="Notes" rows="2" placeholder="Allergies, decorations, etc."></textarea>
       </div>
       <button type="submit" class="co-submit-btn">Place Order &mdash; Pay at Pickup</button>
     </form>
@@ -296,6 +301,14 @@
       });
     });
   }
+
+  /* ── KEYBOARD ── */
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    const modal = document.getElementById('dera-checkout-modal');
+    if (modal && modal.classList.contains('open')) { closeCheckout(); return; }
+    closeSidebar();
+  });
 
   /* ── INIT ── */
   document.addEventListener('DOMContentLoaded', function () {
