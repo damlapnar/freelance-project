@@ -127,6 +127,19 @@
     .custom-order-strip-btn:hover { transform:translateY(-2px); box-shadow:0 8px 22px rgba(0,0,0,0.2); }
     @media(max-width:600px){ .custom-order-strip-inner { flex-direction:column; text-align:center; } .custom-order-strip h2 { text-align:center; } }
 
+    /* ── NEWSLETTER ── */
+    .newsletter-section { background:linear-gradient(135deg, #355E3B 0%, #2a4a30 100%); padding:60px 24px; }
+    .newsletter-container { max-width:600px; margin:0 auto; text-align:center; }
+    .newsletter-section h2 { font-family:'Playfair Display',serif; color:#fff; font-size:clamp(1.5rem,4vw,2rem); margin-bottom:0.8rem; }
+    .newsletter-section > p { color:rgba(255,255,255,0.88); font-size:1rem; margin-bottom:1.8rem; line-height:1.6; }
+    .newsletter-form { display:flex; gap:0.5rem; margin-bottom:1rem; flex-wrap:wrap; justify-content:center; }
+    .newsletter-form input { flex:1; min-width:220px; padding:0.85rem 1rem; border:none; border-radius:10px; font-family:'Open Sans',sans-serif; font-size:0.95rem; background:#fff; color:#222; }
+    .newsletter-form input::placeholder { color:#999; }
+    .newsletter-btn { background:#fff; color:#355E3B; font-family:'Open Sans',sans-serif; font-weight:700; padding:0.85rem 1.8rem; border:none; border-radius:10px; cursor:pointer; white-space:nowrap; transition:transform 0.2s,box-shadow 0.2s; box-shadow:0 4px 12px rgba(0,0,0,0.15); }
+    .newsletter-btn:hover { transform:translateY(-2px); box-shadow:0 6px 16px rgba(0,0,0,0.2); }
+    .newsletter-note { font-size:0.85rem; color:rgba(255,255,255,0.7); margin:0; }
+    @media(max-width:600px){ .newsletter-form { flex-direction:column; } .newsletter-form input { min-width:auto; } }
+
     /* Dark mode overrides */
     [data-theme="dark"] .specials, [data-theme="dark"] .how-to-order { background:#1e3520; }
     [data-theme="dark"] .specials h2, [data-theme="dark"] .how-to-order h2, [data-theme="dark"] .faq-section h2 { color:#e8f5e9; }
@@ -142,6 +155,14 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Bakery","name":"D'era House","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"87","bestRating":"5"},"url":"https://derapastryhouse.com/","telephone":"+12019239776","address":{"@type":"PostalAddress","streetAddress":"1076 Main Ave","addressLocality":"Clifton","addressRegion":"NJ","postalCode":"07011","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"20:00"}],"sameAs":["https://instagram.com/derahousenj","https://www.yelp.com/biz/d-era-pastry-house-clifton"],"servesCuisine":["Desserts","Bakery"]}
   </script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true });
+  </script>
 </head>
 <body>
 
@@ -154,6 +175,7 @@
       <nav><ul>
         <li><a href="index.html" class="nav-active">Home</a></li>
         <li><a href="products.html">Menu</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="locations.html">Locations</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -352,6 +374,19 @@
         <a href="custom-order.html" class="custom-order-strip-btn">Request a Custom Order</a>
       </div>
     </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter-section">
+      <div class="newsletter-container">
+        <h2>Stay Sweet with Our Updates</h2>
+        <p>Get first dibs on seasonal items, specials, and new flavors. Plus, 10% off your next order when you subscribe.</p>
+        <form id="newsletterForm" class="newsletter-form">
+          <input type="email" id="newsletter-email" name="email" placeholder="your@email.com" required>
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+        <p class="newsletter-note">We respect your inbox. Unsubscribe anytime.</p>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -395,6 +430,7 @@
     <nav class="mobile-drawer__nav">
       <a href="index.html">Home <span>›</span></a>
       <a href="products.html">Menu <span>›</span></a>
+      <a href="gallery.html">Gallery <span>›</span></a>
       <a href="about.html">About <span>›</span></a>
       <a href="locations.html">Locations <span>›</span></a>
       <a href="contact.html">Contact <span>›</span></a>
@@ -406,6 +442,26 @@
   <script>
     (function(){const t=document.querySelector('.menu-toggle'),c=document.querySelectorAll('[data-drawer-close]');if(!t)return;function o(){document.body.classList.add('menu-open');t.setAttribute('aria-expanded','true');}function cl(){document.body.classList.remove('menu-open');t.setAttribute('aria-expanded','false');}t.addEventListener('click',()=>document.body.classList.contains('menu-open')?cl():o());c.forEach(el=>el.addEventListener('click',cl));document.addEventListener('keydown',(e)=>{if(e.key==='Escape')cl();});})();
     document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',()=>{const a=btn.nextElementSibling,open=btn.getAttribute('aria-expanded')==='true';document.querySelectorAll('.faq-q').forEach(b=>{b.setAttribute('aria-expanded','false');b.nextElementSibling.classList.remove('open');});if(!open){btn.setAttribute('aria-expanded','true');a.classList.add('open');}});});
+    const nlForm = document.getElementById('newsletterForm');
+    if(nlForm) {
+      nlForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('newsletter-email').value;
+        const btn = nlForm.querySelector('button');
+        const originalText = btn.textContent;
+        btn.textContent = 'Subscribed! ✓';
+        btn.disabled = true;
+        nlForm.style.opacity = '0.7';
+        setTimeout(() => {
+          nlForm.reset();
+          btn.textContent = originalText;
+          btn.disabled = false;
+          nlForm.style.opacity = '1';
+          btn.textContent = 'Thank you! 🎉';
+          setTimeout(() => { btn.textContent = originalText; }, 2000);
+        }, 1500);
+      });
+    }
   </script>
   <a href="https://wa.me/12019239776" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" loading="lazy">
