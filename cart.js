@@ -164,7 +164,7 @@
     const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
     const summary = cart.map(i => `${i.qty}x ${i.name} ($${(i.price * i.qty).toFixed(2)})`).join('\n');
 
-    document.getElementById('checkout-order-summary').textContent = summary;
+    document.getElementById('checkout-order-summary').innerHTML = cart.map(i => `<p role="listitem" style="margin:0 0 .2rem">${esc(i.qty + 'x ' + i.name)} — $${(i.price * i.qty).toFixed(2)}</p>`).join('');
     document.getElementById('checkout-total').textContent = '$' + total.toFixed(2);
     document.getElementById('checkout-hidden-order').value = summary;
     document.getElementById('checkout-hidden-total').value = '$' + total.toFixed(2);
@@ -235,7 +235,7 @@
     <button class="checkout-close" onclick="closeCheckout()" aria-label="Close">&#x2715;</button>
     <h2>Place Your Order</h2>
     <div class="checkout-summary-wrap">
-      <pre id="checkout-order-summary" class="checkout-summary"></pre>
+      <div id="checkout-order-summary" class="checkout-summary" role="list" aria-label="Order items"></div>
       <p class="checkout-total-line">Total: <strong id="checkout-total">$0.00</strong></p>
       <p class="checkout-pay-note">&#x1F4B5; You'll pay at pickup. No charge now.</p>
     </div>
