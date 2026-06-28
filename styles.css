@@ -490,6 +490,12 @@ button:hover {
     bottom: 90px;
     right: 18px;
   }
+
+  /* Section-specific h2 — class selector genel h2 media query'yi eziyor, burada override */
+  .specials h2 { font-size: 1.7rem; }
+  .instagram-title { font-size: 1.6rem; }
+  .how-to-order h2 { font-size: 1.6rem; }
+  .faq-section h2 { font-size: 1.6rem; }
 }
 
 @media (max-width: 480px) {
@@ -498,6 +504,10 @@ button:hover {
   p { font-size: 0.95rem; }
   .hero-text { font-size: 1.4rem; }
   .product-card img { height: 180px; }
+  .specials h2 { font-size: 1.35rem; }
+  .instagram-title { font-size: 1.35rem; }
+  .how-to-order h2 { font-size: 1.35rem; }
+  .faq-section h2 { font-size: 1.35rem; }
 }
 
 /* =========================
