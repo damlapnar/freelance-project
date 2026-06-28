@@ -737,6 +737,10 @@ body.menu-open {
 @media (max-width: 480px) {
   .mobile-drawer {
     width: 100vw;
+    left: -100vw;
+  }
+  body.menu-open .mobile-drawer {
+    left: 0;
   }
 }
 
