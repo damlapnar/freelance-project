@@ -117,9 +117,6 @@
   }, { passive: true });
   btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-  ;
-  });
-
   /* ── 14. LAZY LOADING (fallback for older browsers) ── */
   if (!('loading' in HTMLImageElement.prototype)) {
     const imgs = document.querySelectorAll('img[loading="lazy"]');
