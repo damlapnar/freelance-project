@@ -42,7 +42,13 @@
     .insta-cta-wrap p { color:#fff; font-size:1.05rem; margin-bottom:1rem; }
     .insta-cta-btn { display:inline-flex; align-items:center; gap:0.5rem; background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color:#fff; font-weight:700; font-family:'Open Sans',sans-serif; padding:0.8rem 1.8rem; border-radius:999px; text-decoration:none; transition:transform 0.2s,box-shadow 0.2s; box-shadow:0 4px 16px rgba(220,39,67,0.3); }
     .insta-cta-btn:hover { transform:translateY(-2px); box-shadow:0 8px 22px rgba(220,39,67,0.4); }
-    @media(max-width:600px){ .gallery-grid { grid-template-columns:repeat(2,1fr); gap:0.8rem; } .gallery-item img { height:160px; } .gallery-page { padding:1.5rem 1rem 2rem; } .gallery-subtitle { margin-bottom:1.2rem; } .insta-cta-wrap { margin-top:1.5rem; padding:1.2rem; } }
+    .insta-feed-wrap { text-align:center; margin-top:3rem; }
+    .insta-feed-title { font-family:'Playfair Display',serif; color:#fff; font-size:1.8rem; margin-bottom:0.4rem; }
+    .insta-feed-sub { color:rgba(255,255,255,0.8); font-size:0.95rem; margin-bottom:1.2rem; }
+    .insta-feed-sub a { color:#fff; text-decoration:underline; }
+    .insta-feed-embed { width:100%; max-width:800px; margin:0 auto; overflow:hidden; border-radius:12px; }
+    .insta-feed-embed iframe { width:100%; height:510px; border:none; display:block; }
+    @media(max-width:600px){ .gallery-grid { grid-template-columns:repeat(2,1fr); gap:0.8rem; } .gallery-item img { height:160px; } .gallery-page { padding:1.5rem 1rem 2rem; } .gallery-subtitle { margin-bottom:1.2rem; } .insta-feed-wrap { margin-top:1.5rem; } .insta-feed-title { font-size:1.3rem; } .insta-feed-embed iframe { height:360px; } }
     [data-theme="dark"] .gallery-caption { color:#a8d5b5; }
     [data-theme="dark"] .gallery-item { background:#243d27; }
   </style>
@@ -109,9 +115,12 @@
       <div class="gallery-item" data-category="pastry"><img src="https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zoz5tfzyoz0eiksavx02" alt="Brownie" loading="lazy"><div class="gallery-caption">Brownie</div></div>
     </div>
 
-    <div class="insta-cta-wrap">
-      <p>Follow us for daily photos and specials 📸</p>
-      <a href="https://instagram.com/derahousenj" target="_blank" rel="noopener noreferrer" class="insta-cta-btn">Follow @derahousenj on Instagram</a>
+    <div class="insta-feed-wrap">
+      <h2 class="insta-feed-title">Follow Us on Instagram</h2>
+      <p class="insta-feed-sub"><a href="https://instagram.com/derahousenj" target="_blank" rel="noopener noreferrer">@derahousenj</a> — fresh photos every day</p>
+      <div class="insta-feed-embed">
+        <iframe src="https://snapwidget.com/embed/1126126" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" title="Posts from Instagram"></iframe>
+      </div>
     </div>
   </main>
 
