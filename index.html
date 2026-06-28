@@ -64,7 +64,11 @@
     .special-card-body { padding:1.2rem 1.3rem; }
     .special-card-body h3 { font-family:'Playfair Display',serif; color:#1c1c1c; font-size:1.15rem; margin-bottom:0.4rem; }
     .special-card-body p { color:#555; font-size:0.92rem; line-height:1.55; margin:0; }
-    @media(max-width:680px){ .special-card { width:100%; max-width:380px; } }
+    @media(max-width:680px){
+      .specials-grid { flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch; scroll-snap-type:x mandatory; padding:0 1rem 1rem; justify-content:flex-start; scrollbar-width:none; gap:1rem; }
+      .specials-grid::-webkit-scrollbar { display:none; }
+      .special-card { flex:0 0 260px; scroll-snap-align:start; }
+    }
 
     /* ── WHY US ── */
     .why-us { background:#355E3B; padding:56px 20px; text-align:center; }

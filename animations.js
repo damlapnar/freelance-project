@@ -128,7 +128,21 @@
     }
   }
 
-  /* ── 15. PWA SERVICE WORKER ── */
+  /* ── 15. DRAWER SWIPE TO CLOSE ── */
+  const swipeDrawer = document.getElementById('mobileDrawer');
+  if (swipeDrawer) {
+    let swipeStartX = 0;
+    swipeDrawer.addEventListener('touchstart', e => { swipeStartX = e.touches[0].clientX; }, { passive: true });
+    swipeDrawer.addEventListener('touchend', e => {
+      if (swipeStartX - e.changedTouches[0].clientX > 50) {
+        document.body.classList.remove('menu-open');
+        const t = document.querySelector('.menu-toggle');
+        if (t) t.setAttribute('aria-expanded', 'false');
+      }
+    }, { passive: true });
+  }
+
+  /* ── 16. PWA SERVICE WORKER ── */
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('/service-worker.js').catch(() => {});
