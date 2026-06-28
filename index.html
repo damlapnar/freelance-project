@@ -39,7 +39,18 @@
     .hero-btn.secondary:hover { background:rgba(255,255,255,0.15); }
     .hero-rating { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.15); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.3); border-radius:999px; padding:6px 14px; margin-top:1.2rem; font-family:'Open Sans',sans-serif; font-size:0.88rem; color:#fff; text-decoration:none; }
     .hero-rating .stars { color:#f5b301; letter-spacing:1px; }
-    @media(max-width:768px){ .hero { min-height:380px; } }
+    @media(max-width:768px){
+      .hero { min-height:320px; background-image:url('https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=800&auto=format&fit=crop'); }
+      .hero-actions { flex-direction:column; align-items:stretch; max-width:300px; margin:0 auto; }
+      .hero-btn { text-align:center; padding:0.9rem 1.5rem; }
+      .specials { padding:36px 16px; }
+      .specials-sub { margin-bottom:1.2rem; }
+      .why-us { padding:32px 16px; }
+      .why-us-sub { margin-bottom:1.2rem; }
+      .reviews-section { padding:40px 16px; }
+      .reviews-subtitle { margin-bottom:16px; }
+      .faq-section { padding:36px 16px; }
+    }
 
     /* ── SPECIALS ── */
     .specials { background:#fff; padding:60px 20px; text-align:center; }
@@ -81,7 +92,7 @@
     .hto-btn:hover { background:#2a4a30; transform:translateY(-1px); }
     .hto-info-row { display:flex; flex-wrap:wrap; justify-content:center; gap:0.8rem 2rem; background:#f0f7f1; border-radius:14px; padding:1.2rem 1.5rem; }
     .hto-info-item { font-family:'Open Sans',sans-serif; color:#355E3B; font-size:0.93rem; }
-    @media(max-width:768px){ .hto-grid { grid-template-columns:1fr; gap:2rem; } }
+    @media(max-width:768px){ .hto-grid { grid-template-columns:1fr; gap:1rem; } }
 
     /* ── REVIEWS ── */
     .reviews-section { padding:70px 18px; background:linear-gradient(180deg,#fff 0%,#f6f8fb 100%); }
@@ -150,6 +161,11 @@
     [data-theme="dark"] .faq-q { color:#e8f5e9; }
     [data-theme="dark"] .hto-info-row { background:#1a2e1d; }
     [data-theme="dark"] .hto-card h3 { color:#a8d5b5; }
+    @media(max-width:480px){
+      .special-card img { height:160px; }
+      .specials-sub { font-size:0.9rem; }
+      .why-us-sub { font-size:0.9rem; }
+    }
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Bakery","name":"D'era House","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"87","bestRating":"5"},"url":"https://derapastryhouse.com/","telephone":"+12019239776","address":{"@type":"PostalAddress","streetAddress":"1076 Main Ave","addressLocality":"Clifton","addressRegion":"NJ","postalCode":"07011","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"20:00"}],"sameAs":["https://instagram.com/derahousenj","https://www.yelp.com/biz/d-era-pastry-house-clifton"],"servesCuisine":["Desserts","Bakery"]}
