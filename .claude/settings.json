@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /Users/damlapinar/Documents/GitHub/derapastryhouse && git add -A && if ! git diff --cached --quiet; then git commit -m \"auto: claude changes\" && git push; fi",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}
