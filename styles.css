@@ -715,8 +715,9 @@ body.menu-open {
     display: none !important;
   }
 
-  /* Cart butonu kompakt - sadece ikon */
+  /* Cart butonu kompakt - sadece ikon, sağa it */
   .cart-nav-btn {
+    margin-left: auto;
     padding: 8px !important;
     border-radius: 50% !important;
   }
