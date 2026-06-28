@@ -43,13 +43,6 @@
       .hero { min-height:480px; background-image:url('https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=800&auto=format&fit=crop'); }
       .hero-actions { flex-direction:column; align-items:stretch; max-width:300px; margin:0 auto; }
       .hero-btn { text-align:center; padding:0.9rem 1.5rem; }
-      .specials { padding:36px 16px; }
-      .specials-sub { margin-bottom:1.2rem; }
-      .why-us { padding:32px 16px; }
-      .why-us-sub { margin-bottom:1.2rem; }
-      .reviews-section { padding:40px 16px; }
-      .reviews-subtitle { margin-bottom:16px; }
-      .faq-section { padding:36px 16px; }
     }
 
     /* ── SPECIALS ── */
@@ -165,6 +158,25 @@
     [data-theme="dark"] .faq-q { color:#e8f5e9; }
     [data-theme="dark"] .hto-info-row { background:#1a2e1d; }
     [data-theme="dark"] .hto-card h3 { color:#a8d5b5; }
+    @media(max-width:768px){
+      .specials { padding:24px 16px; }
+      .specials-sub { margin-bottom:0.8rem; }
+      .why-us { padding:24px 16px; }
+      .why-us-sub { margin-bottom:0.8rem; }
+      .why-item { max-width:140px; }
+      .why-icon { font-size:1.8rem; margin-bottom:0.3rem; }
+      .hto-card { padding:1.2rem 1rem 1.3rem; }
+      .hto-icon { font-size:1.8rem; margin-bottom:0.4rem; }
+      .reviews-section { padding:24px 16px; }
+      .reviews-subtitle { margin-bottom:10px; }
+      .review-card:nth-child(n+3) { display:none; }
+      .instagram-section { padding:24px 16px; }
+      .insta-card:nth-child(n+5) { display:none; }
+      .how-to-order { padding:24px 16px; }
+      .faq-section { padding:24px 16px; }
+      .faq-section h2 { margin-bottom:0.8rem; }
+      .custom-order-strip { padding:20px 16px; }
+    }
     @media(max-width:480px){
       .special-card img { height:160px; }
       .specials-sub { font-size:0.9rem; }
