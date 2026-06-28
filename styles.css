@@ -527,21 +527,19 @@ button:hover {
 .menu-toggle {
   display: none;
   border: 0;
-  background: rgba(53,94,59,0.08);
+  background: transparent;
   cursor: pointer;
-  padding: 12px;
-  border-radius: 14px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.10);
-  transition: transform 0.15s ease, background 0.2s ease, box-shadow 0.2s ease;
+  padding: 8px;
+  border-radius: 8px;
+  transition: opacity 0.15s ease;
 }
 
 .menu-toggle:hover {
-  background: rgba(53,94,59,0.14);
+  opacity: 0.7;
 }
 
 .menu-toggle:active {
-  transform: scale(0.98);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  opacity: 0.5;
 }
 
 .menu-toggle:focus-visible {
@@ -725,6 +723,20 @@ body.menu-open {
   .cart-nav-btn svg {
     width: 22px !important;
     height: 22px !important;
+  }
+
+  /* Drawer açıkken header elemanlarını gizle */
+  body.menu-open .logo,
+  body.menu-open .cart-nav-btn {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+/* Küçük ekranlarda drawer tam genişlik */
+@media (max-width: 480px) {
+  .mobile-drawer {
+    width: 100vw;
   }
 }
 
