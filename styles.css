@@ -496,6 +496,16 @@ button:hover {
   .instagram-title { font-size: 1.6rem; }
   .how-to-order h2 { font-size: 1.6rem; }
   .faq-section h2 { font-size: 1.6rem; }
+
+  /* Section padding'leri mobilede sıkıştır */
+  .specials { padding: 2rem 0; }
+  .instagram-section { padding: 36px 16px; }
+  .how-to-order { padding: 36px 16px; }
+  .faq-section { padding: 36px 16px; }
+  .custom-order-strip { padding: 24px 16px; }
+  h2 { margin: 0.8rem 0 0.6rem; }
+  .hto-subtitle { margin-bottom: 1.2rem; }
+  .hto-info-row { margin-top: 0.5rem; padding: 0.8rem 1rem; }
 }
 
 @media (max-width: 480px) {
@@ -996,7 +1006,7 @@ body.menu-open {
 }
 
 @media (max-width: 768px) {
-  .hto-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .hto-grid { grid-template-columns: 1fr; gap: 1rem; }
 }
 
 /* =========================
