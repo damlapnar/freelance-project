@@ -725,9 +725,10 @@ body.menu-open {
     height: 22px !important;
   }
 
-  /* Drawer açıkken header elemanlarını gizle */
+  /* Drawer açıkken tüm header elemanlarını gizle */
   body.menu-open .logo,
-  body.menu-open .cart-nav-btn {
+  body.menu-open .cart-nav-btn,
+  body.menu-open .menu-toggle {
     opacity: 0;
     pointer-events: none;
   }
