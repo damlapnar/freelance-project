@@ -1,5 +1,5 @@
 /* D'era House — Service Worker */
-const CACHE_NAME = 'dera-static-v3';
+const CACHE_NAME = 'dera-static-v4';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -14,7 +14,8 @@ const STATIC_ASSETS = [
   '/animations.min.js',
   '/cart.js',
   '/manifest.json',
-  '/favicon.ico'
+  '/favicon.ico',
+  '/404.html'
 ];
 
 self.addEventListener('install', event => {
