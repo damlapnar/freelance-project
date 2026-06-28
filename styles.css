@@ -496,6 +496,10 @@ button:hover {
   .instagram-title { font-size: 1.6rem; }
   .how-to-order h2 { font-size: 1.6rem; }
   .faq-section h2 { font-size: 1.6rem; }
+  .about-page section h1, .about-page section h2 { font-size: 1.4rem; margin-bottom: 0.6rem; }
+  .about-page section p { font-size: 0.95rem; }
+  .about-page { padding: 1.5rem 0.75rem; }
+  .about-page section { padding: 1.2rem 1rem; margin: 0.8rem auto; }
 
   /* Section padding'leri mobilede sıkıştır */
   .specials { padding: 2rem 0; }
