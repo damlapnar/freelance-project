@@ -1,0 +1,546 @@
+{
+  "scraped_at": "2026-06-29T12:27:23.423Z",
+  "total": 85,
+  "categories": {
+    "BEST SELLERS": [
+      {
+        "name": "Chocolate Fudge Cake – Slice",
+        "desc": "",
+        "price": "$11.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/vmgmw62btqtliq9u0iex"
+      },
+      {
+        "name": "Strawberry Cheesecake – Slice",
+        "desc": "",
+        "price": "$11.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/jljbfkm5nvagot0gflmi"
+      },
+      {
+        "name": "Biscoff Lotus Cake – Slice",
+        "desc": "",
+        "price": "$11.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/sx8rvolme7pg5zvhsy9r"
+      }
+    ],
+    "CAKES (SLICE & WHOLE)": [
+      {
+        "name": "Strawberry Shortcake",
+        "desc": "🍓 Strawberry Shortcake (5.5”) A light and elegant strawberry shortcake made with layers of soft vanilla sponge cake, fresh sliced strawberries, silky vanilla cream, and a homemade strawberry topping. Perfect for birthdays, small celebrations, date nights, or a sweet treat to share. ✔ Fresh strawberries ✔ Homemade vanilla cream ✔ Made to order ✔ Custom message included Serves 4–6 people.",
+        "price": "$40.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/g24sjgtjzeh30dg9omck"
+      },
+      {
+        "name": "Carrot Cake – Slice",
+        "desc": "Moist, warmly spiced carrot sponge (cinnamon + nutmeg) layered with our cream-cheese European-style pastry cream, creating a velvety, lighter twist on traditional carrot cake frosting. Balanced sweetness, rich flavor, and baked fresh daily.",
+        "price": "$11.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/cqkq4rln9z82mvtngzbu"
+      },
+      {
+        "name": "Classic Vanilla Cake– Slice",
+        "desc": "Soft vanilla sponge layered with our signature European-style vanilla pastry cream, creating an ultra-smooth and delicate flavor. Light, silky, and baked fresh in-house daily.",
+        "price": "$11.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/aqwwa0xlbk07jlqlo9wk"
+      },
+      {
+        "name": "Red Velvet Cake – Slice",
+        "desc": "Classic red velvet cake layered with our cream-cheese–infused European-style pastry cream, which creates a lighter, silkier, and more luxurious version of traditional cream cheese frosting. Soft cocoa notes and velvety texture make this a customer favorite.",
+        "price": "$11.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/e8e5kxwmq7jyjwcghz9k"
+      },
+      {
+        "name": "Strawberry Shortcake – Slice",
+        "desc": "Light vanilla sponge layered with fresh strawberries and our signature European-style whipped pastry cream, creating a silky, refreshing, fruit-forward dessert. Perfect balance of creaminess and natural strawberry sweetness.",
+        "price": "$11.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/ux8hb4uiy5ptt2z0vuoy"
+      },
+      {
+        "name": "Mozaik Cake – Slice",
+        "desc": "Traditional Turkish-style chocolate mosaic cake made with buttery biscuit pieces, rich cocoa, and a smooth chocolate base. Finished with a touch of our signature European-style chocolate pastry cream for a velvety, premium texture. Served chilled",
+        "price": "$11.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/vtmaa9ghnrex4b5cwhsi"
+      },
+      {
+        "name": "Trilece – Slice",
+        "desc": "Ultra-soft airy sponge soaked in a three-milk blend and topped with our signature European-style whipped pastry cream, then finished with a silky caramel glaze. Moist, light, creamy, and one of our bestselling traditional European desserts — made fresh in-house.",
+        "price": "$11.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/rwk2fevwiks9jkxy80oj"
+      },
+      {
+        "name": "Biscoff Lotus Cake – Whole (8\")",
+        "desc": "Vanilla sponge layered with European-style Biscoff pastry cream, topped with Lotus crumble and drizzle. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.",
+        "price": "$65.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/eq3swdttr3ctbkp6ikc4"
+      },
+      {
+        "name": "Carrot Cake – Whole (8\")",
+        "desc": "Warmly spiced carrot sponge layered with European-style cream-cheese pastry cream, smooth and balanced. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.",
+        "price": "$65.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/nx3y2pnti47y9wryaacg"
+      },
+      {
+        "name": "Classic Vanilla Cake – Whole (8\")",
+        "desc": "Soft vanilla sponge layered with our signature European-style vanilla pastry cream, finished with a silky smooth frosting. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.",
+        "price": "$65.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/ou2brlfzuixmijlfsroo"
+      },
+      {
+        "name": "Chocolate Fudge Cake – Whole (8\")",
+        "desc": "Moist chocolate sponge filled with European-style chocolate pastry cream, giving it a velvety, mousse-like texture. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.",
+        "price": "$65.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/hkgmt2rghmmgcbgs9wsf"
+      },
+      {
+        "name": "Mozaik Cake – Whole",
+        "desc": "Traditional Turkish-style chocolate mosaic cake made with buttery biscuit pieces and rich cocoa, blended with our signature European-style chocolate pastry cream for an ultra-smooth, premium finish. Shaped into a whole loaf and served chilled. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary",
+        "price": "$65.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/voytego6vqifmomkuo2e"
+      },
+      {
+        "name": "Red Velvet Cake – Whole (8\")",
+        "desc": "Classic red velvet sponge layered with cream-cheese–infused European-style pastry cream, lighter and smoother than traditional frosting. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.",
+        "price": "$65.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/euv1ucjqsnbbjxz8d60k"
+      },
+      {
+        "name": "Strawberry Shortcake – Whole (8\")",
+        "desc": "Light vanilla sponge layered with fresh strawberries and European-style whipped pastry cream. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.",
+        "price": "$65.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/vevwendpaxzirbur9ehh"
+      },
+      {
+        "name": "Trilece – Whole",
+        "desc": "Soft milk-soaked sponge topped with caramel glaze and European-style whipped pastry cream. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.",
+        "price": "$65.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/wz1jzbp6keyq2oj4hyul"
+      },
+      {
+        "name": "Fraise Noire",
+        "desc": "Inspired by the elegance of Parisian patisseries, Fraise Noire is a delicate cocoa velvet cake topped with hand-whipped white chocolate cream and glazed fresh strawberries. Crafted in small batches, this dessert captures the charm of a quiet morning in Montmartre — where every bite feels like a soft-spoken secret. Refined, romantic, and unapologetically French La douceur parisienne, chez D’ERA.",
+        "price": "$11.00",
+        "img": ""
+      },
+      {
+        "name": "Cinnamon Roll (Cream Cheese Frosting)",
+        "desc": "Fluffy cinnamon roll baked with brown sugar cinnamon filling and finished with house-made cream cheese frosting.",
+        "price": "$5.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/nkw2qayykqeagz2z5dq1"
+      },
+      {
+        "name": "Ham & Swiss Croissant",
+        "desc": "Premium sliced ham and melted Swiss cheese tucked into a buttery croissant. Warm, filling, and perfect for breakfast.",
+        "price": "$5.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/tqg5lgjipgck0g0avgnv"
+      },
+      {
+        "name": "Spinach & Feta Puff",
+        "desc": "Crispy golden puff pastry filled with spinach, feta, herbs, and seasoning. Savory, filling, and vegetarian-friendly.",
+        "price": "$5.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/oakvbv7hiuittmyiaegy"
+      },
+      {
+        "name": "Bagel",
+        "desc": "",
+        "price": "$3.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/lhehll5jiw4zfdhqrdko"
+      },
+      {
+        "name": "Banana Bread",
+        "desc": "Banana bread with moist banana slices and subtle hints of vanilla, topped with crushed walnuts.",
+        "price": "$7.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/xpcvqafx0wrkbipknbys"
+      },
+      {
+        "name": "Butter Croissant",
+        "desc": "Flaky, buttery French croissant baked fresh daily.",
+        "price": "$5.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zi6uodo16gmkn9yyd8qs"
+      }
+    ],
+    "BREAKFAST PASTRIES": [
+      {
+        "name": "Chocolate Croissant (Pain Au Chocolat)",
+        "desc": "Classic French pain au chocolat baked golden, wrapped around premium dark chocolate batons that melt into soft layers.",
+        "price": "$5.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/fdtgbz7f4divdumwilvs"
+      },
+      {
+        "name": "Cheese Danish",
+        "desc": "Golden Danish pastry filled with smooth, lightly sweetened cream cheese. Buttery, creamy, and perfectly balanced",
+        "price": "$5.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/wocfxzd7ftwnx5i7u3rc"
+      },
+      {
+        "name": "Almond Croissant",
+        "desc": "Buttery laminated croissant filled with rich house-made almond frangipane and finished with golden toasted almonds. Slightly sweet and aromatic.",
+        "price": "$5.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/bqxu8cljcvuzmmuaftrj"
+      },
+      {
+        "name": "Profiteroles",
+        "desc": "Cream puff decorated with rich chocolate sauce",
+        "price": "$9.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/inae3ifjh8pzqg9pdu32"
+      },
+      {
+        "name": "Chocolate Éclair (2)",
+        "desc": "Light and airy choux pastry filled with our signature European-style pastry cream and topped with silky chocolate glaze. A classic, elegant dessert.",
+        "price": "$6.50",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/wsckxrz2oemwctq1vkjw"
+      },
+      {
+        "name": "Fruit Tart (5)",
+        "desc": "Five fresh fruit tarts topped with a colorful mix of kiwi, strawberry, raspberry, blackberry, and banana. A perfect sweet treat to share or enjoy all to yourself.",
+        "price": "$15.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/qand0edqubp6etbzoreu"
+      },
+      {
+        "name": "Chocolate Covered Strawberries (5)",
+        "desc": "Fresh strawberries dipped in rich chocolate, offering a delightful balance of sweetness and indulgence. (5 pieces)",
+        "price": "$15.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/qnmdk5dpammtz7ejgbhh"
+      },
+      {
+        "name": "Dubai Chocolate",
+        "desc": "Rich, creamy chocolate bars crafted with premium ingredients, offering a smooth and decadent treat.",
+        "price": "$17.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/jvddovatnnkghlcpoqqe"
+      },
+      {
+        "name": "Macarons (4)",
+        "desc": "",
+        "price": "$11.99",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/odtgylqvknbladgxsf3p"
+      },
+      {
+        "name": "New York Cheesecake – Whole (8″)",
+        "desc": "Creamy whole cheesecake blended with our signature European-style whipped pastry cream for a silky, luxurious texture. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary",
+        "price": "$90.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zmflgpqcuid4jg6ajrgs"
+      },
+      {
+        "name": "Strawberry Cheesecake – Whole (8″)",
+        "desc": "Creamy cheesecake topped with house-made strawberry sauce and blended with European-style whipped pastry cream. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.",
+        "price": "$90.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/qhwx2aqywj3zl3mbgitz"
+      },
+      {
+        "name": "Oreo Cheesecake – Whole (8″)",
+        "desc": "Silky Oreo cheesecake blended with our European-style whipped Oreo pastry cream and topped with crushed Oreos. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.",
+        "price": "$90.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/mwjc3sucywtq4bwo2oxj"
+      },
+      {
+        "name": "New York Cheesecake-Slice",
+        "desc": "Creamy New York–style cheesecake blended with our signature European-style whipped pastry cream for a silky, smooth finish. Light vanilla aroma, rich texture, baked fresh in-house.",
+        "price": "$11.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/igcgmv7qobv3jucburrm"
+      },
+      {
+        "name": "M&M Cheesecake – Whole ( 8″)",
+        "desc": "Creamy vanilla cheesecake mixed with crunchy chocolate M&Ms and topped with European-style whipped vanilla pastry cream. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.",
+        "price": "$90.00",
+        "img": ""
+      },
+      {
+        "name": "Sprite (Can)",
+        "desc": "",
+        "price": "$2.50",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/xwirjlylmqn1x1hokke7"
+      },
+      {
+        "name": "Water",
+        "desc": "",
+        "price": "$1.50",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/yekmqv2lslc6k4taev0i"
+      }
+    ],
+    "SIGNATURE DESSERT CUPS & MINI TREATS": [
+      {
+        "name": "Banana Pudding",
+        "desc": "A rich, dreamy banana pudding made the NYC way – layered with fresh banana slices, fluffy vanilla pudding, and crispy vanilla wafers. Handcrafted in small batches. Served chilled. Limited daily quantity – always fresh!",
+        "price": "$11.95",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zfn7bom8lfh1bklk9rxg"
+      },
+      {
+        "name": "Brownie",
+        "desc": "Rich chocolate square with a fudgy interior and a slightly crisp top.",
+        "price": "$8.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zoz5tfzyoz0eiksavx02"
+      }
+    ],
+    "CHEESECAKES": [
+      {
+        "name": "Oreo Cheesecake – Slice",
+        "desc": "Classic cheesecake blended with crushed Oreos and our signature European-style whipped Oreo pastry cream, creating a silky cookies-and-cream texture. Finished with Oreo crumble on top.",
+        "price": "$11.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/juul8bvqmz9t3nbn3xvw"
+      },
+      {
+        "name": "M&M Cheesecake – Slice",
+        "desc": "Creamy vanilla cheesecake swirled with chocolate M&Ms and topped with our signature European-style vanilla pastry cream, adding a smooth finish to the crunchy-chocolate texture. Fun, colorful, and kid-friendly.",
+        "price": "$11.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zxgknbrhng9jhny2txfx"
+      }
+    ],
+    "BEVERAGES": [
+      {
+        "name": "Diet Coke (Can)",
+        "desc": "",
+        "price": "$4.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/z1vvuomu9hty8bosqctl"
+      },
+      {
+        "name": "Coke (Can)",
+        "desc": "",
+        "price": "$2.50",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/to6wvjnndecpdeo7quoc"
+      },
+      {
+        "name": "Turkish Tea",
+        "desc": "Freshly brewed Turkish black tea",
+        "price": "$5.50",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/te8hjxxjqkwt8jsctth3"
+      },
+      {
+        "name": "Turkish Coffee",
+        "desc": "Strong coffee with a thick layer of ground coffee at the bottom, served in a small cup.",
+        "price": "$5.50",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/d7liyh4etau1dshc9kbe"
+      },
+      {
+        "name": "Hot Chocolate",
+        "desc": "Rich chocolate drink with steamed milk, topped with whipped cream and a sprinkle of cocoa powder.",
+        "price": "$6.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zhenxcmqiacdzc1ylizo"
+      },
+      {
+        "name": "Dr Pepper (Can)",
+        "desc": "",
+        "price": "$4.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/m8ecv4huezhrmonsukeq"
+      },
+      {
+        "name": "Canary Dry (Can)",
+        "desc": "",
+        "price": "$4.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/gpreebx9oxolqbpz9tae"
+      },
+      {
+        "name": "Iced Latte",
+        "desc": "",
+        "price": "$6.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/rvpejbzraredx0oosn7g"
+      },
+      {
+        "name": "Cafe Latte",
+        "desc": "Rich espresso blended with steamed milk, topped with a layer of frothy foam.",
+        "price": "$6.00",
+        "img": ""
+      },
+      {
+        "name": "Americano",
+        "desc": "Bold espresso blended with hot water for a smooth, balanced coffee experience.",
+        "price": "$5.50",
+        "img": ""
+      },
+      {
+        "name": "Mountain Dew (Can)",
+        "desc": "",
+        "price": "$4.00",
+        "img": ""
+      },
+      {
+        "name": "Cappucino",
+        "desc": "",
+        "price": "$6.00",
+        "img": ""
+      },
+      {
+        "name": "Nutella Swirl Cupcake",
+        "desc": "Chocolate-hazelnut cupcake swirled with Nutella and topped with our Nutella-infused European-style pastry cream, creating the smoothest, richest Nutella frosting possible. A bestseller.",
+        "price": "$4.50",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/n1cm0ccrqj8pjeym3gzy"
+      },
+      {
+        "name": "Vanilla Bean Cupcake",
+        "desc": "Soft vanilla sponge topped with our signature European-style vanilla pastry cream, whipped into a silky buttercream-like texture. Light, elegant, and aromatic, a classic elevated to a luxury level.",
+        "price": "$4.50",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/rdo8mwjyds4zcyzfuiaw"
+      },
+      {
+        "name": "Cookie Box (8-pack)",
+        "desc": "An assortment of eight cookies featuring chocolate chip",
+        "price": "$30.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/sdk1eoclrzht7vji8yqt"
+      },
+      {
+        "name": "Office Celebration Cake – Corporate Friendly",
+        "desc": "Starting at $55. Pricing varies based on design, size, and theme. Office celebration cakes are available for in-store or phone ordering only. A clean, elegant cake ideal for office events, retirements, promotions, team celebrations, or corporate gatherings. Designs can be kept simple and classic or customized to match company colors.",
+        "price": "$55.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/vnvk01kbpyjo0moc14u4"
+      },
+      {
+        "name": "Anniversary Cake – Classic Elegance",
+        "desc": "A smooth, elegant cake perfect for celebrating love and special milestones. Available in any of our flavors and customizable with soft floral details, gold/silver accents (optional), or a minimalist modern finish. Custom designs and color themes available upon request. In-store or phone ordering only. Starting at $55. Price varies based on size, flavor, and design.",
+        "price": "$55.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zrdxlpxniaxsz6edplnw"
+      },
+      {
+        "name": "Engagement Cake – Floral or Minimalist",
+        "desc": "Starting at $55. Pricing varies based on size, flavor, and design. All custom engagement cakes are available for in-store or phone ordering only. A romantic engagement cake designed with soft florals, pastel tones, or a minimalist smooth finish. Available in any of our signature flavors and customizable with initials, color themes, light piping, or classic white elegance. Perfect for intimate celebrations or upscale engagement dinners.",
+        "price": "$55.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/nbptxkapijqbx4ks22kd"
+      },
+      {
+        "name": "Baby Shower Cake – Boy / Girl Theme",
+        "desc": "Starting at $55. Pricing varies based on size, flavor, and decoration. Custom baby shower cakes are available for in-store or phone ordering only. A sweet and elegant baby shower cake available in pink, blue, beige, cream, or any neutral color palette. Choose from soft cloud-style piping, simple fondant accents, or modern minimalist designs. Perfect for celebrating the arrival of your little one.",
+        "price": "$55.00",
+        "img": ""
+      }
+    ],
+    "CUPCAKES": [
+      {
+        "name": "Red Velvet Cupcake",
+        "desc": "Moist red velvet cake topped with a cream-cheese–infused European-style pastry cream, creating a lighter, silkier version of classic cream cheese frosting. Smooth, elegant, and perfectly balanced.",
+        "price": "$4.50",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/u1luogwiguso5idbvqef"
+      },
+      {
+        "name": "Carrot Cake Cupcake",
+        "desc": "Spiced carrot sponge topped with our cream-cheese European-style pastry cream, giving a velvety, lighter twist to traditional carrot cake frosting. Warm spices and creamy finish",
+        "price": "$4.50",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/tk4v9bydihebdcxtro5g"
+      }
+    ],
+    "COOKIES": [
+      {
+        "name": "Chocolate Chip Cookie",
+        "desc": "Rich chocolate chunks in a classic, chewy cookie.",
+        "price": "$4.50",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/cylajmd3nabbnnnfhidi"
+      },
+      {
+        "name": "White Chocolate Cookie",
+        "desc": "Soft cookie with chunks of sweet white chocolate.",
+        "price": "$4.50",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/uojcui9bykdyhbzcy64r"
+      }
+    ],
+    "SPECIAL DAY ORDERS": [
+      {
+        "name": "Gender Reveal Cake – Surprise Center",
+        "desc": "Starting at $55. Pricing varies based on theme and filling design. Gender reveal cakes are available for in-store or phone ordering only. A classic gender reveal cake with a simple, neutral outer design and optional pink or blue surprise center. Flavors, colors, and decorative accents can be fully customized. Ideal for family gatherings or gender reveal parties.",
+        "price": "$55.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/kijszqvxllygpmlgk7oq"
+      },
+      {
+        "name": "Graduation Cake – School Colors Available",
+        "desc": "Starting at $55. Pricing varies based on size, color theme, and decoration. Graduation cakes are available for in-store or phone ordering only. A celebratory graduation cake customizable with school colors, graduation year, and simple toppers. Available in any flavor. Perfect for class parties, ceremonies, and family celebrations.",
+        "price": "$55.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/akdcvdfppuy4nwfaznpu"
+      },
+      {
+        "name": "Pistachio Baklava (4 pcs)",
+        "desc": "Layered pastry with finely chopped pistachios and sweet syrup, served as four pieces",
+        "price": "$9.50",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/z1w9avapv1kcmuv2qkt3"
+      },
+      {
+        "name": "Walnut Baklava (4 pcs)",
+        "desc": "Layers of phyllo dough, honey, and walnuts. Four pieces per serving.",
+        "price": "$9.50",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/pxofrtrpj3jz7vtwlan1"
+      },
+      {
+        "name": "Wedding Cake – Two Tier",
+        "desc": "Starting at $160. Price varies based on tier size, flavor selection, and design. Two-tier wedding cakes are available for in-store or phone consultation only. An elegant two-tier cake crafted with premium layers and our signature pastry cream. Customize with soft florals, pearls, smooth edges, or modern pastel tones.",
+        "price": "$160.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/ickwlevoisparievygz8"
+      },
+      {
+        "name": "Custom Gift Sets",
+        "desc": "Beautifully curated gift sets customized for any occasion birthdays, anniversaries, baby showers, graduations, thank-you gifts, holidays, corporate events, and more. Each box is fully adjustable: choose your preferred treats, colors, themes, and size. Perfect for last-minute gifting. Customization and pricing vary by selection.",
+        "price": "$0.00",
+        "img": ""
+      },
+      {
+        "name": "Strawberry shortcake",
+        "desc": "🍓 Strawberry Shortcake (5.5”) A light and elegant strawberry shortcake made with layers of soft vanilla sponge cake, fresh sliced strawberries, silky vanilla cream",
+        "price": "$40.00",
+        "img": ""
+      }
+    ],
+    "BAKLAVA": [
+      {
+        "name": "Cold Pistachio Baklava (Soğuk Baklava) (4pcs)",
+        "desc": "Chilled pistachio baklava topped with light chocolate dusting and cold milk syrup.",
+        "price": "$9.50",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/pu8epirxl02tavrqvqzz"
+      },
+      {
+        "name": "Carrot Slice Baklava (Havuç Dilim)",
+        "desc": "Premium pistachio-filled baklava prepared in the traditional “carrot slice” style. Ultra-thin phyllo layers, clarified butter, and a rich pistachio center create a crisp, delicate, and elegant dessert. A classic specialty for baklava lovers.",
+        "price": "$7.95",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/zf64kdvdy0f50q7ebapo"
+      }
+    ],
+    "DEALS": [
+      {
+        "name": "Bagel w Cream Cheese + Large Coffee",
+        "desc": "",
+        "price": "$9.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/pgsug31hj4mxrvftwsyn"
+      }
+    ],
+    "WEDDING ORDERS": [
+      {
+        "name": "Wedding Cake – Three Tier",
+        "desc": "Starting at $250. Price varies based on size, theme, and decoration complexity. Three-tier wedding cakes require in-store or phone consultation only. A luxurious three-tier centerpiece cake designed for weddings and large celebrations. Smooth finish, floral accents, or modern clean-layer design available upon request.",
+        "price": "$250.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/fi2kvczlx0lxqkxuqdhn"
+      },
+      {
+        "name": "Wedding Cake – Single Tier (6″ / 8″)",
+        "desc": "Starting at $85. Price varies based on size, flavor, and decoration. Wedding cake orders are available for in-store or phone consultation only. A beautifully smooth single-tier wedding cake perfect for intimate ceremonies, elopements, and small celebrations. Customizable with florals, piping, minimalist white finish, or pastel themes.",
+        "price": "$85.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/bwyimscsjjcs6wxtkq5t"
+      }
+    ],
+    "CUSTOM ORDERS": [
+      {
+        "name": "Fresh Fruit Basket / Fruit Platter",
+        "desc": "Beautifully arranged seasonal fruits. Perfect for birthdays, anniversaries, parties, and corporate events. Designs vary by season. Customization available in-store or by phone.",
+        "price": "$0.00",
+        "img": ""
+      },
+      {
+        "name": "Stuffed Dates/ Filled Dates",
+        "desc": "Fresh premium dates filled to your choice. Fully customizable flavors, fillings, toppings and quantities can be adjusted. If you have any special requests or large orders, please call the store or visit the store.",
+        "price": "$0.00",
+        "img": ""
+      }
+    ],
+    "SEASONAL SPECIALS": [
+      {
+        "name": "Pumpkin Pie – Whole (9\")",
+        "desc": "A smooth and creamy pumpkin pie baked with warm fall spices and a silky custard filling. Available in 9-inch (serves 6–8) and 12-inch (serves 10–14) sizes. Perfect for Thanksgiving tables, holiday dinners, or family gatherings. Seasonal item – limited availability. Pre-order recommended.",
+        "price": "$35.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/mmml8vfwfvuqadatyooi"
+      },
+      {
+        "name": "Pumpkin Pie – Whole ( 12″)",
+        "desc": "A smooth and creamy pumpkin pie baked with warm fall spices and a silky custard filling. Available in 9-inch (serves 6–8) and 12-inch (serves 10–14) sizes. Perfect for Thanksgiving tables, holiday dinners, or family gatherings. Seasonal item – limited availability. Pre-order recommended for the 12″ size.",
+        "price": "$45.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/mmml8vfwfvuqadatyooi"
+      }
+    ],
+    "MINI COLLECTIONS": [
+      {
+        "name": "Red Velvet Mini Bundt Cake (6)",
+        "desc": "Individually crafted, ultra-soft red velvet cakes with a delicate powdered sugar finish. Light, rich, and addictive — perfect with coffee or as a shareable dessert.",
+        "price": "$27.45",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/p2tmifkmrwthzixpe2ec"
+      }
+    ]
+  }
+}
