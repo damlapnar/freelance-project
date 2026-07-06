@@ -73,3 +73,5 @@ body.cart-open{overflow:hidden}
   .cart-nav-btn{margin-left:auto;padding:8px !important;border-radius:50% !important;}
   .cart-nav-btn svg{width:22px !important;height:22px !important;}
 }
+
+@media (min-width:769px){.nav-container{justify-content:flex-start}.nav-container nav{margin-left:auto}.nav-container .cta{margin-left:1.6rem}.nav-container .cart-nav-btn{margin-left:0.6rem}}

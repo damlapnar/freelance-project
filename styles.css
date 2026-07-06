@@ -1134,3 +1134,10 @@ body.menu-open {
 }
 .snipcart-add-item-btn:hover { background: #2a4b2e; transform: translateY(-1px); }
 [data-theme="dark"] .snipcart-add-item-btn { background: #4a7c50; }
+/* ── Order Now'i sepetin yanına grupla (desktop) ── */
+@media (min-width: 769px) {
+  .nav-container { justify-content: flex-start; }
+  .nav-container nav { margin-left: auto; }
+  .nav-container .cta { margin-left: 1.6rem; }
+  .nav-container .cart-nav-btn { margin-left: 0.6rem; }
+}
