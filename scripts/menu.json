@@ -1,25 +1,25 @@
 {
-  "scraped_at": "2026-06-29T12:27:23.423Z",
-  "total": 85,
+  "scraped_at": "2026-07-06T11:59:46.797Z",
+  "total": 86,
   "categories": {
     "BEST SELLERS": [
       {
-        "name": "Chocolate Fudge Cake – Slice",
+        "name": "Chocolate Croissant (Pain Au...",
         "desc": "",
-        "price": "$11.00",
-        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/vmgmw62btqtliq9u0iex"
-      },
-      {
-        "name": "Strawberry Cheesecake – Slice",
-        "desc": "",
-        "price": "$11.00",
-        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/jljbfkm5nvagot0gflmi"
+        "price": "$5.00",
+        "img": ""
       },
       {
         "name": "Biscoff Lotus Cake – Slice",
         "desc": "",
         "price": "$11.00",
         "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/sx8rvolme7pg5zvhsy9r"
+      },
+      {
+        "name": "Oreo Cheesecake – Slice",
+        "desc": "",
+        "price": "$11.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/juul8bvqmz9t3nbn3xvw"
       }
     ],
     "CAKES (SLICE & WHOLE)": [
@@ -34,6 +34,12 @@
         "desc": "Moist, warmly spiced carrot sponge (cinnamon + nutmeg) layered with our cream-cheese European-style pastry cream, creating a velvety, lighter twist on traditional carrot cake frosting. Balanced sweetness, rich flavor, and baked fresh daily.",
         "price": "$11.00",
         "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/cqkq4rln9z82mvtngzbu"
+      },
+      {
+        "name": "Chocolate Fudge Cake – Slice",
+        "desc": "Moist chocolate sponge filled with our signature European-style chocolate pastry cream, giving it a velvety, mousse-like texture with deep cocoa flavor. Smooth, decadent, and baked fresh in-house daily.",
+        "price": "$11.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/vmgmw62btqtliq9u0iex"
       },
       {
         "name": "Classic Vanilla Cake– Slice",
@@ -236,6 +242,12 @@
         "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/igcgmv7qobv3jucburrm"
       },
       {
+        "name": "Strawberry Cheesecake – Slice",
+        "desc": "Silky cheesecake topped with house-made strawberry sauce and finished with a touch of European-style whipped pastry cream. Creamy, fruity, and perfectly balanced.",
+        "price": "$11.00",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/jljbfkm5nvagot0gflmi"
+      },
+      {
         "name": "M&M Cheesecake – Whole ( 8″)",
         "desc": "Creamy vanilla cheesecake mixed with crunchy chocolate M&Ms and topped with European-style whipped vanilla pastry cream. Our whole cakes are made fresh to order. Please allow preparation time. Same-day availability may vary.",
         "price": "$90.00",
@@ -269,12 +281,6 @@
       }
     ],
     "CHEESECAKES": [
-      {
-        "name": "Oreo Cheesecake – Slice",
-        "desc": "Classic cheesecake blended with crushed Oreos and our signature European-style whipped Oreo pastry cream, creating a silky cookies-and-cream texture. Finished with Oreo crumble on top.",
-        "price": "$11.00",
-        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/juul8bvqmz9t3nbn3xvw"
-      },
       {
         "name": "M&M Cheesecake – Slice",
         "desc": "Creamy vanilla cheesecake swirled with chocolate M&Ms and topped with our signature European-style vanilla pastry cream, adding a smooth finish to the crunchy-chocolate texture. Fun, colorful, and kid-friendly.",
