@@ -1,5 +1,5 @@
 /* D'era House — Service Worker */
-const CACHE_NAME = 'dera-static-v4';
+const CACHE_NAME = 'dera-static-v5';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
