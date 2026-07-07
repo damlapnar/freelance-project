@@ -151,7 +151,14 @@
     // Drawer
     (function(){const t=document.querySelector('.menu-toggle'),c=document.querySelectorAll('[data-drawer-close]');if(!t)return;function o(){document.body.classList.add('menu-open');t.setAttribute('aria-expanded','true');}function cl(){document.body.classList.remove('menu-open');t.setAttribute('aria-expanded','false');}t.addEventListener('click',()=>document.body.classList.contains('menu-open')?cl():o());c.forEach(el=>el.addEventListener('click',cl));document.addEventListener('keydown',(e)=>{if(e.key==='Escape')cl();});})();
   </script>
-  <a href="https://wa.me/12019239776" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" loading="lazy"></a>
+  <div class="chat-float-group">
+    <a href="sms:+12019239776" class="chat-float sms-float" aria-label="Text us">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="28" height="28"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+    </a>
+    <a href="https://wa.me/12019239776" class="chat-float whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" loading="lazy">
+    </a>
+  </div>
   <script src="animations.min.js"></script>
   <script src="cart.js"></script>
 </body>
