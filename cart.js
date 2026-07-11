@@ -240,7 +240,7 @@
       <p class="checkout-pay-note">&#x1F4B5; Pay at pickup &mdash; 1076 Main Ave, Clifton NJ</p>
       <div class="checkout-deposit-note">
         <strong>&#x26A0;&#xFE0F; Deposit Required</strong><br>
-        A deposit is required to confirm your order. For custom cake orders, a 50% deposit is collected before we begin. We&rsquo;ll follow up with payment details after you submit.
+        A deposit is required to confirm your order. For custom cake orders, a 50% deposit is collected before we begin. <strong>We will contact you</strong> with deposit payment details after you submit.
       </div>
     </div>
     <form id="pickup-order-form" action="https://api.web3forms.com/submit" method="POST">
