@@ -468,10 +468,6 @@ button:hover {
 }
 
 @media (max-width: 768px) {
-  body {
-    padding-bottom: 80px; /* alttaki fixed Order Now için boşluk */
-  }
-
   .hero {
     height: 280px;
     background-position: center;
@@ -485,9 +481,8 @@ button:hover {
     text-align: center;
   }
 
-  /* WhatsApp, alttaki Order Now bar ile çakışmasın */
   .whatsapp-float {
-    bottom: 90px;
+    bottom: 22px;
     right: 18px;
   }
 
