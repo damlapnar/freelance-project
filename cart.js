@@ -237,7 +237,11 @@
     <div class="checkout-summary-wrap">
       <div id="checkout-order-summary" class="checkout-summary" role="list" aria-label="Order items"></div>
       <p class="checkout-total-line">Total: <strong id="checkout-total">$0.00</strong></p>
-      <p class="checkout-pay-note">&#x1F4B5; You'll pay at pickup. No charge now.</p>
+      <p class="checkout-pay-note">&#x1F4B5; Pay at pickup &mdash; 1076 Main Ave, Clifton NJ</p>
+      <div class="checkout-deposit-note">
+        <strong>&#x26A0;&#xFE0F; Deposit Required</strong><br>
+        A deposit is required to confirm your order. For custom cake orders, a 50% deposit is collected before we begin. We&rsquo;ll follow up with payment details after you submit.
+      </div>
     </div>
     <form id="pickup-order-form" action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="a10ef4ae-2861-41cb-9942-55013c6c3079">

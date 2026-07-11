@@ -48,6 +48,7 @@ body.cart-open{overflow:hidden}
 .checkout-summary{font-family:'Open Sans',sans-serif;font-size:.85rem;color:#333;white-space:pre-wrap;margin:0 0 .5rem}
 .checkout-total-line{font-family:'Open Sans',sans-serif;font-size:1rem;color:#1c1c1c;margin:.4rem 0 .2rem;font-weight:700}
 .checkout-pay-note{font-size:.82rem;color:#555;margin:0;font-family:'Open Sans',sans-serif}
+.checkout-deposit-note{background:#fff8e1;border:1.5px solid #f0b429;border-radius:10px;padding:.75rem 1rem;margin-top:.75rem;font-family:'Open Sans',sans-serif;font-size:.83rem;color:#7a5c00;line-height:1.5}
 .co-field{display:flex;flex-direction:column;gap:.3rem;margin-bottom:.9rem}
 .co-field label{font-family:'Open Sans',sans-serif;font-size:.85rem;font-weight:700;color:#355E3B}
 .co-field input,.co-field textarea{padding:.7rem .9rem;border-radius:10px;border:1.5px solid #ddd;font-family:'Open Sans',sans-serif;font-size:.92rem;color:#222;background:#fafafa;transition:border-color .2s}
