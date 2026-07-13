@@ -365,12 +365,16 @@
   function injectScrollTop() {
     var btn = document.createElement('button');
     btn.className = 'scroll-top-btn';
+    btn.type = 'button';
     btn.setAttribute('aria-label', 'Back to top');
     btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>';
     document.body.appendChild(btn);
-    window.addEventListener('scroll', function () {
-      btn.classList.toggle('visible', window.scrollY > 300);
-    }, { passive: true });
+    function checkScroll() {
+      var scrolled = window.scrollY || document.documentElement.scrollTop;
+      btn.classList.toggle('visible', scrolled > 200);
+    }
+    window.addEventListener('scroll', checkScroll, { passive: true });
+    document.addEventListener('scroll', checkScroll, { passive: true });
     btn.addEventListener('click', function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
