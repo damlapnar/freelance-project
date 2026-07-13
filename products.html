@@ -1,5 +1,106 @@
 <!DOCTYPE html>
-<html l
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu | D'era House, Clifton, NJ</title>
+  <meta name="description" content="Explore D'era House's full menu, handcrafted cheesecakes, custom cakes, baklava, artisan cookies and pastries. Fresh daily in Clifton, NJ.">
+  <link rel="canonical" href="https://derapastryhouse.com/products">
+  <meta property="og:title" content="Menu | D'era House, Clifton, NJ">
+  <meta property="og:description" content="Explore D'era House's full menu, handcrafted cheesecakes, custom cakes, baklava, artisan cookies and pastries. Fresh daily in Clifton, NJ.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://derapastryhouse.com/products">
+  <meta property="og:image" content="https://derapastryhouse.com/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Menu | D'era House, Clifton, NJ">
+  <meta name="twitter:description" content="Explore D'era House's full menu, handcrafted cheesecakes, custom cakes, baklava, artisan cookies and pastries. Fresh daily in Clifton, NJ.">
+  <meta name="twitter:image" content="https://derapastryhouse.com/og-image.jpg">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#355E3B">
+  <link rel="stylesheet" href="styles.min.css">
+  <link rel="stylesheet" href="animations.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&amp;family=Open+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    .menu-hero { position:relative; background:url('https://images.unsplash.com/photo-1579372786545-d24232daf58c?w=1470&auto=format&fit=crop') center/cover no-repeat; min-height:280px; display:flex; align-items:center; justify-content:center; text-align:center; }
+    .menu-hero::before { content:''; position:absolute; inset:0; background:rgba(0,0,0,0.52); z-index:1; }
+    .menu-hero-text { position:relative; z-index:2; padding:0 1.5rem; }
+    .menu-hero-text h1 { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,5vw,2.6rem); color:#fff; padding-top:0; text-shadow:2px 2px 6px rgba(0,0,0,0.5); margin-bottom:0.4rem; }
+    .menu-hero-text p { color:rgba(255,255,255,0.88); font-size:1rem; margin:0; }
+    .menu-page { background:#355E3B; padding:3rem 1.5rem 4rem; }
+    .menu-category { max-width:1100px; margin:0 auto 3.5rem; }
+    .menu-category h2 { font-family:'Playfair Display',serif; color:#fff; font-size:clamp(1.3rem,3vw,1.7rem); margin-bottom:1.5rem; padding-bottom:0.5rem; border-bottom:2px solid rgba(255,255,255,0.2); display:flex; align-items:center; gap:0.6rem; }
+    .menu-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1.4rem; }
+    .menu-card { background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.12); transition:transform 0.3s,box-shadow 0.3s; display:flex; flex-direction:column; }
+    .menu-card:hover { transform:translateY(-5px); box-shadow:0 14px 32px rgba(0,0,0,0.18); }
+    .menu-card img { width:100%; height:200px; object-fit:cover; display:block; transition:transform 0.4s; flex-shrink:0; }
+    .menu-card:hover img { transform:scale(1.05); }
+    .menu-card-body { padding:1rem 1.2rem 1.3rem; flex:1; display:flex; flex-direction:column; }
+    .menu-card-body h3 { font-family:'Playfair Display',serif; color:#1c1c1c; font-size:1.08rem; margin-bottom:0.3rem; }
+    .menu-card-body p { color:#555; font-size:0.9rem; line-height:1.55; margin:0 0 0.6rem; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; cursor:pointer; }
+    .menu-card-body p.expanded { display:block; }
+    .menu-card-body .tag { display:inline-block; background:#f0f7f1; color:#355E3B; font-size:0.78rem; font-weight:700; padding:3px 10px; border-radius:999px; font-family:'Open Sans',sans-serif; }
+    .menu-card-price { display:inline-block; background:#355E3B; color:#fff; font-size:0.88rem; font-weight:700; padding:4px 12px; border-radius:999px; font-family:'Open Sans',sans-serif; margin-top:0.4rem; }
+    .menu-card-no-img { height:200px; display:flex; align-items:center; justify-content:center; font-size:3rem; background:#f9f5f0; }
+    .add-to-cart-btn { display:block; width:100%; margin-top:.8rem; padding:.6rem 1rem; background:#355E3B; color:#fff; border:none; border-radius:999px; font-family:'Open Sans',sans-serif; font-size:.88rem; font-weight:700; cursor:pointer; transition:background .2s,transform .15s; }
+    .add-to-cart-btn:hover { background:#2a4b2e; transform:translateY(-1px); }
+    .menu-order-cta { text-align:center; padding:1rem 1rem 0; max-width:600px; margin:0 auto; }
+    .menu-order-cta p { color:rgba(255,255,255,0.85); margin-bottom:1.2rem; font-size:1rem; }
+    .menu-order-btn { display:inline-block; background:#fff; color:#355E3B; font-family:'Open Sans',sans-serif; font-weight:700; padding:0.9rem 2.5rem; border-radius:999px; text-decoration:none; font-size:1rem; box-shadow:0 6px 20px rgba(0,0,0,0.15); transition:transform 0.2s,box-shadow 0.2s; }
+    .menu-order-btn:hover { transform:translateY(-2px); box-shadow:0 10px 26px rgba(0,0,0,0.2); }
+    .custom-banner { background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); border-radius:16px; padding:2rem; text-align:center; max-width:700px; margin:2rem auto 0; }
+    .custom-banner h3 { color:#fff; font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:0.5rem; }
+    .custom-banner p { color:rgba(255,255,255,0.82); margin-bottom:1.2rem; font-size:0.97rem; }
+    .custom-banner a { display:inline-block; background:#fff; color:#355E3B; font-weight:700; font-family:'Open Sans',sans-serif; padding:0.8rem 2rem; border-radius:999px; text-decoration:none; transition:transform 0.2s; }
+    .custom-banner a:hover { transform:translateY(-2px); }
+    [data-theme="dark"] .menu-card { background:#243d27; }
+    [data-theme="dark"] .menu-card-body h3 { color:#e8f5e9; }
+    [data-theme="dark"] .menu-card-body p { color:#a8d5b5; }
+    [data-theme="dark"] .menu-card-body .tag { background:#1a2e1d; color:#a8d5b5; }
+    @media(max-width:680px){
+      .menu-grid { grid-template-columns:1fr 1fr; gap:0.75rem; }
+      .menu-card img, .menu-card-no-img { height:130px; }
+      .menu-card-body { padding:0.65rem 0.75rem 0.8rem; }
+      .menu-card-body h3 { font-size:0.85rem; margin-bottom:0.2rem; }
+      .menu-card-body p { font-size:0.88rem; -webkit-line-clamp:2; }
+      .menu-card-price { font-size:0.78rem; padding:3px 8px; }
+      .add-to-cart-btn { font-size:0.75rem; padding:0.4rem 0.7rem; }
+    }
+  </style>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQT6NMKCEZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KQT6NMKCEZ', { 'anonymize_ip': true });
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header>
+    <div class="nav-container">
+      <a href="/" class="logo">D'ERA</a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="mobileDrawer" aria-expanded="false"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+      <nav><ul>
+        <li><a href="/">Home</a></li><li><a href="/products" class="nav-active">Menu</a></li><li><a href="/gallery">Gallery</a></li><li><a href="/about">About</a></li><li><a href="/locations">Locations</a></li><li><a href="/contact">Contact</a></li>
+      </ul></nav>
+      <a href="https://www.grubhub.com/restaurant/dera-pastry-house-1076-main-ave-clifton/12091408" class="cta" target="_blank" rel="noopener noreferrer">Order Now</a>
+      <button class="cart-nav-btn" onclick="openSidebar()" aria-label="View cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cart-count" style="display:none">0</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="menu-hero">
+    <div class="menu-hero-text">
+      <h1>Our Menu</h1>
+      <p>Made fresh every morning, no shortcuts, no freezer</p>
+    </div>
+  </section>
+
+  <main class="menu-page" id="main-content">
 
     <div class="menu-category">
       <h2>🎂 Cakes (slice & whole)</h2>
