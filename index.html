@@ -82,8 +82,11 @@
     .hto-icon { font-size:2.2rem; margin-bottom:0.7rem; }
     .hto-card h3 { font-family:'Playfair Display',serif; color:#355E3B; font-size:1.1rem; margin-bottom:0.5rem; }
     .hto-card p { color:#555; font-size:0.92rem; line-height:1.6; margin-bottom:1.2rem; }
-    .hto-btn { display:inline-block; background:#355E3B; color:#fff; font-family:'Open Sans',sans-serif; font-weight:700; padding:0.6rem 1.4rem; border-radius:999px; text-decoration:none; font-size:0.9rem; transition:background 0.2s,transform 0.2s; }
+    .hto-btn { display:inline-flex; align-items:center; min-height:44px; background:#355E3B; color:#fff; font-family:'Open Sans',sans-serif; font-weight:700; padding:0.6rem 1.2rem; border-radius:999px; text-decoration:none; font-size:0.85rem; transition:background 0.2s,transform 0.2s; }
     .hto-btn:hover { background:#2a4a30; transform:translateY(-1px); }
+    .hto-btn-secondary { background:transparent; border:2px solid #355E3B; color:#355E3B; }
+    .hto-btn-secondary:hover { background:#355E3B; color:#fff; }
+    .hto-contact-btns { display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center; }
     .hto-info-row { display:flex; flex-wrap:wrap; justify-content:center; gap:0.8rem 2rem; background:#f0f7f1; border-radius:14px; padding:1.2rem 1.5rem; }
     .hto-info-item { font-family:'Open Sans',sans-serif; color:#355E3B; font-size:0.93rem; }
     @media(max-width:768px){ .hto-grid { grid-template-columns:1fr; gap:1rem; } }
@@ -407,7 +410,11 @@
             <div class="hto-icon">💬</div>
             <h3>Text or Call Us</h3>
             <p>For custom orders or questions, reach us directly, we actually pick up.</p>
-            <a href="https://wa.me/12019239776" target="_blank" rel="noopener noreferrer" class="hto-btn">WhatsApp Us</a>
+            <div class="hto-contact-btns">
+              <a href="tel:+12019239776" class="hto-btn">📞 Call</a>
+              <a href="sms:+12019239776" class="hto-btn hto-btn-secondary">💬 Text</a>
+              <a href="https://wa.me/12019239776" target="_blank" rel="noopener noreferrer" class="hto-btn hto-btn-secondary">🟢 WA</a>
+            </div>
           </div>
           <div class="hto-card">
             <div class="hto-step">3</div>
@@ -544,6 +551,7 @@
         <h3>D'era House</h3>
         <p><a href="https://maps.google.com/?q=1076+Main+Ave,+Clifton,+NJ+07011" target="_blank" rel="noopener noreferrer">1076 Main Ave<br>Clifton, NJ 07011</a></p>
         <p><a href="tel:+12019239776">+1 (201) 923-9776</a></p>
+        <div class="footer-contact-btns"><a href="tel:+12019239776" class="footer-cta-btn">📞 Call</a><a href="sms:+12019239776" class="footer-cta-btn">💬 Text</a></div>
         <p>Mon–Sun: 8:00 AM – 8:00 PM</p>
       </div>
       <div class="footer-section">
@@ -618,14 +626,7 @@
       });
     }
   </script>
-  <div class="chat-float-group">
-    <a href="sms:+12019239776" class="chat-float sms-float" aria-label="Text us">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="28" height="28"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
-    </a>
-    <a href="https://wa.me/12019239776" class="chat-float whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" loading="lazy">
-    </a>
-  </div>
+
   <script src="animations.min.js"></script>
   <script src="cart.js?v=2"></script>
 </body>

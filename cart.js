@@ -299,6 +299,38 @@
     });
   }
 
+  /* ── CONTACT FLOAT ── */
+  function injectContactFloat() {
+    const el = document.createElement('div');
+    el.innerHTML = `
+<div class="contact-float-wrap" id="contactFloatWrap">
+  <div class="contact-float-menu" id="contactFloatMenu">
+    <a href="tel:+12019239776" class="cf-opt">📞 Call</a>
+    <a href="sms:+12019239776" class="cf-opt">💬 Text</a>
+    <a href="mailto:deragroupllc@gmail.com" class="cf-opt">✉️ Email</a>
+    <a href="https://wa.me/12019239776" class="cf-opt" target="_blank" rel="noopener noreferrer">🟢 WhatsApp</a>
+  </div>
+  <button class="cf-toggle" id="cfToggle" aria-label="Contact us" aria-expanded="false">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="26" height="26"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+  </button>
+</div>`;
+    document.body.appendChild(el);
+
+    const toggle = document.getElementById('cfToggle');
+    const wrap = document.getElementById('contactFloatWrap');
+    toggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const isOpen = wrap.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    document.addEventListener('click', function(e) {
+      if (wrap && !wrap.contains(e.target)) {
+        wrap.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
   /* ── GLOBAL CLOSE FUNCTIONS ── */
   window.openSidebar = openSidebar;
   window.closeSidebar = closeSidebar;
@@ -332,6 +364,7 @@
   /* ── INIT ── */
   document.addEventListener('DOMContentLoaded', function () {
     injectCartHTML();
+    injectContactFloat();
     loadCart();
     renderSidebar();
     updateBadge();
