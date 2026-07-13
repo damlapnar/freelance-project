@@ -91,3 +91,6 @@ body.cart-open{overflow:hidden}body.cart-open .contact-float-wrap{display:none!i
 
 @media (min-width:769px){.nav-container{justify-content:flex-start}.nav-container nav{margin-left:auto}.nav-container .cta{margin-left:1.6rem}.nav-container .cart-nav-btn{margin-left:0.6rem}}
 .skip-link{position:absolute;left:50%;transform:translateX(-50%) translateY(-100%);top:0;z-index:99999;background:#355E3B;color:#fff;padding:.6rem 1.2rem;border-radius:0 0 8px 8px;text-decoration:none;font-weight:700;font-family:'Open Sans',sans-serif;transition:transform .2s;white-space:nowrap}.skip-link:focus{transform:translateX(-50%) translateY(0)}
+.scroll-top-btn{position:fixed;bottom:92px;right:22px;z-index:9996;width:46px;height:46px;border-radius:14px;background:#355E3B;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.22);opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s;pointer-events:none;}
+.scroll-top-btn.visible{opacity:1;transform:translateY(0);pointer-events:auto;}
+.scroll-top-btn:hover{background:#2a4a30;box-shadow:0 6px 20px rgba(0,0,0,.28);}
