@@ -168,7 +168,7 @@
     const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
     const summary = cart.map(i => `${i.qty}x ${i.name} ($${(i.price * i.qty).toFixed(2)})`).join('\n');
 
-    document.getElementById('checkout-order-summary').innerHTML = cart.map(i => `<p role="listitem" style="margin:0 0 .2rem">${esc(i.qty + 'x ' + i.name)} — $${(i.price * i.qty).toFixed(2)}</p>`).join('');
+    document.getElementById('checkout-order-summary').innerHTML = cart.map(i => `<p role="listitem" style="margin:0 0 .2rem;color:#333">${esc(i.qty + 'x ' + i.name)} — $${(i.price * i.qty).toFixed(2)}</p>`).join('');
     document.getElementById('checkout-total').textContent = '$' + total.toFixed(2);
     document.getElementById('checkout-hidden-order').value = summary;
     document.getElementById('checkout-hidden-total').value = '$' + total.toFixed(2);
