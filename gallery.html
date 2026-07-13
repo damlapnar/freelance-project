@@ -26,11 +26,13 @@
     .gallery-page h1 { font-family:'Playfair Display',serif; color:#fff; text-align:center; font-size:clamp(1.8rem,5vw,2.4rem); padding-top:0; margin-bottom:0.5rem; }
     .gallery-subtitle { text-align:center; color:rgba(255,255,255,0.8); margin-bottom:2.5rem; font-size:1rem; }
     .gallery-filter { display:flex; flex-wrap:wrap; justify-content:center; gap:0.6rem; margin-bottom:2rem; }
-    .filter-btn { background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3); color:#fff; font-family:'Open Sans',sans-serif; font-weight:600; padding:0.5rem 1.2rem; border-radius:999px; cursor:pointer; transition:background 0.2s,transform 0.2s; font-size:0.9rem; }
+    .filter-btn { background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3); color:#fff; font-family:'Open Sans',sans-serif; font-weight:600; padding:0.5rem 1.2rem; border-radius:999px; cursor:pointer; transition:background 0.2s,transform 0.2s; font-size:0.9rem; min-height:44px; }
     .filter-btn:hover, .filter-btn.active { background:#fff; color:#355E3B; transform:translateY(-1px); }
+    .filter-btn:focus-visible { outline:2px solid #fff; outline-offset:2px; }
     .gallery-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.2rem; max-width:1100px; margin:0 auto; }
     .gallery-item { border-radius:16px; overflow:hidden; background:#fff; box-shadow:0 4px 20px rgba(0,0,0,0.14); cursor:pointer; transition:transform 0.3s,box-shadow 0.3s; }
     .gallery-item:hover { transform:translateY(-5px); box-shadow:0 16px 36px rgba(0,0,0,0.2); }
+    .gallery-item:focus-visible { outline:3px solid #fff; outline-offset:3px; }
     .gallery-item img { width:100%; height:240px; object-fit:cover; display:block; transition:transform 0.5s; }
     .gallery-item:hover img { transform:scale(1.07); }
     .gallery-caption { padding:0.8rem 1rem; font-family:'Open Sans',sans-serif; font-weight:600; color:#355E3B; font-size:0.92rem; }
@@ -62,6 +64,7 @@
   </script>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <header>
     <div class="nav-container">
       <a href="/" class="logo">D'ERA</a>
@@ -78,7 +81,7 @@
     </div>
   </header>
 
-  <main class="gallery-page">
+  <main class="gallery-page" id="main-content">
     <h1>Our Gallery</h1>
     <p class="gallery-subtitle">Made fresh every day, swipe to explore by category</p>
 
@@ -124,7 +127,7 @@
     </div>
   </main>
 
-  <div id="lightbox"><button id="lightbox-close" aria-label="Close">×</button><img id="lightbox-img" src="" alt=""></div>
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview"><button id="lightbox-close" type="button" aria-label="Close image preview">×</button><img id="lightbox-img" src="" alt=""></div>
 
   <footer class="site-footer">
     <div class="footer-container">
@@ -135,7 +138,7 @@
     <div class="footer-copy">&copy; 2026 D'era House. Handcrafted with heart in Clifton, NJ.</div>
   </footer>
   <div class="drawer-overlay" data-drawer-close></div>
-  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Menu">
+  <aside class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Mobile navigation menu">
     <div class="mobile-drawer__top"><div class="mobile-drawer__brand">D'era House</div><button class="drawer-close" type="button" aria-label="Close menu" data-drawer-close>×</button></div>
     <nav class="mobile-drawer__nav"><a href="/">Home <span>›</span></a><a href="/products">Menu <span>›</span></a><a href="/gallery">Gallery <span>›</span></a><a href="/about">About <span>›</span></a><a href="/locations">Locations <span>›</span></a><a href="/contact">Contact <span>›</span></a></nav>
     <div class="mobile-drawer__ctaWrap"><a class="mobile-drawer__cta" href="https://www.grubhub.com/restaurant/dera-pastry-house-1076-main-ave-clifton/12091408" target="_blank" rel="noopener noreferrer">Order Now</a></div>
@@ -144,10 +147,18 @@
     // Filter
     document.querySelectorAll('.filter-btn').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;document.querySelectorAll('.gallery-item').forEach(item=>{item.style.display=(f==='all'||item.dataset.category===f)?'':'none';});});});
     // Lightbox
-    const lb=document.getElementById('lightbox'),lbImg=document.getElementById('lightbox-img');
-    document.querySelectorAll('.gallery-item').forEach(item=>{item.addEventListener('click',()=>{const img=item.querySelector('img');lbImg.src=img.src.replace('w=600','w=1200');lbImg.alt=img.alt;lb.classList.add('active');document.body.style.overflow='hidden';});});
-    document.getElementById('lightbox-close').addEventListener('click',()=>{lb.classList.remove('active');document.body.style.overflow='';});
-    lb.addEventListener('click',e=>{if(e.target===lb){lb.classList.remove('active');document.body.style.overflow='';}});
+    const lb=document.getElementById('lightbox'),lbImg=document.getElementById('lightbox-img'),lbClose=document.getElementById('lightbox-close');
+    let lbOpener=null;
+    function openLightbox(item){const img=item.querySelector('img');lbImg.src=img.src.replace('w_600','w_1200');lbImg.alt=img.alt;lb.classList.add('active');document.body.style.overflow='hidden';lbOpener=item;setTimeout(()=>lbClose.focus(),50);}
+    function closeLightbox(){lb.classList.remove('active');document.body.style.overflow='';if(lbOpener)lbOpener.focus();}
+    document.querySelectorAll('.gallery-item').forEach(item=>{
+      item.setAttribute('tabindex','0');
+      item.setAttribute('role','button');
+      item.addEventListener('click',()=>openLightbox(item));
+      item.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openLightbox(item);}});
+    });
+    lbClose.addEventListener('click',closeLightbox);
+    lb.addEventListener('click',e=>{if(e.target===lb)closeLightbox();});
     // Drawer
     (function(){const t=document.querySelector('.menu-toggle'),c=document.querySelectorAll('[data-drawer-close]');if(!t)return;function o(){document.body.classList.add('menu-open');t.setAttribute('aria-expanded','true');}function cl(){document.body.classList.remove('menu-open');t.setAttribute('aria-expanded','false');}t.addEventListener('click',()=>document.body.classList.contains('menu-open')?cl():o());c.forEach(el=>el.addEventListener('click',cl));document.addEventListener('keydown',(e)=>{if(e.key==='Escape')cl();});})();
   </script>

@@ -623,8 +623,8 @@ button:hover {
   border: 0;
   background: rgba(53,94,59,0.10);
   color: #355E3B;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 14px;
   font-size: 22px;
   cursor: pointer;
@@ -976,7 +976,9 @@ body.menu-open {
 .hto-card h3 { font-family: 'Playfair Display', serif; color: #355E3B; font-size: 1.15rem; margin-bottom: 0.5rem; }
 .hto-card p { color: #555; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; }
 .hto-btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   background: #355E3B;
   color: #fff;
   font-family: 'Open Sans', sans-serif;
@@ -988,6 +990,26 @@ body.menu-open {
   transition: background 0.2s, transform 0.2s;
 }
 .hto-btn:hover { background: #2a4a30; transform: translateY(-1px); }
+
+.skip-link {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100%);
+  top: 0;
+  z-index: 99999;
+  background: #355E3B;
+  color: #fff;
+  padding: .6rem 1.2rem;
+  border-radius: 0 0 8px 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-family: 'Open Sans', sans-serif;
+  transition: transform .2s;
+  white-space: nowrap;
+}
+.skip-link:focus { transform: translateX(-50%) translateY(0); }
+
+.co-required-note { font-size: .78rem; color: #767676; margin: 0 0 .8rem; text-align: right; font-family: 'Open Sans', sans-serif; }
 
 .hto-info-row {
   display: flex;

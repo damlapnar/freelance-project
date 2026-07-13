@@ -115,7 +115,11 @@
   /* ── SIDEBAR ── */
   function openSidebar() {
     const s = document.getElementById('dera-cart-sidebar');
-    if (s) { s.classList.add('open'); document.body.classList.add('cart-open'); }
+    if (s) {
+      s.classList.add('open');
+      document.body.classList.add('cart-open');
+      setTimeout(() => { const cb = s.querySelector('.cart-close-btn'); if (cb) cb.focus(); }, 50);
+    }
   }
   function closeSidebar() {
     const s = document.getElementById('dera-cart-sidebar');
@@ -148,12 +152,12 @@
           <p class="cart-item-name">${esc(item.name)}</p>
           <p class="cart-item-line-price">$${(item.price * item.qty).toFixed(2)}</p>
           <div class="cart-qty-control">
-            <button onclick="deraCart.setQty('${item.id}', ${item.qty - 1})">&#x2212;</button>
+            <button onclick="deraCart.setQty('${item.id}', ${item.qty - 1})" aria-label="Decrease quantity of ${esc(item.name)}">&#x2212;</button>
             <span>${item.qty}</span>
-            <button onclick="deraCart.setQty('${item.id}', ${item.qty + 1})">&#x2B;</button>
+            <button onclick="deraCart.setQty('${item.id}', ${item.qty + 1})" aria-label="Increase quantity of ${esc(item.name)}">&#x2B;</button>
           </div>
         </div>
-        <button class="cart-item-remove" onclick="deraCart.remove('${item.id}')" aria-label="Remove">&#x2715;</button>
+        <button class="cart-item-remove" onclick="deraCart.remove('${item.id}')" aria-label="Remove ${esc(item.name)}">&#x2715;</button>
       </div>`).join('');
   }
 
@@ -212,7 +216,7 @@
     const cartHTML = `
 <div id="dera-cart-overlay" onclick="closeSidebar()"></div>
 
-<aside id="dera-cart-sidebar" role="dialog" aria-label="Shopping cart">
+<aside id="dera-cart-sidebar" role="dialog" aria-modal="true" aria-label="Shopping cart">
   <div class="cart-header">
     <h2>Your Order</h2>
     <button class="cart-close-btn" onclick="closeSidebar()" aria-label="Close cart">&#x2715;</button>
@@ -230,7 +234,7 @@
   </div>
 </aside>
 
-<div id="dera-checkout-modal" role="dialog" aria-label="Place your order">
+<div id="dera-checkout-modal" role="dialog" aria-modal="true" aria-label="Place your order">
   <div class="checkout-box">
     <button class="checkout-close" onclick="closeCheckout()" aria-label="Close">&#x2715;</button>
     <h2>Place Your Order</h2>
@@ -249,6 +253,7 @@
       <input type="hidden" name="from_name" value="D'era Pastry House">
       <input type="hidden" id="checkout-hidden-order" name="Order">
       <input type="hidden" id="checkout-hidden-total" name="Total">
+      <p class="co-required-note">* Required fields</p>
       <div class="co-field">
         <label for="co-name">Your Name *</label>
         <input id="co-name" type="text" name="name" required placeholder="Jane Smith">
@@ -263,7 +268,7 @@
       </div>
       <div class="co-field">
         <label for="co-pickup">Pickup Date &amp; Time *</label>
-        <input id="co-pickup" type="text" name="Pickup" required placeholder="e.g. Tomorrow at 3pm">
+        <input id="co-pickup" type="datetime-local" name="Pickup" required>
       </div>
       <div class="co-field">
         <label for="co-notes">Special Instructions</label>

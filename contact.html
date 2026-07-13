@@ -64,6 +64,7 @@
   </script>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <header>
     <div class="nav-container">
       <a href="/" class="logo">D'ERA</a>
@@ -80,7 +81,7 @@
     </div>
   </header>
 
-  <main class="contact-page">
+  <main class="contact-page" id="main-content">
     <div class="contact-wrap">
       <h1>Let's Talk</h1>
       <p class="contact-subtitle">For custom orders, questions, or anything else, we're easy to reach.</p>
@@ -99,19 +100,19 @@
         <h2>Send a Message</h2>
         <div class="info-note">Have a reference image or custom cake idea? Send it via WhatsApp or Messenger for the fastest response.</div>
         <form action="https://formspree.io/f/xrblplgz" method="POST" id="contactForm">
-          <label for="name">Name</label>
+          <label for="name">Name *</label>
           <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name">
-          <label for="email">Email</label>
+          <label for="email">Email *</label>
           <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" inputmode="email">
-          <label for="phone">Phone</label>
+          <label for="phone">Phone (optional)</label>
           <input type="tel" id="phone" name="phone" placeholder="Optional" autocomplete="tel" inputmode="tel">
-          <label for="message">Message</label>
+          <label for="message">Message *</label>
           <textarea id="message" name="message" placeholder="Tell us your order request, preferences, or questions" required autocomplete="off"></textarea>
           <input type="text" name="_honey" style="display:none">
           <input type="hidden" name="form-start" id="form-start">
           <button type="submit">Send Message</button>
         </form>
-        <div id="formSuccess">Got it! We'll be in touch within a few hours. 🎂</div>
+        <div id="formSuccess" tabindex="-1">Got it! We'll be in touch within a few hours. 🎂</div>
       </div>
     </div>
   </main>
@@ -125,13 +126,13 @@
     <div class="footer-copy">&copy; 2026 D'era House. Handcrafted with heart in Clifton, NJ.</div>
   </footer>
   <div class="drawer-overlay" data-drawer-close></div>
-  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Menu">
+  <aside class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Mobile navigation menu">
     <div class="mobile-drawer__top"><div class="mobile-drawer__brand">D'era House</div><button class="drawer-close" type="button" aria-label="Close menu" data-drawer-close>×</button></div>
     <nav class="mobile-drawer__nav"><a href="/">Home <span>›</span></a><a href="/products">Menu <span>›</span></a><a href="/gallery">Gallery <span>›</span></a><a href="/about">About <span>›</span></a><a href="/locations">Locations <span>›</span></a><a href="/contact">Contact <span>›</span></a></nav>
     <div class="mobile-drawer__ctaWrap"><a class="mobile-drawer__cta" href="https://www.grubhub.com/restaurant/dera-pastry-house-1076-main-ave-clifton/12091408" target="_blank" rel="noopener noreferrer">Order Now</a></div>
   </aside>
   <script>
-    document.addEventListener("DOMContentLoaded",function(){const form=document.getElementById("contactForm"),success=document.getElementById("formSuccess");document.getElementById("form-start").value=Date.now();form.addEventListener("submit",function(e){e.preventDefault();fetch(form.action,{method:"POST",body:new FormData(form),headers:{'Accept':'application/json'}}).then(r=>{if(r.ok){form.style.display='none';success.style.display="block";if(typeof window.deraConfetti==='function')window.deraConfetti();}else{alert("Something went wrong. Please call us directly at (201) 923-9776.");}}).catch(()=>alert("There was a problem. Please call us at (201) 923-9776."));});});
+    document.addEventListener("DOMContentLoaded",function(){const form=document.getElementById("contactForm"),success=document.getElementById("formSuccess");document.getElementById("form-start").value=Date.now();form.addEventListener("submit",function(e){e.preventDefault();const btn=form.querySelector('button[type="submit"]');btn.disabled=true;btn.textContent='Sending…';fetch(form.action,{method:"POST",body:new FormData(form),headers:{'Accept':'application/json'}}).then(r=>{if(r.ok){form.style.display='none';success.style.display="block";success.focus();if(typeof window.deraConfetti==='function')window.deraConfetti();}else{btn.disabled=false;btn.textContent='Send Message';success.textContent='Something went wrong. Please call us at (201) 923-9776.';success.style.background='#fff3f3';success.style.borderColor='#e88';success.style.color='#c00';success.style.display='block';success.focus();}}).catch(()=>{btn.disabled=false;btn.textContent='Send Message';success.textContent='There was a problem. Please call us at (201) 923-9776.';success.style.background='#fff3f3';success.style.borderColor='#e88';success.style.color='#c00';success.style.display='block';success.focus();});});});
     (function(){const t=document.querySelector('.menu-toggle'),c=document.querySelectorAll('[data-drawer-close]');if(!t)return;function o(){document.body.classList.add('menu-open');t.setAttribute('aria-expanded','true');}function cl(){document.body.classList.remove('menu-open');t.setAttribute('aria-expanded','false');}t.addEventListener('click',()=>document.body.classList.contains('menu-open')?cl():o());c.forEach(el=>el.addEventListener('click',cl));document.addEventListener('keydown',(e)=>{if(e.key==='Escape')cl();});})();
   </script>
   <div class="chat-float-group">

@@ -137,7 +137,7 @@
     .newsletter-section h2 { font-family:'Playfair Display',serif; color:#fff; font-size:clamp(1.5rem,4vw,2rem); margin-bottom:0.8rem; }
     .newsletter-section > p { color:rgba(255,255,255,0.88); font-size:1rem; margin-bottom:1.8rem; line-height:1.6; }
     .newsletter-form { display:flex; gap:0.5rem; margin-bottom:1rem; flex-wrap:wrap; justify-content:center; }
-    .newsletter-form input { flex:1; min-width:220px; padding:0.85rem 1rem; border:none; border-radius:10px; font-family:'Open Sans',sans-serif; font-size:0.95rem; background:#fff; color:#222; }
+    .newsletter-form input { flex:1; min-width:220px; padding:0.85rem 1rem; border:none; border-radius:10px; font-family:'Open Sans',sans-serif; font-size:1rem; background:#fff; color:#222; }
     .newsletter-form input::placeholder { color:#999; }
     .newsletter-btn { background:#fff; color:#355E3B; font-family:'Open Sans',sans-serif; font-weight:700; padding:0.85rem 1.8rem; border:none; border-radius:10px; cursor:pointer; white-space:nowrap; transition:transform 0.2s,box-shadow 0.2s; box-shadow:0 4px 12px rgba(0,0,0,0.15); }
     .newsletter-btn:hover { transform:translateY(-2px); box-shadow:0 6px 16px rgba(0,0,0,0.2); }
@@ -193,6 +193,7 @@
   </script>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <header>
     <div class="nav-container">
@@ -217,7 +218,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <!-- HERO -->
     <section class="hero">
       <div class="hero-text">
@@ -274,22 +275,22 @@
       <p class="why-us-sub">We're not a chain. We're your neighborhood bakery.</p>
       <div class="why-grid">
         <div class="why-item">
-          <div class="why-icon">👩‍🍳</div>
+          <div class="why-icon" aria-hidden="true">👩‍🍳</div>
           <h3>Woman-Owned</h3>
           <p>Started from a kitchen dream, built into something the whole block loves</p>
         </div>
         <div class="why-item">
-          <div class="why-icon">🌅</div>
+          <div class="why-icon" aria-hidden="true">🌅</div>
           <h3>Baked Fresh Daily</h3>
           <p>We don't freeze. What you eat today was made this morning.</p>
         </div>
         <div class="why-item">
-          <div class="why-icon">🎂</div>
+          <div class="why-icon" aria-hidden="true">🎂</div>
           <h3>Custom Orders</h3>
           <p>Just 24 hours notice, we'll make exactly what you have in mind</p>
         </div>
         <div class="why-item">
-          <div class="why-icon">🚚</div>
+          <div class="why-icon" aria-hidden="true">🚚</div>
           <h3>Delivery &amp; Pickup</h3>
           <p>Order through GrubHub or walk right in, 7 days a week</p>
         </div>
@@ -380,24 +381,24 @@
         <h2>Got Questions?</h2>
         <div class="faq-list">
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Do you offer delivery? <span class="faq-arrow">›</span></button>
-            <div class="faq-a">Yes, we deliver through GrubHub. You can also do in-store pickup or curbside at 1076 Main Ave, Clifton. We're open 7 days a week, 8 AM to 8 PM.</div>
+            <button class="faq-q" aria-expanded="false" aria-controls="faq-a-1">Do you offer delivery? <span class="faq-arrow">›</span></button>
+            <div class="faq-a" id="faq-a-1">Yes, we deliver through GrubHub. You can also do in-store pickup or curbside at 1076 Main Ave, Clifton. We're open 7 days a week, 8 AM to 8 PM.</div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">How do I order a custom cake? <span class="faq-arrow">›</span></button>
-            <div class="faq-a">Use our <a href="/custom-order">Custom Order form</a>, call us at <a href="tel:+12019239776">(201) 923-9776</a>, or message us on <a href="https://wa.me/12019239776" target="_blank" rel="noopener noreferrer">WhatsApp</a>. We need at least 24 hours for custom orders, more for large wedding or event cakes.</div>
+            <button class="faq-q" aria-expanded="false" aria-controls="faq-a-2">How do I order a custom cake? <span class="faq-arrow">›</span></button>
+            <div class="faq-a" id="faq-a-2">Use our <a href="/custom-order">Custom Order form</a>, call us at <a href="tel:+12019239776">(201) 923-9776</a>, or message us on <a href="https://wa.me/12019239776" target="_blank" rel="noopener noreferrer">WhatsApp</a>. We need at least 24 hours for custom orders, more for large wedding or event cakes.</div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Can I just walk in without ordering ahead? <span class="faq-arrow">›</span></button>
-            <div class="faq-a">Absolutely. Walk-ins are welcome anytime during business hours. We bake fresh every day, so selection varies, call ahead if you're looking for something specific.</div>
+            <button class="faq-q" aria-expanded="false" aria-controls="faq-a-3">Can I just walk in without ordering ahead? <span class="faq-arrow">›</span></button>
+            <div class="faq-a" id="faq-a-3">Absolutely. Walk-ins are welcome anytime during business hours. We bake fresh every day, so selection varies, call ahead if you're looking for something specific.</div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Do you make wedding and event cakes? <span class="faq-arrow">›</span></button>
-            <div class="faq-a">Yes! Weddings, birthdays, baby showers, graduations, corporate events, we do it all. For large orders we recommend reaching out at least 1–2 weeks in advance. Fill out our <a href="/custom-order">Custom Order form</a> to get started.</div>
+            <button class="faq-q" aria-expanded="false" aria-controls="faq-a-4">Do you make wedding and event cakes? <span class="faq-arrow">›</span></button>
+            <div class="faq-a" id="faq-a-4">Yes! Weddings, birthdays, baby showers, graduations, corporate events, we do it all. For large orders we recommend reaching out at least 1–2 weeks in advance. Fill out our <a href="/custom-order">Custom Order form</a> to get started.</div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Can you accommodate dietary restrictions? <span class="faq-arrow">›</span></button>
-            <div class="faq-a">We do our best for gluten-free, nut-free, and halal requests. Please mention your needs when ordering, we'll let you know what's possible and make sure nothing gets missed.</div>
+            <button class="faq-q" aria-expanded="false" aria-controls="faq-a-5">Can you accommodate dietary restrictions? <span class="faq-arrow">›</span></button>
+            <div class="faq-a" id="faq-a-5">We do our best for gluten-free, nut-free, and halal requests. Please mention your needs when ordering, we'll let you know what's possible and make sure nothing gets missed.</div>
           </div>
         </div>
       </div>
@@ -479,7 +480,7 @@
   </footer>
 
   <div class="drawer-overlay" data-drawer-close></div>
-  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Menu">
+  <aside class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Mobile navigation menu">
     <div class="mobile-drawer__top">
       <div class="mobile-drawer__brand">D'era House</div>
       <button class="drawer-close" type="button" aria-label="Close menu" data-drawer-close>×</button>
