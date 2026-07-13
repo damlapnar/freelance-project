@@ -272,7 +272,7 @@
       <button type="submit" class="co-submit-btn">Place Order &mdash; Pay at Pickup</button>
     </form>
     <div id="checkout-success" style="display:none" class="checkout-success-msg">
-      &#x2705; Order received! We'll see you at pickup — 1076 Main Ave, Clifton NJ.
+      &#x2705; Order received! We'll contact you shortly to confirm your deposit and pickup details &mdash; 1076 Main Ave, Clifton NJ.
     </div>
   </div>
 </div>`;
