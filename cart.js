@@ -371,7 +371,7 @@
     document.body.appendChild(btn);
     function checkScroll() {
       var scrolled = window.scrollY || document.documentElement.scrollTop;
-      btn.classList.toggle('visible', scrolled > 200);
+      btn.classList.toggle('visible', scrolled > 50);
     }
     window.addEventListener('scroll', checkScroll, { passive: true });
     document.addEventListener('scroll', checkScroll, { passive: true });
