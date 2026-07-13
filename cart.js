@@ -236,7 +236,8 @@
 
 <div id="dera-checkout-modal" role="dialog" aria-modal="true" aria-label="Place your order">
   <div class="checkout-box">
-    <button class="checkout-close" onclick="closeCheckout()" aria-label="Close">&#x2715;</button>
+    <div class="sheet-handle"></div>
+    <button class="checkout-close" onclick="closeCheckout()" aria-label="Close checkout">&#x2715;</button>
     <h2>Place Your Order</h2>
     <div class="checkout-summary-wrap">
       <div id="checkout-order-summary" class="checkout-summary" role="list" aria-label="Order items"></div>
@@ -287,6 +288,9 @@
     document.body.appendChild(div);
 
     document.getElementById('pickup-order-form').addEventListener('submit', submitOrder);
+    document.getElementById('dera-checkout-modal').addEventListener('click', function(e) {
+      if (e.target === this) closeCheckout();
+    });
   }
 
   /* ── GLOBAL CLOSE FUNCTIONS ── */

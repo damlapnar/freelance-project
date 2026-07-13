@@ -594,6 +594,7 @@ button:hover {
   left: -320px;                       /* 🔥 solda kapalı */
   width: min(320px, 86vw);
   height: 100vh;
+  height: 100dvh;
   background: #ffffff;
   color: #355E3B;
   box-shadow: 18px 0 40px rgba(0,0,0,0.18); /* yön ters */
