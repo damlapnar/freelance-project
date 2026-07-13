@@ -236,9 +236,14 @@
 
 <div id="dera-checkout-modal" role="dialog" aria-modal="true" aria-label="Place your order">
   <div class="checkout-box">
-    <div class="sheet-handle"></div>
-    <button class="checkout-close" onclick="closeCheckout()" aria-label="Close checkout">&#x2715;</button>
-    <h2>Place Your Order</h2>
+    <div class="checkout-header">
+      <div class="sheet-handle"></div>
+      <div class="checkout-title-row">
+        <h2>Place Your Order</h2>
+        <button class="checkout-close" type="button" onclick="closeCheckout()" aria-label="Close checkout">&#x2715;</button>
+      </div>
+    </div>
+    <div class="checkout-body">
     <div class="checkout-summary-wrap">
       <div id="checkout-order-summary" class="checkout-summary" role="list" aria-label="Order items"></div>
       <p class="checkout-total-line">Total: <strong id="checkout-total">$0.00</strong></p>
@@ -279,6 +284,7 @@
     </form>
     <div id="checkout-success" style="display:none" class="checkout-success-msg">
       &#x2705; Order received! We'll contact you shortly to confirm your deposit and pickup details &mdash; 1076 Main Ave, Clifton NJ.
+    </div>
     </div>
   </div>
 </div>`;
