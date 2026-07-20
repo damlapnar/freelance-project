@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-13T10:54:43.636Z",
+  "scraped_at": "2026-07-20T10:46:15.033Z",
   "total": 86,
   "categories": {
     "BEST SELLERS": [
@@ -14,6 +14,12 @@
         "desc": "",
         "price": "$11.00",
         "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/vmgmw62btqtliq9u0iex"
+      },
+      {
+        "name": "Chocolate Chip Cookie",
+        "desc": "",
+        "price": "$4.50",
+        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/cylajmd3nabbnnnfhidi"
       },
       {
         "name": "Biscoff Lotus Cake – Slice",
@@ -419,12 +425,6 @@
       }
     ],
     "COOKIES": [
-      {
-        "name": "Chocolate Chip Cookie",
-        "desc": "Rich chocolate chunks in a classic, chewy cookie.",
-        "price": "$4.50",
-        "img": "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_600,q_auto:best,f_auto,c_fill,h_600/cylajmd3nabbnnnfhidi"
-      },
       {
         "name": "White Chocolate Cookie",
         "desc": "Soft cookie with chunks of sweet white chocolate.",
